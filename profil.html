@@ -103,6 +103,10 @@
         .section-desc { font-size: 15.5px; color: var(--text-muted); max-width: 720px; }
         .section-head { display: flex; justify-content: space-between; align-items: flex-end; gap: 32px; margin-bottom: 48px; flex-wrap: wrap; }
         .section-head .desc { flex: 1; min-width: 300px; }
+        .section-head-split { align-items: flex-start; }
+        .section-head-left { flex: 0 0 auto; }
+        .section-head-right { flex: 0 0 auto; text-align: right; }
+        .section-head-right .section-title { margin-bottom: 0; }
 
         /* ============ PRODI SECTION ============ */
         .prodi { background: var(--bg); }
@@ -321,11 +325,11 @@
 <!-- SEJARAH -->
 <section id="sejarah">
     <div class="container">
-        <div class="section-head">
-            <div>
+        <div class="section-head section-head-split">
+            <div class="section-head-left">
                 <div class="section-eyebrow">01 &mdash; Sejarah</div>
             </div>
-            <div class="desc">
+            <div class="section-head-right">
                 <h2 class="section-title">Perjalanan Sejak 2001</h2>
             </div>
         </div>
