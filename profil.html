@@ -1,451 +1,412 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Profil Jurusan — Teknik Elektro dan Komputer UNG</title>
-<meta name="description" content="Profil Jurusan Teknik Elektro dan Komputer, Fakultas Teknik, Universitas Negeri Gorontalo. Sejarah, visi-misi, struktur organisasi, dan tenaga pendidik.">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,400;8..60,600;8..60,700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profil Jurusan — Teknik Elektro dan Komputer UNG</title>
+    <meta name="description" content="Profil Jurusan Teknik Elektro dan Komputer, Fakultas Teknik, Universitas Negeri Gorontalo. Sejarah, visi-misi, dan struktur organisasi.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,400;8..60,600;8..60,700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
-:root {
---navy: #1E3A8A;
---navy-deep: #0F1E47;
---navy-light: #3B82F6;
---accent: #F97316;
---accent-dark: #C2410C;
---text: #1A1A1A;
---text-muted: #555555;
---bg: #ffffff;
---soft: #F9FAFB;
---border: #E5E7EB;
-}
-* { margin: 0; padding: 0; box-sizing: border-box; }
-html { scroll-behavior: smooth; }
-body { font-family: 'Inter', -apple-system, sans-serif; color: var(--text); background: var(--bg); line-height: 1.6; -webkit-font-smoothing: antialiased; }
-a { text-decoration: none; color: inherit; }
-img { display: block; max-width: 100%; }
-.container { max-width: 1280px; margin: 0 auto; padding: 0 32px; }
+        :root {
+            --navy: #1E3A8A;
+            --navy-deep: #0F1E47;
+            --navy-light: #3B82F6;
+            --accent: #F97316;
+            --accent-dark: #C2410C;
+            --text: #1A1A1A;
+            --text-muted: #555555;
+            --bg: #ffffff;
+            --soft: #F9FAFB;
+            --border: #E5E7EB;
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
+        body { font-family: 'Inter', -apple-system, sans-serif; color: var(--text); background: var(--bg); line-height: 1.6; -webkit-font-smoothing: antialiased; }
+        a { text-decoration: none; color: inherit; }
+        img { display: block; max-width: 100%; }
+        .container { max-width: 1280px; margin: 0 auto; padding: 0 32px; }
 
-/* ===== utility bar ===== */
-.utility-bar { background: var(--navy-deep); color: rgba(255,255,255,0.85); font-size: 12.5px; padding: 11px 0; }
-.utility-bar .container { display: flex; justify-content: space-between; align-items: center; }
-.utility-bar a { color: rgba(255,255,255,0.85); }
-.utility-bar a:hover { color: var(--accent); }
-.utility-bar .ub-left i { color: var(--accent); }
-.utility-bar .ub-right a { margin-left: 18px; }
+        /* ============ UTILITY BAR ============ */
+        .utility-bar { background: var(--navy-deep); color: rgba(255,255,255,0.85); font-size: 12.5px; padding: 11px 0; }
+        .utility-bar .container { display: flex; justify-content: space-between; align-items: center; }
+        .utility-bar a { color: rgba(255,255,255,0.85); margin-left: 22px; font-weight: 500; }
+        .utility-bar a:hover { color: var(--accent); }
 
-/* ===== header ===== */
-.header { background: #fff; border-bottom: 1px solid var(--border); position: sticky; top: 0; z-index: 100; }
-.header .container { display: flex; align-items: center; justify-content: space-between; padding-top: 18px; padding-bottom: 18px; }
-.brand { display: flex; align-items: center; gap: 14px; }
-.brand-logo img { width: 56px; height: 56px; object-fit: contain; }
-.brand-text h1 { font-family: 'Source Serif 4', serif; font-size: 19px; font-weight: 700; color: var(--navy); line-height: 1.15; }
-.brand-text span { font-size: 12px; color: var(--text-muted); }
-.nav-menu { list-style: none; display: flex; gap: 4px; }
-.nav-menu > li { position: relative; }
-.nav-menu > li > a { display: block; padding: 10px 14px; font-size: 14px; font-weight: 500; color: var(--text); }
-.nav-menu > li > a:hover, .nav-menu > li:hover > a, .nav-menu > li.active > a { color: var(--accent-dark); }
+        /* ============ HEADER NAVBAR ============ */
+        .header { background: var(--bg); border-bottom: 3px solid var(--accent); position: sticky; top: 0; z-index: 100; }
+        .header .container { display: flex; align-items: center; justify-content: space-between; height: 88px; }
+        .brand { display: flex; align-items: center; gap: 16px; }
+        .brand-logo { width: 60px; height: 60px; flex-shrink: 0; }
+        .brand-logo img { width: 100%; height: 100%; object-fit: contain; }
+        .brand-text h1 { font-family: 'Source Serif 4', serif; font-size: 19px; font-weight: 700; color: var(--navy); line-height: 1.2; letter-spacing: -0.2px; }
+        .brand-text span { font-size: 12px; color: var(--text-muted); font-weight: 500; display: block; margin-top: 3px; }
 
-/* dropdown */
-.dropdown { position: absolute; top: 100%; left: 0; background: #fff; border: 1px solid var(--border); border-top: 3px solid var(--accent); min-width: 240px; padding: 8px 0; opacity: 0; visibility: hidden; transform: translateY(8px); transition: all .18s ease; z-index: 99; }
-.nav-menu > li:hover .dropdown { opacity: 1; visibility: visible; transform: translateY(0); }
-.dropdown a { display: block; padding: 9px 18px; font-size: 13.5px; color: var(--text); }
-.dropdown a:hover { background: var(--soft); color: var(--accent-dark); }
-.dd-sep { height: 1px; background: var(--border); margin: 6px 12px; }
-.dd-label { padding: 6px 18px 4px; font-size: 11px; text-transform: uppercase; letter-spacing: .08em; color: var(--text-muted); }
+        .nav-menu { list-style: none; display: flex; gap: 4px; }
+        .nav-menu > li { position: relative; }
+        .nav-menu > li > a { display: block; padding: 10px 14px; font-size: 14px; font-weight: 500; color: var(--text); }
+        .nav-menu > li > a:hover, .nav-menu > li:hover > a, .nav-menu > li.active > a { color: var(--accent-dark); }
+        .dropdown { position: absolute; top: 100%; left: 0; background: #fff; border: 1px solid var(--border); border-top: 3px solid var(--accent); min-width: 240px; padding: 8px 0; opacity: 0; visibility: hidden; transform: translateY(8px); transition: all .18s; z-index: 99; }
+        .nav-menu > li:hover .dropdown { opacity: 1; visibility: visible; transform: translateY(0); }
+        .dropdown a { display: block; padding: 9px 18px; font-size: 13.5px; color: var(--text); }
+        .dropdown a:hover { background: var(--soft); color: var(--accent-dark); }
+        .dd-sep { height: 1px; background: var(--border); margin: 6px 12px; }
+        .dd-label { padding: 6px 18px 4px; font-size: 11px; text-transform: uppercase; letter-spacing: .08em; color: var(--text-muted); }
 
-/* ===== page banner ===== */
-.page-banner { background: var(--navy); color: #fff; padding: 60px 0 50px; border-bottom: 4px solid var(--accent); }
-.page-banner .container { display: flex; align-items: flex-end; justify-content: space-between; gap: 32px; flex-wrap: wrap; }
-.breadcrumb { font-size: 12px; color: rgba(255,255,255,0.7); letter-spacing: .05em; text-transform: uppercase; margin-bottom: 12px; }
-.breadcrumb a { color: rgba(255,255,255,0.7); }
-.breadcrumb a:hover { color: var(--accent); }
-.page-banner h1 { font-family: 'Source Serif 4', serif; font-size: 42px; font-weight: 700; line-height: 1.15; max-width: 720px; }
-.page-banner .lede { color: rgba(255,255,255,0.85); max-width: 540px; font-size: 15px; margin-top: 12px; }
-.page-banner-meta { font-size: 12px; color: rgba(255,255,255,0.65); text-align: right; }
-.page-banner-meta strong { display: block; color: var(--accent); font-size: 28px; font-family: 'Source Serif 4', serif; font-weight: 700; }
+        /* ============ HERO SECTION (REVISI) ============ */
+        .hero { background: var(--soft); padding: 56px 0 0; border-bottom: 1px solid var(--border); }
+        .hero-grid { display: grid; grid-template-columns: 1.05fr 1fr; gap: 64px; align-items: start; margin-bottom: 48px; }
 
-/* ===== section ===== */
-section { padding: 80px 0; }
-.section-eyebrow { font-size: 12px; font-weight: 600; letter-spacing: .15em; color: var(--accent-dark); text-transform: uppercase; margin-bottom: 12px; }
-.section-title { font-family: 'Source Serif 4', serif; font-size: 36px; font-weight: 700; color: var(--navy); line-height: 1.2; margin-bottom: 16px; }
-.section-desc { font-size: 16px; color: var(--text-muted); max-width: 720px; }
-.section-head { margin-bottom: 48px; }
+        .hero-eyebrow { font-size: 12px; font-weight: 600; letter-spacing: .15em; color: var(--accent-dark); text-transform: uppercase; display: flex; align-items: center; gap: 12px; margin-bottom: 18px; }
+        .hero-eyebrow::before { content: ""; width: 32px; height: 2px; background: var(--accent); }
+        .hero-title { font-family: 'Source Serif 4', serif; font-size: 50px; font-weight: 700; color: var(--navy); line-height: 1.1; letter-spacing: -1.5px; margin-bottom: 22px; }
+        .hero-title em { font-style: italic; color: var(--accent-dark); }
+        .hero-lead { font-size: 16.5px; color: var(--text-muted); max-width: 520px; margin-bottom: 28px; }
 
-/* ===== sejarah ===== */
-#sejarah { background: var(--soft); }
-.sejarah-grid { display: grid; grid-template-columns: 1.1fr 1fr; gap: 56px; align-items: start; }
-.sejarah-prose { font-size: 15.5px; color: var(--text); }
-.sejarah-prose p { margin-bottom: 16px; }
-.sejarah-prose strong { color: var(--navy); }
-.ketua-list { background: #fff; border: 1px solid var(--border); border-left: 4px solid var(--accent); }
-.ketua-list h4 { background: var(--navy); color: #fff; font-family: 'Source Serif 4', serif; padding: 16px 22px; font-size: 16px; }
-.ketua-list table { width: 100%; border-collapse: collapse; font-size: 14px; }
-.ketua-list th, .ketua-list td { padding: 10px 22px; text-align: left; border-bottom: 1px solid var(--border); }
-.ketua-list th { background: var(--soft); font-weight: 600; font-size: 12px; letter-spacing: .05em; text-transform: uppercase; color: var(--text-muted); }
-.ketua-list td:first-child { color: var(--accent-dark); font-family: 'Source Serif 4', serif; font-weight: 600; width: 90px; }
+        .hero-cta { display: flex; gap: 12px; margin-bottom: 36px; }
+        .btn { display: inline-flex; align-items: center; padding: 12px 22px; font-size: 14px; font-weight: 600; border: 1px solid; cursor: pointer; }
+        .btn-primary { background: var(--navy); color: #fff; border-color: var(--navy); }
+        .btn-primary:hover { background: var(--navy-deep); }
+        .btn-outline { background: transparent; color: var(--navy); border-color: var(--navy); }
+        .btn-outline:hover { background: var(--navy); color: #fff; }
 
-/* ===== visi-misi ===== */
-#visi-misi .vm-grid { display: grid; grid-template-columns: 1fr 1.2fr; gap: 48px; align-items: start; }
-.vm-card { background: var(--soft); border-top: 4px solid var(--accent); padding: 36px 32px; }
-.vm-card .lbl { font-size: 12px; font-weight: 600; color: var(--accent-dark); letter-spacing: .15em; text-transform: uppercase; margin-bottom: 14px; }
-.vm-card h3 { font-family: 'Source Serif 4', serif; font-size: 22px; color: var(--navy); line-height: 1.4; margin-bottom: 18px; }
-.vm-misi { background: #fff; border: 1px solid var(--border); border-left: 4px solid var(--navy); }
-.vm-misi h4 { padding: 22px 28px 14px; font-family: 'Source Serif 4', serif; font-size: 20px; color: var(--navy); border-bottom: 1px solid var(--border); }
-.vm-misi ol { padding: 18px 28px 26px 50px; }
-.vm-misi li { font-size: 14.5px; margin-bottom: 12px; }
-.vm-misi li strong { color: var(--navy); display: block; margin-bottom: 2px; }
+        .hero-stats { display: grid; grid-template-columns: repeat(4, 1fr); border-top: 1px solid var(--border); }
+        .hero-stat { padding: 22px 0; border-right: 1px solid var(--border); }
+        .hero-stat:last-child { border-right: 0; padding-right: 0; }
+        .hero-stat:not(:first-child) { padding-left: 22px; }
+        .hero-stat-num { font-family: 'Source Serif 4', serif; font-size: 30px; font-weight: 700; color: var(--navy); line-height: 1; }
+        .hero-stat-lbl { font-size: 12px; color: var(--text-muted); text-transform: uppercase; letter-spacing: .06em; margin-top: 6px; }
 
-.tujuan { margin-top: 36px; background: var(--navy); color: #fff; padding: 36px 40px; }
-.tujuan h4 { font-family: 'Source Serif 4', serif; font-size: 22px; margin-bottom: 18px; }
-.tujuan ul { list-style: none; column-count: 2; column-gap: 32px; }
-.tujuan li { padding: 6px 0 6px 24px; position: relative; font-size: 14px; line-height: 1.5; }
-.tujuan li::before { content: "✓"; position: absolute; left: 0; color: var(--accent); font-weight: 700; }
+        /* HERO IMAGE STAGE (KOTAK FOTO) */
+        .hero-stage { position: relative; }
+        .hero-frame { position: relative; height: 480px; background: var(--navy); overflow: hidden; }
+        .hero-slide { position: absolute; inset: 0; opacity: 0; transition: opacity .8s; }
+        .hero-slide.active { opacity: 1; }
+        .hero-slide img { width: 100%; height: 100%; object-fit: cover; }
+        .hero-slide::after { content: ""; position: absolute; inset: 0; background: linear-gradient(to top, rgba(0,27,61,0.85) 0%, rgba(0,27,61,0.3) 50%, transparent 100%); }
+        .hero-caption { position: absolute; left: 0; right: 0; bottom: 0; padding: 24px 28px; color: #fff; z-index: 2; }
+        .hero-caption-tag { display: inline-block; background: var(--accent); color: var(--navy-deep); font-size: 10.5px; font-weight: 700; letter-spacing: .12em; padding: 4px 10px; text-transform: uppercase; margin-bottom: 10px; }
+        .hero-caption-text { font-family: 'Source Serif 4', serif; font-size: 20px; line-height: 1.3; font-weight: 600; max-width: 90%; }
+        .hero-nav { position: absolute; top: 50%; transform: translateY(-50%); width: 100%; display: flex; justify-content: space-between; padding: 0 14px; z-index: 3; }
+        .hero-nav button { width: 38px; height: 38px; background: rgba(255,255,255,0.92); border: 0; font-size: 16px; cursor: pointer; color: var(--navy); font-weight: 700; }
+        .hero-nav button:hover { background: var(--accent); }
+        .hero-dots { position: absolute; bottom: 14px; right: 18px; display: flex; gap: 6px; z-index: 3; }
+        .hero-dots .dot { width: 22px; height: 3px; background: rgba(255,255,255,0.5); cursor: pointer; }
+        .hero-dots .dot.on { background: var(--accent); }
 
-/* ===== struktur ===== */
-#struktur { background: var(--soft); }
-.struktur-table { background: #fff; border: 1px solid var(--border); }
-.struktur-table .row { display: grid; grid-template-columns: 60px 1fr 1.4fr; border-bottom: 1px solid var(--border); align-items: center; }
-.struktur-table .row:last-child { border-bottom: 0; }
-.struktur-table .row.head { background: var(--navy); color: #fff; }
-.struktur-table .row.head > div { padding: 14px 24px; font-size: 12px; font-weight: 600; letter-spacing: .08em; text-transform: uppercase; }
-.struktur-table .row > div { padding: 16px 24px; font-size: 14.5px; }
-.struktur-table .num { font-family: 'Source Serif 4', serif; font-weight: 700; color: var(--accent-dark); font-size: 18px; text-align: center; }
-.struktur-table .nama { font-weight: 600; color: var(--navy); }
-.struktur-table .role { color: var(--text-muted); font-size: 13.5px; }
+        /* ============ SECTION DEFAULTS ============ */
+        section { padding: 80px 0; }
+        .section-eyebrow { font-size: 12px; font-weight: 600; letter-spacing: .15em; color: var(--accent-dark); text-transform: uppercase; margin-bottom: 12px; display: flex; align-items: center; gap: 12px; }
+        .section-eyebrow::before { content: ""; width: 24px; height: 2px; background: var(--accent); }
+        .section-title { font-family: 'Source Serif 4', serif; font-size: 36px; font-weight: 700; color: var(--navy); line-height: 1.2; margin-bottom: 14px; }
+        .section-desc { font-size: 15.5px; color: var(--text-muted); max-width: 720px; }
+        .section-head { display: flex; justify-content: space-between; align-items: flex-end; gap: 32px; margin-bottom: 48px; flex-wrap: wrap; }
+        .section-head .desc { flex: 1; min-width: 300px; }
 
-/* ===== dosen ===== */
-#dosen .dosen-controls { display: flex; gap: 16px; align-items: center; margin-bottom: 28px; flex-wrap: wrap; }
-#dosen .search { flex: 1; min-width: 240px; padding: 11px 16px; border: 1px solid var(--border); font: inherit; font-size: 14px; background: #fff; }
-#dosen .search:focus { outline: 0; border-color: var(--accent); }
-#dosen .filter-btn { padding: 10px 18px; border: 1px solid var(--border); background: #fff; font: inherit; font-size: 13px; cursor: pointer; }
-#dosen .filter-btn.on { background: var(--navy); color: #fff; border-color: var(--navy); }
-#dosen .count { font-size: 13px; color: var(--text-muted); margin-left: auto; }
-.dosen-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 24px; }
-.dosen-card { background: #fff; border: 1px solid var(--border); text-align: center; padding: 0 0 22px; transition: all .18s; }
-.dosen-card:hover { border-color: var(--accent); transform: translateY(-2px); box-shadow: 0 6px 20px rgba(0,43,92,0.08); }
-.dosen-card .photo { width: 100%; aspect-ratio: 1; background: var(--soft); object-fit: cover; }
-.dosen-card .nm { font-family: 'Source Serif 4', serif; font-size: 15px; font-weight: 700; color: var(--navy); padding: 16px 14px 4px; line-height: 1.3; }
-.dosen-card .bidang { font-size: 12.5px; color: var(--text-muted); padding: 0 14px; }
-.dosen-card .aksi { margin-top: 14px; display: flex; gap: 6px; justify-content: center; padding: 0 14px; }
-.dosen-card .aksi a { font-size: 11px; padding: 5px 10px; border: 1px solid var(--border); }
-.dosen-card .aksi a:hover { background: var(--navy); color: #fff; border-color: var(--navy); }
+        /* ============ PRODI SECTION ============ */
+        .prodi { background: var(--bg); }
+        .prodi-list { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0; border-top: 2px solid var(--navy); border-bottom: 2px solid var(--navy); }
+        .prodi-item { padding: 36px 32px 32px; border-right: 1px solid var(--border); position: relative; }
+        .prodi-item:last-child { border-right: 0; }
+        .prodi-num { font-family: 'Source Serif 4', serif; font-size: 36px; font-weight: 700; color: var(--accent); line-height: 1; margin-bottom: 12px; }
+        .prodi-strata { font-size: 11px; font-weight: 600; color: var(--text-muted); letter-spacing: .1em; text-transform: uppercase; margin-bottom: 6px; }
+        .prodi-item h3 { font-family: 'Source Serif 4', serif; font-size: 22px; font-weight: 700; color: var(--navy); line-height: 1.2; margin-bottom: 14px; }
+        .prodi-visi { font-size: 13.5px; line-height: 1.55; color: var(--text); padding: 14px 0; border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); margin-bottom: 14px; font-style: italic; }
+        .prodi-visi::before { content: "Visi: "; font-style: normal; font-weight: 600; color: var(--accent-dark); font-size: 11px; letter-spacing: .08em; text-transform: uppercase; display: block; margin-bottom: 4px; }
+        .prodi-kaprodi { font-size: 12.5px; color: var(--text-muted); }
+        .prodi-kaprodi strong { display: block; color: var(--navy); font-size: 13.5px; margin-bottom: 2px; }
 
-/* ===== footer ===== */
-footer { background: var(--navy-deep); color: rgba(255,255,255,0.75); padding: 56px 0 28px; font-size: 13.5px; }
-footer h5 { font-family: 'Source Serif 4', serif; font-size: 15px; color: #fff; margin-bottom: 16px; }
-footer a { color: rgba(255,255,255,0.75); }
-footer a:hover { color: var(--accent); }
-.footer-grid { display: grid; grid-template-columns: 1.4fr 1fr 1fr 1fr; gap: 48px; margin-bottom: 40px; }
-.footer-bot { border-top: 1px solid rgba(255,255,255,0.12); padding-top: 22px; display: flex; justify-content: space-between; font-size: 12px; color: rgba(255,255,255,0.55); }
+        /* ============ BERITA SECTION (REVISI TOTAL) ============ */
+        .berita { background: var(--soft); }
+        .berita-grid { display: grid; grid-template-columns: 1.1fr 1fr; gap: 40px; align-items: start; }
+        .berita-main { background: #fff; border: 1px solid var(--border); }
+        .berita-main-img { aspect-ratio: 16/10; overflow: hidden; background: var(--soft); }
+        .berita-main-img img { width: 100%; height: 100%; object-fit: cover; }
+        .berita-main-body { padding: 28px 32px 32px; }
+        .berita-main-tag { display: inline-block; background: var(--navy); color: var(--accent); font-size: 10.5px; font-weight: 700; letter-spacing: .12em; padding: 4px 10px; text-transform: uppercase; margin-bottom: 14px; }
+        .berita-meta { font-size: 12px; color: var(--text-muted); margin-bottom: 10px; text-transform: uppercase; letter-spacing: .06em; }
+        .berita-main h2 { font-family: 'Source Serif 4', serif; font-size: 28px; line-height: 1.25; color: var(--navy); margin-bottom: 14px; font-weight: 700; }
+        .berita-main p { font-size: 14.5px; color: var(--text-muted); }
+        .berita-main-link { display: inline-block; margin-top: 18px; font-size: 13px; font-weight: 600; color: var(--accent-dark); border-bottom: 2px solid var(--accent); padding-bottom: 2px; }
 
-@media (max-width: 900px) {
-.sejarah-grid, #visi-misi .vm-grid { grid-template-columns: 1fr; }
-.footer-grid { grid-template-columns: 1fr 1fr; }
-.page-banner h1 { font-size: 32px; }
-.section-title { font-size: 28px; }
-}
-</style>
+        /* SIDE: UPDATE TERKINI (LAYOUT BENER) */
+        .berita-side { background: #fff; border: 1px solid var(--border); }
+        .berita-side-head { padding: 18px 24px; border-bottom: 2px solid var(--navy); display: flex; align-items: center; justify-content: space-between; }
+        .berita-side-head h3 { font-family: 'Source Serif 4', serif; font-size: 20px; color: var(--navy); }
+        .berita-side-head .sub { font-size: 11.5px; color: var(--accent-dark); font-weight: 600; letter-spacing: .08em; text-transform: uppercase; }
+        .berita-side-list { padding: 0; }
+        .berita-side-item { display: grid; grid-template-columns: 96px 1fr; gap: 18px; padding: 18px 24px; border-bottom: 1px solid var(--border); align-items: start; transition: background .15s; }
+        .berita-side-item:last-child { border-bottom: 0; }
+        .berita-side-item:hover { background: var(--soft); }
+        .berita-side-img { aspect-ratio: 1; background: var(--soft); overflow: hidden; flex-shrink: 0; }
+        .berita-side-img img { width: 100%; height: 100%; object-fit: cover; }
+        .berita-side-item .date { font-size: 11px; color: var(--accent-dark); font-weight: 600; letter-spacing: .08em; text-transform: uppercase; margin-bottom: 4px; }
+        .berita-side-item h4 { font-family: 'Source Serif 4', serif; font-size: 15px; line-height: 1.35; color: var(--text); font-weight: 600; }
+        .berita-side-item:hover h4 { color: var(--navy); }
+
+        /* ============ LABORATORIUM SECTION (REVISI: GAMBAR + KONEKTOR) ============ */
+        .lab { background: var(--bg); }
+        .lab-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0; border-top: 2px solid var(--navy); border-bottom: 2px solid var(--navy); }
+        .lab-item { padding: 0; border-right: 1px solid var(--border); border-bottom: 1px solid var(--border); position: relative; }
+        .lab-item:nth-child(3n) { border-right: 0; }
+        .lab-item:nth-last-child(-n+3) { border-bottom: 0; }
+        .lab-img { aspect-ratio: 4/3; overflow: hidden; background: var(--soft); }
+        .lab-img img { width: 100%; height: 100%; object-fit: cover; transition: transform .4s; }
+        .lab-item:hover .lab-img img { transform: scale(1.05); }
+        .lab-body { padding: 18px 22px 22px; }
+        .lab-code { font-family: 'Source Serif 4', serif; font-size: 11px; font-weight: 700; color: var(--accent-dark); letter-spacing: .15em; }
+        .lab-body h3 { font-family: 'Source Serif 4', serif; font-size: 17px; color: var(--navy); margin: 4px 0 6px; font-weight: 700; }
+        .lab-body p { font-size: 12.5px; color: var(--text-muted); line-height: 1.5; }
+
+        /* ============ FOOTER ============ */
+        footer { background: var(--navy-deep); color: rgba(255,255,255,0.75); padding: 56px 0 28px; font-size: 13.5px; }
+        footer h5 { font-family: 'Source Serif 4', serif; font-size: 15px; color: #fff; margin-bottom: 16px; }
+        footer a { color: rgba(255,255,255,0.75); }
+        footer a:hover { color: var(--accent); }
+        .footer-grid { display: grid; grid-template-columns: 1.4fr 1fr 1fr 1fr; gap: 48px; margin-bottom: 40px; }
+        .footer-bot { border-top: 1px solid rgba(255,255,255,0.12); padding-top: 22px; display: flex; justify-content: space-between; font-size: 12px; color: rgba(255,255,255,0.55); }
+
+        @media (max-width: 900px) {
+            .hero-grid { grid-template-columns: 1fr; }
+            .hero-title { font-size: 36px; }
+            .hero-stats { grid-template-columns: repeat(2, 1fr); }
+            .hero-stat { border-bottom: 1px solid var(--border); }
+            .berita-grid { grid-template-columns: 1fr; }
+            .prodi-list, .lab-grid { grid-template-columns: 1fr; }
+            .prodi-item, .lab-item { border-right: 0; border-bottom: 1px solid var(--border); }
+            .footer-grid { grid-template-columns: 1fr 1fr; }
+            .section-title { font-size: 28px; }
+        }
+    </style>
 </head>
 <body>
 
 <!-- utility bar -->
 <div class="utility-bar">
-<div class="container">
-<div class="ub-left"><i>●</i> &nbsp; Universitas Negeri Gorontalo — Kementerian Pendidikan Tinggi</div>
-<div class="ub-right">
-<a href="https://www.ung.ac.id/" target="_blank">UNG</a>
-<a href="https://ft.ung.ac.id/" target="_blank">Fakultas Teknik</a>
-<a href="https://siat.ung.ac.id/" target="_blank">SIAT</a>
-</div>
-</div>
+    <div class="container">
+        <div><i style="color:var(--accent);">●</i> &nbsp; Universitas Negeri Gorontalo</div>
+        <div>
+            <a href="https://www.ung.ac.id/" target="_blank">UNG</a>
+            <a href="https://ft.ung.ac.id/" target="_blank">Fakultas Teknik</a>
+            <a href="https://siat.ung.ac.id/" target="_blank">SIAT</a>
+        </div>
+    </div>
 </div>
 
 <header class="header">
-<div class="container">
-<div class="brand">
-<div class="brand-logo"><img src="assets/logo.jpg" alt="Logo Jurusan Teknik Elektro dan Komputer UNG"></div>
-<div class="brand-text">
-<h1>Jurusan Teknik Elektro &amp; Komputer</h1>
-<span>Fakultas Teknik &bull; Universitas Negeri Gorontalo</span>
-</div>
-</div>
-<nav>
-<ul class="nav-menu">
-<li><a href="index.html">Beranda</a></li>
-<li class="active">
-<a href="profil.html">Profil</a>
-<div class="dropdown">
-<a href="profil.html#sejarah">Sejarah</a>
-<a href="profil.html#visi-misi">Visi &amp; Misi</a>
-<a href="profil.html#struktur">Struktur Organisasi</a>
-<a href="profil.html#pimpinan">Pimpinan Jurusan</a>
-<div class="dd-sep"></div>
-<div class="dd-label">Tenaga Pendidik</div>
-<a href="profil.html#dosen">Dosen Teknik Elektro</a>
-<a href="profil.html#dosen">Dosen Teknik Komputer</a>
-<a href="profil.html#dosen">Dosen Pend. Vok. Elektro</a>
-</div>
-</li>
-<li><a href="prodi.html">Program Studi</a></li>
-<li><a href="akademik.html">Akademik</a></li>
-<li><a href="penelitian.html">Penelitian</a></li>
-<li><a href="pengabdian.html">Pengabdian</a></li>
-<li><a href="berita.html">Berita</a></li>
-<li><a href="kontak.html">Kontak</a></li>
-</ul>
-</nav>
-</div>
+    <div class="container">
+        <div class="brand">
+            <div class="brand-logo"><img src="assets/logo.jpg" alt="Logo Jurusan"></div>
+            <div class="brand-text">
+                <h1>Jurusan Teknik Elektro &amp; Komputer</h1>
+                <span>Fakultas Teknik &bull; Universitas Negeri Gorontalo</span>
+            </div>
+        </div>
+        <nav>
+            <ul class="nav-menu">
+                <li class="active"><a href="index.html">Beranda</a></li>
+                <li>
+                    <a href="profil.html">Profil</a>
+                    <div class="dropdown">
+                        <a href="profil.html#sejarah">Sejarah</a>
+                        <a href="profil.html#visi-misi">Visi &amp; Misi</a>
+                        <a href="profil.html#struktur">Struktur Organisasi</a>
+                        <a href="profil.html#pimpinan">Pimpinan Jurusan</a>
+                        <div class="dd-sep"></div>
+                        <div class="dd-label">Tenaga Pendidik</div>
+                        <a href="profil.html#dosen">Dosen Teknik Elektro</a>
+                        <a href="profil.html#dosen">Dosen Teknik Komputer</a>
+                        <a href="profil.html#dosen">Dosen Pend. Vok. Elektro</a>
+                    </div>
+                </li>
+                <li>
+                    <a href="prodi.html">Program Studi</a>
+                    <div class="dropdown">
+                        <a href="prodi.html#te">S1 Teknik Elektro</a>
+                        <a href="prodi.html#tk">S1 Teknik Komputer</a>
+                        <a href="prodi.html#pve">S1 Pendidikan Vokasional Elektro</a>
+                    </div>
+                </li>
+                <li>
+                    <a href="akademik.html">Akademik</a>
+                    <div class="dropdown">
+                        <a href="akademik.html#kurikulum-te">Kurikulum OBE — Teknik Elektro</a>
+                        <a href="akademik.html#kurikulum-kkni">Kurikulum KKNI</a>
+                        <a href="akademik.html#kurikulum-tk">Kurikulum OBE — Teknik Komputer</a>
+                        <a href="akademik.html#sop">Panduan Akademik</a>
+                        <a href="akademik.html#kalender">Kalender Akademik</a>
+                    </div>
+                </li>
+                <li><a href="penelitian.html">Penelitian</a></li>
+                <li><a href="pengabdian.html">Pengabdian</a></li>
+                <li><a href="berita.html">Berita</a></li>
+                <li><a href="kontak.html">Kontak</a></li>
+            </ul>
+        </nav>
+    </div>
 </header>
 
 <!-- page banner -->
 <section class="page-banner">
-<div class="container">
-<div>
-<div class="breadcrumb"><a href="index.html">Beranda</a> &nbsp;&rsaquo;&nbsp; Profil</div>
-<h1>Profil Jurusan Teknik Elektro &amp; Komputer</h1>
-<p class="lede">Mengenal lebih dekat sejarah, visi-misi, struktur organisasi, dan tenaga pendidik Jurusan Teknik Elektro dan Komputer, Fakultas Teknik UNG.</p>
-</div>
-<div class="page-banner-meta">
-<strong>2001</strong>
-Tahun Berdiri
-</div>
-</div>
+    <div class="container">
+        <div>
+            <div class="breadcrumb"><a href="index.html">Beranda</a> &nbsp;&rsaquo;&nbsp; Profil</div>
+            <h1>Profil Jurusan Teknik Elektro &amp; Komputer</h1>
+            <p class="lede">Mengenal lebih dekat sejarah, visi-misi, dan struktur organisasi Jurusan Teknik Elektro dan Komputer, Fakultas Teknik UNG.</p>
+        </div>
+        <div class="page-banner-meta">
+            <strong>2001</strong>
+            Tahun Berdiri
+        </div>
+    </div>
 </section>
 
 <!-- SEJARAH -->
 <section id="sejarah">
-<div class="container">
-<div class="section-head">
-<div class="section-eyebrow">01 &mdash; Sejarah</div>
-<h2 class="section-title">Perjalanan Sejak 2001</h2>
-<p class="section-desc">Jurusan Teknik Elektro dan Komputer didirikan sebagai bagian dari Fakultas Teknik Universitas Negeri Gorontalo, dan terus berkembang menjawab kebutuhan pendidikan tinggi teknik di wilayah Sulawesi dan Indonesia Timur.</p>
-</div>
-<div class="sejarah-grid">
-<div class="sejarah-prose">
-<p>Jurusan Teknik Elektro UNG dibentuk pada tahun <strong>2001</strong> sebagai bagian dari pengembangan Fakultas Teknik. Program Studi Teknik Elektro (S1) merupakan program pertama yang dibuka, dengan tujuan memenuhi kebutuhan tenaga teknis kelistrikan dan telekomunikasi di kawasan Indonesia Timur.</p>
-<p>Seiring meningkatnya kebutuhan akan teknologi informasi dan pendidikan vokasional, Jurusan kemudian membuka <strong>Program Studi Teknik Komputer</strong> dan <strong>Program Studi Pendidikan Vokasional Rekayasa Elektro</strong>, sehingga total mengelola tiga program studi sarjana.</p>
-<p>Sejak 2024, Jurusan menjalankan kurikulum berbasis <strong>OBE (Outcome-Based Education)</strong> untuk S1 Teknik Elektro dan S1 Teknik Komputer, sementara S1 Pendidikan Vokasional Rekayasa Elektro mengadopsi kerangka KKNI yang berorientasi pada kompetensi pendidik vokasional.</p>
-</div>
-<div class="ketua-list">
-<h4>Daftar Ketua Jurusan</h4>
-<table>
-<thead><tr><th>Periode</th><th>Nama</th></tr></thead>
-<tbody>
-<tr><td>2001&ndash;2005</td><td>(data arsip)</td></tr>
-<tr><td>2024&ndash;sekarang</td><td>Yasin Mohamad, ST., MT.</td></tr>
-</tbody>
-</table>
-</div>
-</div>
-</div>
+    <div class="container">
+        <div class="section-head">
+            <div class="section-eyebrow">01 &mdash; Sejarah</div>
+            <h2 class="section-title">Perjalanan Sejak 2001</h2>
+            <p class="section-desc">Jurusan Teknik Elektro dan Komputer didirikan sebagai bagian dari Fakultas Teknik Universitas Negeri Gorontalo, dan terus berkembang menjawab kebutuhan pendidikan tinggi teknik di wilayah Sulawesi dan Indonesia Timur.</p>
+        </div>
+        <div class="sejarah-grid">
+            <div class="sejarah-prose">
+                <p>Jurusan Teknik Elektro UNG dibentuk pada tahun <strong>2001</strong> sebagai bagian dari pengembangan Fakultas Teknik. Program Studi Teknik Elektro (S1) merupakan program pertama yang dibuka, dengan tujuan memenuhi kebutuhan tenaga teknis kelistrikan dan telekomunikasi di kawasan Indonesia Timur.</p>
+                <p>Seiring meningkatnya kebutuhan akan teknologi informasi dan pendidikan vokasional, Jurusan kemudian membuka <strong>Program Studi Teknik Komputer</strong> dan <strong>Program Studi Pendidikan Vokasional Rekayasa Elektro</strong>, sehingga total mengelola tiga program studi sarjana.</p>
+                <p>Sejak 2024, Jurusan menjalankan kurikulum berbasis <strong>OBE (Outcome-Based Education)</strong> untuk S1 Teknik Elektro dan S1 Teknik Komputer, sementara S1 Pendidikan Vokasional Rekayasa Elektro mengadopsi kerangka KKNI yang berorientasi pada kompetensi pendidik vokasional.</p>
+            </div>
+            <div class="ketua-list">
+                <h4>Daftar Ketua Jurusan</h4>
+                <table>
+                    <thead><tr><th>Periode</th><th>Nama</th></tr></thead>
+                    <tbody>
+                        <tr><td>2001&ndash;2005</td><td>(data arsip)</td></tr>
+                        <tr><td>2024&ndash;sekarang</td><td>Yasin Mohamad, ST., MT.</td></tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
 </section>
 
 <!-- VISI MISI -->
 <section id="visi-misi">
-<div class="container">
-<div class="section-head">
-<div class="section-eyebrow">02 &mdash; Visi, Misi &amp; Tujuan</div>
-<h2 class="section-title">Komitmen Kami</h2>
-<p class="section-desc">Visi dan misi yang menjadi arah pengembangan Jurusan, program studi, dan seluruh civitas akademika.</p>
-</div>
+    <div class="container">
+        <div class="section-head">
+            <div class="section-eyebrow">02 &mdash; Visi, Misi &amp; Tujuan</div>
+            <h2 class="section-title">Komitmen Kami</h2>
+            <p class="section-desc">Visi dan misi yang menjadi arah pengembangan Jurusan, program studi, dan seluruh civitas akademika.</p>
+        </div>
 
-<div class="vm-grid">
-<div class="vm-card">
-<div class="lbl">Visi Jurusan</div>
-<h3>"Menjadi pusat pendidikan tinggi teknik elektro dan komputer yang unggul, berkarakter, dan berdaya saing di kawasan Indonesia Timur pada tahun 2035."</h3>
-<p style="font-size:13.5px;color:var(--text-muted);">Dilandasi semangat "<em>unggul</em>" dalam mutu lulusan, "<em>berkarakter</em>" dalam integritas akademik, dan "<em>berdaya saing</em>" dalam kontribusi keilmuan di tingkat nasional dan internasional.</p>
-</div>
-<div class="vm-misi">
-<h4>Misi</h4>
-<ol>
-<li><strong>Pendidikan Berkualitas</strong>Menyelenggarakan pendidikan tinggi teknik elektro dan komputer berbasis OBE dengan standar nasional pendidikan tinggi.</li>
-<li><strong>Penelitian &amp; Inovasi</strong>Mengembangkan riset terapan di bidang tenaga listrik, telekomunikasi, IoT, dan kecerdasan buatan.</li>
-<li><strong>Pengabdian Masyarakat</strong>Menerapkan ipteks untuk menjawab kebutuhan industri, pemerintah, dan masyarakat di kawasan Indonesia Timur.</li>
-<li><strong>Tata Kelola Akuntabel</strong>Mewujudkan sistem manajemen jurusan yang transparan, partisipatif, dan berstandar akreditasi unggul.</li>
-</ol>
-</div>
-</div>
+        <div class="vm-grid">
+            <div class="vm-card">
+                <div class="lbl">Visi Jurusan</div>
+                <h3>"Menjadi pusat pendidikan tinggi teknik elektro dan komputer yang unggul, berkarakter, dan berdaya saing di kawasan Indonesia Timur pada tahun 2035."</h3>
+                <p style="font-size:13.5px;color:var(--text-muted);">Dilandasi semangat "<em>unggul</em>" dalam mutu lulusan, "<em>berkarakter</em>" dalam integritas akademik, dan "<em>berdaya saing</em>" dalam kontribusi keilmuan di tingkat nasional dan internasional.</p>
+            </div>
+            <div class="vm-misi">
+                <h4>Misi</h4>
+                <ol>
+                    <li><strong>Pendidikan Berkualitas</strong>Menyelenggarakan pendidikan tinggi teknik elektro dan komputer berbasis OBE dengan standar nasional pendidikan tinggi.</li>
+                    <li><strong>Penelitian &amp; Inovasi</strong>Mengembangkan riset terapan di bidang tenaga listrik, telekomunikasi, IoT, dan kecerdasan buatan.</li>
+                    <li><strong>Pengabdian Masyarakat</strong>Menerapkan ipteks untuk menjawab kebutuhan industri, pemerintah, dan masyarakat di kawasan Indonesia Timur.</li>
+                    <li><strong>Tata Kelola Akuntabel</strong>Mewujudkan sistem manajemen jurusan yang transparan, partisipatif, dan berstandar akreditasi unggul.</li>
+                </ol>
+            </div>
+        </div>
 
-<div class="tujuan">
-<h4>Tujuan Strategis</h4>
-<ul>
-<li>Menghasilkan lulusan berkarakter profesional dan berdaya saing global</li>
-<li>Mencapai akreditasi <em>Unggul</em> untuk seluruh program studi</li>
-<li>Meningkatkan publikasi ilmiah di jurnal nasional dan internasional bereputasi</li>
-<li>Memperkuat kemitraan dengan industri, alumni, dan pemerintah daerah</li>
-<li>Mengintegrasikan riset dan pengajaran berbasis kebutuhan nyata masyarakat</li>
-<li>Mendorong hilirisasi hasil penelitian menjadi produk dan layanan</li>
-<li>Mewujudkan sistem penjaminan mutu internal yang berkelanjutan</li>
-<li>Membangun jejaring akademik lintas kampus dan lintas negara</li>
-</ul>
-</div>
-</div>
+        <div class="tujuan">
+            <h4>Tujuan Strategis</h4>
+            <ul>
+                <li>Menghasilkan lulusan berkarakter profesional dan berdaya saing global</li>
+                <li>Mencapai akreditasi <em>Unggul</em> untuk seluruh program studi</li>
+                <li>Meningkatkan publikasi ilmiah di jurnal nasional dan internasional bereputasi</li>
+                <li>Memperkuat kemitraan dengan industri, alumni, dan pemerintah daerah</li>
+                <li>Mengintegrasikan riset dan pengajaran berbasis kebutuhan nyata masyarakat</li>
+                <li>Mendorong hilirisasi hasil penelitian menjadi produk dan layanan</li>
+                <li>Mewujudkan sistem penjaminan mutu internal yang berkelanjutan</li>
+                <li>Membangun jejaring akademik lintas kampus dan lintas negara</li>
+            </ul>
+        </div>
+    </div>
 </section>
 
 <!-- STRUKTUR -->
 <section id="struktur">
-<div class="container">
-<div class="section-head">
-<div class="section-eyebrow">03 &mdash; Struktur Organisasi</div>
-<h2 class="section-title">Pimpinan Jurusan &amp; Program Studi</h2>
-<p class="section-desc">Susunan kepemimpinan Jurusan Teknik Elektro dan Komputer periode 2024 &ndash; sekarang.</p>
-</div>
-<div class="struktur-table" id="strukturTable">
-<div class="row head"><div>#</div><div>Nama</div><div>Jabatan</div></div>
-<div class="row"><div colspan="3" style="padding:24px;text-align:center;color:var(--text-muted);">Memuat data struktur organisasi...</div></div>
-</div>
-</div>
+    <div class="container">
+        <div class="section-head">
+            <div class="section-eyebrow">03 &mdash; Struktur Organisasi</div>
+            <h2 class="section-title">Pimpinan Jurusan &amp; Program Studi</h2>
+            <p class="section-desc">Susunan kepemimpinan Jurusan Teknik Elektro dan Komputer periode 2024 &ndash; sekarang.</p>
+        </div>
+        <div class="struktur-table" id="strukturTable">
+            <div class="row head"><div>#</div><div>Nama</div><div>Jabatan</div></div>
+            <div class="row"><div colspan="3" style="padding:24px;text-align:center;color:var(--text-muted);">Memuat data struktur organisasi...</div></div>
+        </div>
+    </div>
 </section>
 
-<!-- TENAGA PENDIDIK -->
-<section id="dosen">
-<div class="container">
-<div class="section-head">
-<div class="section-eyebrow">04 &mdash; Tenaga Pendidik</div>
-<h2 class="section-title">Dosen &amp; Kapasitas Riset</h2>
-<p class="section-desc">Tenaga pendidik berpengalaman dengan keahlian spesifik di bidangnya. Data berikut bersumber dari sistem akademik internal Jurusan.</p>
-</div>
-<div class="dosen-controls">
-<input type="text" class="search" id="dosenSearch" placeholder="Cari nama atau bidang keahlian...">
-<div>
-<button class="filter-btn on" data-prodi="all">Semua</button>
-<button class="filter-btn" data-prodi="teknik-elektro">Teknik Elektro</button>
-<button class="filter-btn" data-prodi="teknik-komputer">Teknik Komputer</button>
-<button class="filter-btn" data-prodi="pendidikan-vokasional">Pend. Vokasional</button>
-</div>
-<div class="count" id="dosenCount">—</div>
-</div>
-<div class="dosen-grid" id="dosenGrid">
-<div class="dosen-card" style="padding:32px;color:var(--text-muted);">Memuat data dosen...</div>
-</div>
-</div>
-</section>
-
-<!-- FOOTER -->
 <footer>
-<div class="container">
-<div class="footer-grid">
-<div>
-<h5>Jurusan Teknik Elektro &amp; Komputer</h5>
-<p>Fakultas Teknik, Universitas Negeri Gorontalo<br>Jl. Jend. Sudirman No. 6, Kota Gorontalo 96128<br>Telp: (0435) 821125</p>
-</div>
-<div>
-<h5>Program Studi</h5>
-<p><a href="prodi.html#te">S1 Teknik Elektro</a></p>
-<p><a href="prodi.html#tk">S1 Teknik Komputer</a></p>
-<p><a href="prodi.html#pve">S1 Pend. Vok. Elektro</a></p>
-</div>
-<div>
-<h5>Akademik</h5>
-<p><a href="akademik.html#kurikulum-te">Kurikulum OBE &mdash; TE</a></p>
-<p><a href="akademik.html#kurikulum-kkni">Kurikulum KKNI</a></p>
-<p><a href="akademik.html#kurikulum-tk">Kurikulum OBE &mdash; TK</a></p>
-</div>
-<div>
-<h5>Tautan</h5>
-<p><a href="https://www.ung.ac.id/" target="_blank">UNG</a></p>
-<p><a href="https://ft.ung.ac.id/" target="_blank">Fakultas Teknik</a></p>
-<p><a href="https://siat.ung.ac.id/" target="_blank">SIAT</a></p>
-</div>
-</div>
-<div class="footer-bot">
-<div>&copy; 2026 Jurusan Teknik Elektro dan Komputer &mdash; Fakultas Teknik UNG</div>
-<div>Diperbarui: 25 Juli 2026</div>
-</div>
-</div>
+    <div class="container">
+        <div class="footer-grid">
+            <div>
+                <h5>Jurusan Teknik Elektro &amp; Komputer</h5>
+                <p>Fakultas Teknik, Universitas Negeri Gorontalo<br>Jl. Jend. Sudirman No. 6, Kota Gorontalo 96128<br>Telp: (0435) 821125</p>
+            </div>
+            <div>
+                <h5>Program Studi</h5>
+                <p><a href="prodi.html#te">S1 Teknik Elektro</a></p>
+                <p><a href="prodi.html#tk">S1 Teknik Komputer</a></p>
+                <p><a href="prodi.html#pve">S1 Pend. Vok. Elektro</a></p>
+            </div>
+            <div>
+                <h5>Akademik</h5>
+                <p><a href="akademik.html#kurikulum-te">Kurikulum OBE &mdash; TE</a></p>
+                <p><a href="akademik.html#kurikulum-kkni">Kurikulum KKNI</a></p>
+                <p><a href="akademik.html#kurikulum-tk">Kurikulum OBE &mdash; TK</a></p>
+            </div>
+            <div>
+                <h5>Tautan</h5>
+                <p><a href="https://www.ung.ac.id/" target="_blank">UNG</a></p>
+                <p><a href="https://ft.ung.ac.id/" target="_blank">Fakultas Teknik</a></p>
+                <p><a href="https://siat.ung.ac.id/" target="_blank">SIAT</a></p>
+            </div>
+        </div>
+        <div class="footer-bot">
+            <div>&copy; 2026 Jurusan Teknik Elektro dan Komputer &mdash; Fakultas Teknik UNG</div>
+            <div>Diperbarui: 25 Juli 2026</div>
+        </div>
+    </div>
 </footer>
 
 <script>
-const API = 'https://temp.ikad-developer.my.id/elektro';
+    const API = 'https://temp.ikad-developer.my.id/elektro';
 
-// ---- STRUKTUR ORGANISASI ----
-(function() {
-const tbl = document.getElementById('strukturTable');
-if (!tbl) return;
-fetch(API + '/struktur-organisasi')
-.then(r => r.json())
-.then(data => {
-if (!Array.isArray(data) || !data.length) return;
-const rows = data.map((p, i) => `
-<div class="row">
-<div class="num">${String(i + 1).padStart(2, '0')}</div>
-<div class="nama">${p.nama}</div>
-<div class="role">${p.keterangan}</div>
-</div>
-`).join('');
-tbl.innerHTML = `
-<div class="row head"><div>#</div><div>Nama</div><div>Jabatan</div></div>
-${rows}
-`;
-});
-})();
-
-// ---- TENAGA PENDIDIK ----
-let allDosen = [], currentFilter = 'all';
-function escHtml(s) { return String(s == null ? '' : s).replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c])); }
-
-function prodiFromBidang(b) {
-if (!b) return 'lain';
-const x = b.toLowerCase();
-if (x.includes('computer') || x.includes('komputer') || x.includes('software') || x.includes('iot') || x.includes('network') || x.includes('artificial') || x.includes('data')) return 'teknik-komputer';
-if (x.includes('power') || x.includes('electrical') || x.includes('listrik') || x.includes('telekomunikasi') || x.includes('telekom') || x.includes('control') || x.includes('elektronika') || x.includes('industri')) return 'teknik-elektro';
-return 'pendidikan-vokasional';
-}
-
-function renderDosen() {
-const grid = document.getElementById('dosenGrid');
-const count = document.getElementById('dosenCount');
-const term = (document.getElementById('dosenSearch').value || '').toLowerCase();
-let filtered = allDosen.filter(d => {
-if (currentFilter !== 'all' && prodiFromBidang(d.bidang) !== currentFilter) return false;
-if (term && !(d.nama.toLowerCase().includes(term) || (d.bidang || '').toLowerCase().includes(term))) return false;
-return true;
-});
-count.textContent = `${filtered.length} dari ${allDosen.length} dosen`;
-if (!filtered.length) { grid.innerHTML = '<div class="dosen-card" style="padding:32px;color:var(--text-muted);grid-column:1/-1;">Tidak ada hasil.</div>'; return; }
-grid.innerHTML = filtered.map(d => `
-<div class="dosen-card">
-<img class="photo" src="${escHtml(d.profil)}" alt="${escHtml(d.nama)}" onerror="this.style.background='var(--soft)';this.src='assets/photo-placeholder.jpg';">
-<div class="nm">${escHtml(d.nama)}</div>
-<div class="bidang">${escHtml(d.bidang || '-')}</div>
-<div class="aksi">
-${d.scholar ? `<a href="${escHtml(d.scholar)}" target="_blank">Scholar</a>` : ''}
-${d.scopus ? `<a href="${escHtml(d.scopus)}" target="_blank">Scopus</a>` : ''}
-${d.sinta ? `<a href="${escHtml(d.sinta)}" target="_blank">SINTA</a>` : ''}
-</div>
-</div>
-`).join('');
-}
-
-function bindDosenFilters() {
-document.querySelectorAll('.filter-btn').forEach(btn => {
-btn.addEventListener('click', () => {
-document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('on'));
-btn.classList.add('on');
-currentFilter = btn.dataset.prodi;
-renderDosen();
-});
-});
-document.getElementById('dosenSearch').addEventListener('input', renderDosen);
-}
-
-function loadDosen() {
-fetch(API + '/daftar-dosen')
-.then(r => r.json())
-.then(data => {
-if (!Array.isArray(data)) return;
-allDosen = data;
-renderDosen();
-})
-.catch(() => {
-document.getElementById('dosenGrid').innerHTML = '<div class="dosen-card" style="padding:32px;color:#c00;">Gagal memuat data dosen.</div>';
-});
-}
-    bindDosenFilters();
-    loadDosen();
+    // ---- STRUKTUR ORGANISASI ----
+    (function() {
+        const tbl = document.getElementById('strukturTable');
+        if (!tbl) return;
+        fetch(API + '/struktur-organisasi')
+            .then(r => r.json())
+            .then(data => {
+                if (!Array.isArray(data) || !data.length) return;
+                const rows = data.map((p, i) => `
+                    <div class="row">
+                        <div class="num">${String(i + 1).padStart(2, '0')}</div>
+                        <div class="nama">${p.nama}</div>
+                        <div class="role">${p.keterangan}</div>
+                    </div>
+                `).join('');
+                tbl.innerHTML = `
+                    <div class="row head"><div>#</div><div>Nama</div><div>Jabatan</div></div>
+                    ${rows}
+                `;
+            })
+            .catch(() => {
+                tbl.innerHTML = '<div class="row"><div colspan="3" style="padding:24px;text-align:center;color:#c00;">Gagal memuat data struktur organisasi.</div></div>';
+            });
+    })();
 </script>
 
 </body>
