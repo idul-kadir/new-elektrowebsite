@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Jurusan Teknik Elektro dan Komputer — Universitas Negeri Gorontalo</title>
-    <meta name="description" content="Jurusan Teknik Elektro dan Komputer, Fakultas Teknik, Universitas Negeri Gorontalo. Pendidikan tinggi teknik elektro, komputer, dan pendidikan vokasional di kawasan Indonesia Timur.">
+    <meta name="description" content="Jurusan Teknik Elektro dan Komputer, Fakultas Teknik, Universitas Negeri Gorontalo. Pendidikan tinggi teknik elektro dan komputer di kawasan Indonesia Timur.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,400;8..60,600;8..60,700;8..60,800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -217,7 +217,6 @@
                         <div class="dd-label">Tenaga Pendidik</div>
                         <a href="profil.html#dosen">Dosen Teknik Elektro</a>
                         <a href="profil.html#dosen">Dosen Teknik Komputer</a>
-                        <a href="profil.html#dosen">Dosen Pend. Vok. Elektro</a>
                     </div>
                 </li>
                 <li>
@@ -225,7 +224,6 @@
                     <div class="dropdown">
                         <a href="prodi.html#te">S1 Teknik Elektro</a>
                         <a href="prodi.html#tk">S1 Teknik Komputer</a>
-                        <a href="prodi.html#pve">S1 Pendidikan Vokasional Elektro</a>
                     </div>
                 </li>
                 <li>
@@ -254,7 +252,7 @@
             <div>
                 <div class="hero-eyebrow">Jurusan Teknik Elektro &amp; Komputer</div>
                 <h1 class="hero-title">Membangun <em>Insan Teknik</em> Yang Berdaya Saing Global</h1>
-                <p class="hero-lead">Tiga program studi sarjana yang mengintegrasikan pendidikan, penelitian, dan pengabdian di bidang elektro, komputer, dan pendidikan vokasional — untuk kawasan Indonesia Timur.</p>
+                <p class="hero-lead">Program studi sarjana yang mengintegrasikan pendidikan, penelitian, dan pengabdian di bidang elektro dan komputer — untuk kawasan Indonesia Timur.</p>
                 <div class="hero-cta">
                     <a href="profil.html" class="btn btn-primary">Tentang Jurusan</a>
                     <a href="prodi.html" class="btn btn-outline">Program Studi</a>
@@ -283,7 +281,7 @@
         <div class="section-head">
             <div class="desc">
                 <div class="section-eyebrow">Program Studi</div>
-                <h2 class="section-title">Tiga Program Studi Sarjana</h2>
+                <h2 class="section-title">Program Studi Sarjana</h2>
                 <p class="section-desc">Kurikulum berbasis OBE dan KKNI, dengan dosen berpengalaman dan fasilitas laboratorium yang lengkap.</p>
             </div>
         </div>
@@ -387,11 +385,11 @@
                 </div>
             </div>
             <div class="lab-item">
-                <div class="lab-img" style="background:linear-gradient(135deg,var(--navy) 0%, var(--navy-deep) 100%); display:flex;align-items:center;justify-content:center;color:var(--accent);font-family:'Source Serif 4', serif;font-size:14px;font-weight:600;letter-spacing:.1em;">EDU&nbsp;CENTER</div>
+                <div class="lab-img" style="background:linear-gradient(135deg,var(--navy) 0%, var(--navy-deep) 100%); display:flex;align-items:center;justify-content:center;color:var(--accent);font-family:'Source Serif 4', serif;font-size:14px;font-weight:600;letter-spacing:.1em;">FASILITAS</div>
                 <div class="lab-body">
                     <div class="lab-code">FASILITAS / 06</div>
-                    <h3>Pendidikan Vokasional</h3>
-                    <p>Workshop dan teaching factory untuk calon pendidik teknik.</p>
+                    <h3>Ruang Baca &amp; Diskusi</h3>
+                    <p>Ruang bersama untuk diskusi, belajar mandiri, dan konsultasi akademik mahasiswa.</p>
                 </div>
             </div>
         </div>
@@ -409,7 +407,6 @@
                 <h5>Program Studi</h5>
                 <p><a href="prodi.html#te">S1 Teknik Elektro</a></p>
                 <p><a href="prodi.html#tk">S1 Teknik Komputer</a></p>
-                <p><a href="prodi.html#pve">S1 Pend. Vok. Elektro</a></p>
             </div>
             <div>
                 <h5>Akademik</h5>
@@ -510,7 +507,12 @@
             .then(r => r.json())
             .then(data => {
                 if (!Array.isArray(data) || !data.length) return;
-                list.innerHTML = data.map((item, i) => {
+                // Filter: hanya prodi yang tercantum di website resmi
+                const filtered = data.filter(item => {
+                    const name = Object.keys(item)[0].toLowerCase();
+                    return !name.includes('vokasional');
+                });
+                list.innerHTML = filtered.map((item, i) => {
                     const [name, info] = Object.entries(item)[0];
                     const nameKey = name.toLowerCase();
                     let visi = '';
