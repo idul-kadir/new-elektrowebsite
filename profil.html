@@ -223,15 +223,16 @@
         .tujuan li::before { content: "✓"; position: absolute; left: 0; color: var(--accent); font-weight: 700; }
 
         #struktur { background: var(--soft); }
-        .struktur-table { background: #fff; border: 1px solid var(--border); }
-        .struktur-table .row { display: grid; grid-template-columns: 60px 1fr 1.4fr; border-bottom: 1px solid var(--border); align-items: center; }
-        .struktur-table .row:last-child { border-bottom: 0; }
-        .struktur-table .row.head { background: var(--navy); color: #fff; }
-        .struktur-table .row.head > div { padding: 14px 24px; font-size: 12px; font-weight: 600; letter-spacing: .08em; text-transform: uppercase; }
-        .struktur-table .row > div { padding: 16px 24px; font-size: 14.5px; }
-        .struktur-table .num { font-family: 'Source Serif 4', serif; font-weight: 700; color: var(--accent-dark); font-size: 18px; text-align: center; }
-        .struktur-table .nama { font-weight: 600; color: var(--navy); }
-        .struktur-table .role { color: var(--text-muted); font-size: 13.5px; }
+        .pimpinan-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 24px; }
+        .pimpinan-card { background: #fff; border: 1px solid var(--border); padding: 24px; transition: border-color .15s, box-shadow .15s; }
+        .pimpinan-card:hover { border-color: var(--accent); box-shadow: 0 4px 14px rgba(15, 35, 70, 0.06); }
+        .pimpinan-foto-wrap { width: 96px; height: 96px; margin: 0 auto 18px; position: relative; background: var(--soft); border-radius: 50%; overflow: hidden; }
+        .pimpinan-foto { width: 100%; height: 100%; object-fit: cover; display: block; }
+        .pimpinan-foto-fallback { position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; font-family: 'Source Serif 4', serif; font-weight: 700; font-size: 28px; color: var(--navy); background: var(--soft); }
+        .pimpinan-body { text-align: center; }
+        .pimpinan-jabatan { font-size: 11px; font-weight: 600; color: var(--accent-dark); letter-spacing: .12em; text-transform: uppercase; margin-bottom: 8px; line-height: 1.4; min-height: 30px; display: flex; align-items: center; justify-content: center; }
+        .pimpinan-nama { font-family: 'Source Serif 4', serif; font-weight: 600; color: var(--navy); font-size: 15.5px; line-height: 1.35; margin-bottom: 6px; }
+        .pimpinan-bidang { font-size: 12px; color: var(--text-muted); font-style: italic; }
 
         @media (max-width: 900px) {
             .sejarah-grid, #visi-misi .vm-grid { grid-template-columns: 1fr; }
@@ -408,11 +409,10 @@
         <div class="section-head">
             <div class="section-eyebrow">03 &mdash; Struktur Organisasi</div>
             <h2 class="section-title">Pimpinan Jurusan &amp; Program Studi</h2>
-            <p class="section-desc">Susunan kepemimpinan Jurusan Teknik Elektro dan Komputer periode 2024 &ndash; sekarang.</p>
+            <p class="section-desc">Susunan kepemimpinan Jurusan Teknik Elektro dan Komputer.</p>
         </div>
-        <div class="struktur-table" id="strukturTable">
-            <div class="row head"><div>#</div><div>Nama</div><div>Jabatan</div></div>
-            <div class="row"><div colspan="3" style="padding:24px;text-align:center;color:var(--text-muted);">Memuat data struktur organisasi...</div></div>
+        <div class="pimpinan-grid" id="strukturTable">
+            <div class="pimpinan-card" style="padding:32px;color:var(--text-muted);">Memuat data struktur organisasi...</div>
         </div>
     </div>
 </section>
@@ -454,26 +454,37 @@
 
     // ---- STRUKTUR ORGANISASI ----
     (function() {
-        const tbl = document.getElementById('strukturTable');
-        if (!tbl) return;
+        const grid = document.getElementById('strukturTable');
+        if (!grid) return;
         fetch(API + '/struktur-organisasi')
             .then(r => r.json())
             .then(data => {
                 if (!Array.isArray(data) || !data.length) return;
-                const rows = data.map((p, i) => `
-                    <div class="row">
-                        <div class="num">${String(i + 1).padStart(2, '0')}</div>
-                        <div class="nama">${p.nama}</div>
-                        <div class="role">${p.keterangan}</div>
-                    </div>
-                `).join('');
-                tbl.innerHTML = `
-                    <div class="row head"><div>#</div><div>Nama</div><div>Jabatan</div></div>
-                    ${rows}
-                `;
+                const cards = data.map(p => {
+                    const nama = (p.nama || '').trim();
+                    const parts = nama.split(/\s+/).filter(s => s.length > 0 && !/[.,]/.test(s));
+                    const initials = (parts[0] ? parts[0][0] : '') + (parts[1] ? parts[1][0] : '');
+                    const fbText = initials.toUpperCase() || '—';
+                    const foto = p.profil ? `<img class="pimpinan-foto" src="${p.profil}" alt="${nama}" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">` : '';
+                    const fb = `<div class="pimpinan-foto-fallback">${fbText}</div>`;
+                    return `
+                        <div class="pimpinan-card">
+                            <div class="pimpinan-foto-wrap">
+                                ${foto}
+                                ${fb}
+                            </div>
+                            <div class="pimpinan-body">
+                                <div class="pimpinan-jabatan">${p.keterangan || ''}</div>
+                                <div class="pimpinan-nama">${nama}</div>
+                                ${p['bidang keahlian'] ? `<div class="pimpinan-bidang">${p['bidang keahlian']}</div>` : ''}
+                            </div>
+                        </div>
+                    `;
+                }).join('');
+                grid.innerHTML = cards;
             })
             .catch(() => {
-                tbl.innerHTML = '<div class="row"><div colspan="3" style="padding:24px;text-align:center;color:#c00;">Gagal memuat data struktur organisasi.</div></div>';
+                grid.innerHTML = '<div class="pimpinan-card" style="padding:32px;color:#c00;">Gagal memuat data struktur organisasi.</div>';
             });
     })();
 </script>
