@@ -232,7 +232,9 @@
         .pimpinan-body { text-align: center; }
         .pimpinan-jabatan { font-size: 11px; font-weight: 600; color: var(--accent-dark); letter-spacing: .12em; text-transform: uppercase; margin-bottom: 8px; line-height: 1.4; min-height: 30px; display: flex; align-items: center; justify-content: center; }
         .pimpinan-nama { font-family: 'Source Serif 4', serif; font-weight: 600; color: var(--navy); font-size: 15.5px; line-height: 1.35; margin-bottom: 6px; }
-        .pimpinan-bidang { font-size: 12px; color: var(--text-muted); font-style: italic; }
+        .pimpinan-bidang { font-size: 13px; color: var(--text-muted); font-style: italic; line-height: 1.4; }
+        .pimpinan-scholar { display: inline-flex; align-items: center; justify-content: center; width: 28px; height: 28px; margin-top: 10px; color: var(--navy); border: 1px solid var(--border); border-radius: 50%; transition: color .15s, border-color .15s; }
+        .pimpinan-scholar:hover { color: var(--accent); border-color: var(--accent); }
 
         @media (max-width: 900px) {
             .sejarah-grid, #visi-misi .vm-grid { grid-template-columns: 1fr; }
@@ -453,42 +455,43 @@
     const API = 'https://temp.ikad-developer.my.id/elektro';
 
     // ---- STRUKTUR ORGANISASI ----
-    // Data dari https://elektro.ft.ung.ac.id/struktur-organisasi
-    // URL foto = https://siatek.web.id/adm/file/{NIP}.jpg
+    // Data dari API https://temp.ikad-developer.my.id/elektro/struktur-organisasi
+    // Field: nama, keterangan, profil, scholar, bidang keahlian
     (function() {
         const grid = document.getElementById('strukturTable');
         if (!grid) return;
-        const data = [
-            { nama: 'Yasin Mohamad, ST., MT.',                            jabatan: 'Ketua Jurusan',                                       nip: '197410032001121001' },
-            { nama: 'Amirudin Yunus Dako, ST., M.Eng.',                   jabatan: 'Sekretaris Jurusan',                                  nip: '197004052009121001' },
-            { nama: 'Ifan Wiranto, ST., MT.',                             jabatan: 'Ketua Program Studi S1 Teknik Elektro',              nip: '197506242005011003' },
-            { nama: 'Dr. Bambang Panji Asmara, ST., MT.',                 jabatan: 'Ketua Program Studi S1 Pendidikan Vokasional Rekayasa Elektro', nip: '197201282005011003' },
-            { nama: 'Syahrir Abdussamad, ST., MT.',                       jabatan: 'Ketua Program Studi S1 Teknik Komputer',             nip: '197011052001121001' },
-            { nama: 'Iskandar Z. Nasibu, S.Pd, M.Eng.',                   jabatan: 'Kepala Laboratorium',                                 nip: '196704212003121001' },
-            { nama: 'Zainudin Bonok, ST., MT.',                           jabatan: 'Ketua Unit Penjamin Mutu Jurusan',                    nip: '197506242005011003' },
-            { nama: 'Syahrir Abdussamad, ST., MT.',                       jabatan: 'Ketua Pengelola Jurnal',                              nip: '197011052001121001' }
-        ];
-        const baseFoto = 'https://siatek.web.id/adm/file/';
-        const cards = data.map(p => {
-            const nama = p.nama;
-            const parts = nama.split(/[\s,]+/).filter(s => s && !/^[A-Z]\.?$|ST|MT|S\.Pd|M\.Eng|Dr/i.test(s));
-            const initials = (parts[0] ? parts[0][0] : '') + (parts[1] ? parts[1][0] : '');
-            const fbText = initials.toUpperCase() || '—';
-            const fotoUrl = baseFoto + p.nip + '.jpg';
-            return `
-                <div class="pimpinan-card">
-                    <div class="pimpinan-foto-wrap">
-                        <img class="pimpinan-foto" src="${fotoUrl}" alt="${nama}" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
-                        <div class="pimpinan-foto-fallback">${fbText}</div>
-                    </div>
-                    <div class="pimpinan-body">
-                        <div class="pimpinan-jabatan">${p.jabatan}</div>
-                        <div class="pimpinan-nama">${nama}</div>
-                    </div>
-                </div>
-            `;
-        }).join('');
-        grid.innerHTML = cards;
+        fetch(API + '/struktur-organisasi')
+            .then(r => r.json())
+            .then(data => {
+                if (!Array.isArray(data) || !data.length) return;
+                const cards = data.map(p => {
+                    const nama = (p.nama || '').trim();
+                    const parts = nama.split(/[\s,]+/).filter(s => s && !/^[A-Z]\.?$|ST|MT|S\.Pd|M\.Eng|Dr/i.test(s));
+                    const initials = (parts[0] ? parts[0][0] : '') + (parts[1] ? parts[1][0] : '');
+                    const fbText = initials.toUpperCase() || '—';
+                    const foto = p.profil ? `<img class="pimpinan-foto" src="${p.profil}" alt="${nama}" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">` : '';
+                    const fb = `<div class="pimpinan-foto-fallback">${fbText}</div>`;
+                    const scholar = p.scholar ? `<a href="${p.scholar}" target="_blank" rel="noopener" class="pimpinan-scholar" title="Google Scholar" aria-label="Google Scholar"><svg viewBox="0 0 24 24" width="14" height="14" fill="currentColor"><path d="M5.242 13.769L0 9.5 12 0l12 9.5-5.242 4.269C17.548 11.249 14.978 9.5 12 9.5c-2.977 0-5.548 1.748-6.758 4.269zM12 10a7 7 0 1 0 0 14 7 7 0 0 0 0-14z"/></svg></a>` : '';
+                    return `
+                        <div class="pimpinan-card">
+                            <div class="pimpinan-foto-wrap">
+                                ${foto}
+                                ${fb}
+                            </div>
+                            <div class="pimpinan-body">
+                                <div class="pimpinan-jabatan">${p.keterangan || ''}</div>
+                                <div class="pimpinan-nama">${nama}</div>
+                                ${p['bidang keahlian'] ? `<div class="pimpinan-bidang">${p['bidang keahlian']}</div>` : ''}
+                                ${scholar}
+                            </div>
+                        </div>
+                    `;
+                }).join('');
+                grid.innerHTML = cards;
+            })
+            .catch(() => {
+                grid.innerHTML = '<div class="pimpinan-card" style="padding:32px;color:#c00;">Gagal memuat data struktur organisasi.</div>';
+            });
     })();
 </script>
 
