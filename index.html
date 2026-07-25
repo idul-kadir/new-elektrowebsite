@@ -10,15 +10,16 @@
     <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,400;8..60,600;8..60,700;8..60,800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     <style>
         :root {
-            --navy: #002B5C;
-            --navy-deep: #001A3D;
-            --gold: #F4A300;
-            --gold-dark: #C18500;
+            --navy: #1E3A8A;
+            --navy-deep: #0F1E47;
+            --navy-light: #3B82F6;
+            --accent: #F97316;
+            --accent-dark: #C2410C;
             --text: #1A1A1A;
             --text-muted: #555555;
             --bg: #ffffff;
-            --cream: #FAF8F3;
-            --border: #E0DDD5;
+            --soft: #F9FAFB;
+            --border: #E5E7EB;
         }
         * { margin: 0; padding: 0; box-sizing: border-box; }
         html { scroll-behavior: smooth; }
@@ -31,10 +32,10 @@
         .utility-bar { background: var(--navy-deep); color: rgba(255,255,255,0.85); font-size: 12.5px; padding: 11px 0; }
         .utility-bar .container { display: flex; justify-content: space-between; align-items: center; }
         .utility-bar a { color: rgba(255,255,255,0.85); margin-left: 22px; font-weight: 500; }
-        .utility-bar a:hover { color: var(--gold); }
+        .utility-bar a:hover { color: var(--accent); }
 
         /* ============ HEADER NAVBAR ============ */
-        .header { background: var(--bg); border-bottom: 3px solid var(--gold); position: sticky; top: 0; z-index: 100; }
+        .header { background: var(--bg); border-bottom: 3px solid var(--accent); position: sticky; top: 0; z-index: 100; }
         .header .container { display: flex; align-items: center; justify-content: space-between; height: 88px; }
         .brand { display: flex; align-items: center; gap: 16px; }
         .brand-logo { width: 60px; height: 60px; flex-shrink: 0; }
@@ -45,22 +46,22 @@
         .nav-menu { list-style: none; display: flex; gap: 4px; }
         .nav-menu > li { position: relative; }
         .nav-menu > li > a { display: block; padding: 10px 14px; font-size: 14px; font-weight: 500; color: var(--text); }
-        .nav-menu > li > a:hover, .nav-menu > li:hover > a, .nav-menu > li.active > a { color: var(--gold-dark); }
-        .dropdown { position: absolute; top: 100%; left: 0; background: #fff; border: 1px solid var(--border); border-top: 3px solid var(--gold); min-width: 240px; padding: 8px 0; opacity: 0; visibility: hidden; transform: translateY(8px); transition: all .18s; z-index: 99; }
+        .nav-menu > li > a:hover, .nav-menu > li:hover > a, .nav-menu > li.active > a { color: var(--accent-dark); }
+        .dropdown { position: absolute; top: 100%; left: 0; background: #fff; border: 1px solid var(--border); border-top: 3px solid var(--accent); min-width: 240px; padding: 8px 0; opacity: 0; visibility: hidden; transform: translateY(8px); transition: all .18s; z-index: 99; }
         .nav-menu > li:hover .dropdown { opacity: 1; visibility: visible; transform: translateY(0); }
         .dropdown a { display: block; padding: 9px 18px; font-size: 13.5px; color: var(--text); }
-        .dropdown a:hover { background: var(--cream); color: var(--gold-dark); }
+        .dropdown a:hover { background: var(--soft); color: var(--accent-dark); }
         .dd-sep { height: 1px; background: var(--border); margin: 6px 12px; }
         .dd-label { padding: 6px 18px 4px; font-size: 11px; text-transform: uppercase; letter-spacing: .08em; color: var(--text-muted); }
 
         /* ============ HERO SECTION (REVISI) ============ */
-        .hero { background: var(--cream); padding: 56px 0 0; border-bottom: 1px solid var(--border); }
+        .hero { background: var(--soft); padding: 56px 0 0; border-bottom: 1px solid var(--border); }
         .hero-grid { display: grid; grid-template-columns: 1.05fr 1fr; gap: 64px; align-items: start; margin-bottom: 48px; }
 
-        .hero-eyebrow { font-size: 12px; font-weight: 600; letter-spacing: .15em; color: var(--gold-dark); text-transform: uppercase; display: flex; align-items: center; gap: 12px; margin-bottom: 18px; }
-        .hero-eyebrow::before { content: ""; width: 32px; height: 2px; background: var(--gold); }
+        .hero-eyebrow { font-size: 12px; font-weight: 600; letter-spacing: .15em; color: var(--accent-dark); text-transform: uppercase; display: flex; align-items: center; gap: 12px; margin-bottom: 18px; }
+        .hero-eyebrow::before { content: ""; width: 32px; height: 2px; background: var(--accent); }
         .hero-title { font-family: 'Source Serif 4', serif; font-size: 50px; font-weight: 700; color: var(--navy); line-height: 1.1; letter-spacing: -1.5px; margin-bottom: 22px; }
-        .hero-title em { font-style: italic; color: var(--gold-dark); }
+        .hero-title em { font-style: italic; color: var(--accent-dark); }
         .hero-lead { font-size: 16.5px; color: var(--text-muted); max-width: 520px; margin-bottom: 28px; }
 
         .hero-cta { display: flex; gap: 12px; margin-bottom: 36px; }
@@ -85,19 +86,19 @@
         .hero-slide img { width: 100%; height: 100%; object-fit: cover; }
         .hero-slide::after { content: ""; position: absolute; inset: 0; background: linear-gradient(to top, rgba(0,27,61,0.85) 0%, rgba(0,27,61,0.3) 50%, transparent 100%); }
         .hero-caption { position: absolute; left: 0; right: 0; bottom: 0; padding: 24px 28px; color: #fff; z-index: 2; }
-        .hero-caption-tag { display: inline-block; background: var(--gold); color: var(--navy-deep); font-size: 10.5px; font-weight: 700; letter-spacing: .12em; padding: 4px 10px; text-transform: uppercase; margin-bottom: 10px; }
+        .hero-caption-tag { display: inline-block; background: var(--accent); color: var(--navy-deep); font-size: 10.5px; font-weight: 700; letter-spacing: .12em; padding: 4px 10px; text-transform: uppercase; margin-bottom: 10px; }
         .hero-caption-text { font-family: 'Source Serif 4', serif; font-size: 20px; line-height: 1.3; font-weight: 600; max-width: 90%; }
         .hero-nav { position: absolute; top: 50%; transform: translateY(-50%); width: 100%; display: flex; justify-content: space-between; padding: 0 14px; z-index: 3; }
         .hero-nav button { width: 38px; height: 38px; background: rgba(255,255,255,0.92); border: 0; font-size: 16px; cursor: pointer; color: var(--navy); font-weight: 700; }
-        .hero-nav button:hover { background: var(--gold); }
+        .hero-nav button:hover { background: var(--accent); }
         .hero-dots { position: absolute; bottom: 14px; right: 18px; display: flex; gap: 6px; z-index: 3; }
         .hero-dots .dot { width: 22px; height: 3px; background: rgba(255,255,255,0.5); cursor: pointer; }
-        .hero-dots .dot.on { background: var(--gold); }
+        .hero-dots .dot.on { background: var(--accent); }
 
         /* ============ SECTION DEFAULTS ============ */
         section { padding: 80px 0; }
-        .section-eyebrow { font-size: 12px; font-weight: 600; letter-spacing: .15em; color: var(--gold-dark); text-transform: uppercase; margin-bottom: 12px; display: flex; align-items: center; gap: 12px; }
-        .section-eyebrow::before { content: ""; width: 24px; height: 2px; background: var(--gold); }
+        .section-eyebrow { font-size: 12px; font-weight: 600; letter-spacing: .15em; color: var(--accent-dark); text-transform: uppercase; margin-bottom: 12px; display: flex; align-items: center; gap: 12px; }
+        .section-eyebrow::before { content: ""; width: 24px; height: 2px; background: var(--accent); }
         .section-title { font-family: 'Source Serif 4', serif; font-size: 36px; font-weight: 700; color: var(--navy); line-height: 1.2; margin-bottom: 14px; }
         .section-desc { font-size: 15.5px; color: var(--text-muted); max-width: 720px; }
         .section-head { display: flex; justify-content: space-between; align-items: flex-end; gap: 32px; margin-bottom: 48px; flex-wrap: wrap; }
@@ -108,39 +109,39 @@
         .prodi-list { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0; border-top: 2px solid var(--navy); border-bottom: 2px solid var(--navy); }
         .prodi-item { padding: 36px 32px 32px; border-right: 1px solid var(--border); position: relative; }
         .prodi-item:last-child { border-right: 0; }
-        .prodi-num { font-family: 'Source Serif 4', serif; font-size: 36px; font-weight: 700; color: var(--gold); line-height: 1; margin-bottom: 12px; }
+        .prodi-num { font-family: 'Source Serif 4', serif; font-size: 36px; font-weight: 700; color: var(--accent); line-height: 1; margin-bottom: 12px; }
         .prodi-strata { font-size: 11px; font-weight: 600; color: var(--text-muted); letter-spacing: .1em; text-transform: uppercase; margin-bottom: 6px; }
         .prodi-item h3 { font-family: 'Source Serif 4', serif; font-size: 22px; font-weight: 700; color: var(--navy); line-height: 1.2; margin-bottom: 14px; }
         .prodi-visi { font-size: 13.5px; line-height: 1.55; color: var(--text); padding: 14px 0; border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); margin-bottom: 14px; font-style: italic; }
-        .prodi-visi::before { content: "Visi: "; font-style: normal; font-weight: 600; color: var(--gold-dark); font-size: 11px; letter-spacing: .08em; text-transform: uppercase; display: block; margin-bottom: 4px; }
+        .prodi-visi::before { content: "Visi: "; font-style: normal; font-weight: 600; color: var(--accent-dark); font-size: 11px; letter-spacing: .08em; text-transform: uppercase; display: block; margin-bottom: 4px; }
         .prodi-kaprodi { font-size: 12.5px; color: var(--text-muted); }
         .prodi-kaprodi strong { display: block; color: var(--navy); font-size: 13.5px; margin-bottom: 2px; }
 
         /* ============ BERITA SECTION (REVISI TOTAL) ============ */
-        .berita { background: var(--cream); }
+        .berita { background: var(--soft); }
         .berita-grid { display: grid; grid-template-columns: 1.1fr 1fr; gap: 40px; align-items: start; }
         .berita-main { background: #fff; border: 1px solid var(--border); }
-        .berita-main-img { aspect-ratio: 16/10; overflow: hidden; background: var(--cream); }
+        .berita-main-img { aspect-ratio: 16/10; overflow: hidden; background: var(--soft); }
         .berita-main-img img { width: 100%; height: 100%; object-fit: cover; }
         .berita-main-body { padding: 28px 32px 32px; }
-        .berita-main-tag { display: inline-block; background: var(--navy); color: var(--gold); font-size: 10.5px; font-weight: 700; letter-spacing: .12em; padding: 4px 10px; text-transform: uppercase; margin-bottom: 14px; }
+        .berita-main-tag { display: inline-block; background: var(--navy); color: var(--accent); font-size: 10.5px; font-weight: 700; letter-spacing: .12em; padding: 4px 10px; text-transform: uppercase; margin-bottom: 14px; }
         .berita-meta { font-size: 12px; color: var(--text-muted); margin-bottom: 10px; text-transform: uppercase; letter-spacing: .06em; }
         .berita-main h2 { font-family: 'Source Serif 4', serif; font-size: 28px; line-height: 1.25; color: var(--navy); margin-bottom: 14px; font-weight: 700; }
         .berita-main p { font-size: 14.5px; color: var(--text-muted); }
-        .berita-main-link { display: inline-block; margin-top: 18px; font-size: 13px; font-weight: 600; color: var(--gold-dark); border-bottom: 2px solid var(--gold); padding-bottom: 2px; }
+        .berita-main-link { display: inline-block; margin-top: 18px; font-size: 13px; font-weight: 600; color: var(--accent-dark); border-bottom: 2px solid var(--accent); padding-bottom: 2px; }
 
         /* SIDE: UPDATE TERKINI (LAYOUT BENER) */
         .berita-side { background: #fff; border: 1px solid var(--border); }
         .berita-side-head { padding: 18px 24px; border-bottom: 2px solid var(--navy); display: flex; align-items: center; justify-content: space-between; }
         .berita-side-head h3 { font-family: 'Source Serif 4', serif; font-size: 20px; color: var(--navy); }
-        .berita-side-head .sub { font-size: 11.5px; color: var(--gold-dark); font-weight: 600; letter-spacing: .08em; text-transform: uppercase; }
+        .berita-side-head .sub { font-size: 11.5px; color: var(--accent-dark); font-weight: 600; letter-spacing: .08em; text-transform: uppercase; }
         .berita-side-list { padding: 0; }
         .berita-side-item { display: grid; grid-template-columns: 96px 1fr; gap: 18px; padding: 18px 24px; border-bottom: 1px solid var(--border); align-items: start; transition: background .15s; }
         .berita-side-item:last-child { border-bottom: 0; }
-        .berita-side-item:hover { background: var(--cream); }
-        .berita-side-img { aspect-ratio: 1; background: var(--cream); overflow: hidden; flex-shrink: 0; }
+        .berita-side-item:hover { background: var(--soft); }
+        .berita-side-img { aspect-ratio: 1; background: var(--soft); overflow: hidden; flex-shrink: 0; }
         .berita-side-img img { width: 100%; height: 100%; object-fit: cover; }
-        .berita-side-item .date { font-size: 11px; color: var(--gold-dark); font-weight: 600; letter-spacing: .08em; text-transform: uppercase; margin-bottom: 4px; }
+        .berita-side-item .date { font-size: 11px; color: var(--accent-dark); font-weight: 600; letter-spacing: .08em; text-transform: uppercase; margin-bottom: 4px; }
         .berita-side-item h4 { font-family: 'Source Serif 4', serif; font-size: 15px; line-height: 1.35; color: var(--text); font-weight: 600; }
         .berita-side-item:hover h4 { color: var(--navy); }
 
@@ -150,11 +151,11 @@
         .lab-item { padding: 0; border-right: 1px solid var(--border); border-bottom: 1px solid var(--border); position: relative; }
         .lab-item:nth-child(3n) { border-right: 0; }
         .lab-item:nth-last-child(-n+3) { border-bottom: 0; }
-        .lab-img { aspect-ratio: 4/3; overflow: hidden; background: var(--cream); }
+        .lab-img { aspect-ratio: 4/3; overflow: hidden; background: var(--soft); }
         .lab-img img { width: 100%; height: 100%; object-fit: cover; transition: transform .4s; }
         .lab-item:hover .lab-img img { transform: scale(1.05); }
         .lab-body { padding: 18px 22px 22px; }
-        .lab-code { font-family: 'Source Serif 4', serif; font-size: 11px; font-weight: 700; color: var(--gold-dark); letter-spacing: .15em; }
+        .lab-code { font-family: 'Source Serif 4', serif; font-size: 11px; font-weight: 700; color: var(--accent-dark); letter-spacing: .15em; }
         .lab-body h3 { font-family: 'Source Serif 4', serif; font-size: 17px; color: var(--navy); margin: 4px 0 6px; font-weight: 700; }
         .lab-body p { font-size: 12.5px; color: var(--text-muted); line-height: 1.5; }
 
@@ -162,7 +163,7 @@
         footer { background: var(--navy-deep); color: rgba(255,255,255,0.75); padding: 56px 0 28px; font-size: 13.5px; }
         footer h5 { font-family: 'Source Serif 4', serif; font-size: 15px; color: #fff; margin-bottom: 16px; }
         footer a { color: rgba(255,255,255,0.75); }
-        footer a:hover { color: var(--gold); }
+        footer a:hover { color: var(--accent); }
         .footer-grid { display: grid; grid-template-columns: 1.4fr 1fr 1fr 1fr; gap: 48px; margin-bottom: 40px; }
         .footer-bot { border-top: 1px solid rgba(255,255,255,0.12); padding-top: 22px; display: flex; justify-content: space-between; font-size: 12px; color: rgba(255,255,255,0.55); }
 
@@ -184,7 +185,7 @@
 <!-- utility bar -->
 <div class="utility-bar">
     <div class="container">
-        <div><i style="color:var(--gold);">●</i> &nbsp; Universitas Negeri Gorontalo</div>
+        <div><i style="color:var(--accent);">●</i> &nbsp; Universitas Negeri Gorontalo</div>
         <div>
             <a href="https://www.ung.ac.id/" target="_blank">UNG</a>
             <a href="https://ft.ung.ac.id/" target="_blank">Fakultas Teknik</a>
@@ -322,7 +323,7 @@
                 </div>
                 <div class="berita-side-list" id="beritaSide">
                     <div class="berita-side-item">
-                        <div class="berita-side-img" style="background:var(--cream);"></div>
+                        <div class="berita-side-img" style="background:var(--soft);"></div>
                         <div>
                             <div class="date">Memuat...</div>
                             <h4>Sedang mengambil data berita...</h4>
@@ -386,7 +387,7 @@
                 </div>
             </div>
             <div class="lab-item">
-                <div class="lab-img" style="background:linear-gradient(135deg,var(--navy) 0%, var(--navy-deep) 100%); display:flex;align-items:center;justify-content:center;color:var(--gold);font-family:'Source Serif 4', serif;font-size:14px;font-weight:600;letter-spacing:.1em;">EDU&nbsp;CENTER</div>
+                <div class="lab-img" style="background:linear-gradient(135deg,var(--navy) 0%, var(--navy-deep) 100%); display:flex;align-items:center;justify-content:center;color:var(--accent);font-family:'Source Serif 4', serif;font-size:14px;font-weight:600;letter-spacing:.1em;">EDU&nbsp;CENTER</div>
                 <div class="lab-body">
                     <div class="lab-code">FASILITAS / 06</div>
                     <h3>Pendidikan Vokasional</h3>
