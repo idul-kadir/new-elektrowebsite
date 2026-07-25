@@ -1,0 +1,580 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jurusan Teknik Elektro dan Komputer — Universitas Negeri Gorontalo</title>
+    <meta name="description" content="Jurusan Teknik Elektro dan Komputer, Fakultas Teknik, Universitas Negeri Gorontalo. Pendidikan tinggi teknik elektro, komputer, dan pendidikan vokasional di kawasan Indonesia Timur.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,400;8..60,600;8..60,700;8..60,800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --navy: #002B5C;
+            --navy-deep: #001A3D;
+            --gold: #F4A300;
+            --gold-dark: #C18500;
+            --text: #1A1A1A;
+            --text-muted: #555555;
+            --bg: #ffffff;
+            --cream: #FAF8F3;
+            --border: #E0DDD5;
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
+        body { font-family: 'Inter', -apple-system, sans-serif; color: var(--text); background: var(--bg); line-height: 1.6; -webkit-font-smoothing: antialiased; }
+        a { text-decoration: none; color: inherit; }
+        img { display: block; max-width: 100%; }
+        .container { max-width: 1280px; margin: 0 auto; padding: 0 32px; }
+
+        /* ============ UTILITY BAR ============ */
+        .utility-bar { background: var(--navy-deep); color: rgba(255,255,255,0.85); font-size: 12.5px; padding: 11px 0; }
+        .utility-bar .container { display: flex; justify-content: space-between; align-items: center; }
+        .utility-bar a { color: rgba(255,255,255,0.85); margin-left: 22px; font-weight: 500; }
+        .utility-bar a:hover { color: var(--gold); }
+
+        /* ============ HEADER NAVBAR ============ */
+        .header { background: var(--bg); border-bottom: 3px solid var(--gold); position: sticky; top: 0; z-index: 100; }
+        .header .container { display: flex; align-items: center; justify-content: space-between; height: 88px; }
+        .brand { display: flex; align-items: center; gap: 16px; }
+        .brand-logo { width: 60px; height: 60px; flex-shrink: 0; }
+        .brand-logo img { width: 100%; height: 100%; object-fit: contain; }
+        .brand-text h1 { font-family: 'Source Serif 4', serif; font-size: 19px; font-weight: 700; color: var(--navy); line-height: 1.2; letter-spacing: -0.2px; }
+        .brand-text span { font-size: 12px; color: var(--text-muted); font-weight: 500; display: block; margin-top: 3px; }
+
+        .nav-menu { list-style: none; display: flex; gap: 4px; }
+        .nav-menu > li { position: relative; }
+        .nav-menu > li > a { display: block; padding: 10px 14px; font-size: 14px; font-weight: 500; color: var(--text); }
+        .nav-menu > li > a:hover, .nav-menu > li:hover > a, .nav-menu > li.active > a { color: var(--gold-dark); }
+        .dropdown { position: absolute; top: 100%; left: 0; background: #fff; border: 1px solid var(--border); border-top: 3px solid var(--gold); min-width: 240px; padding: 8px 0; opacity: 0; visibility: hidden; transform: translateY(8px); transition: all .18s; z-index: 99; }
+        .nav-menu > li:hover .dropdown { opacity: 1; visibility: visible; transform: translateY(0); }
+        .dropdown a { display: block; padding: 9px 18px; font-size: 13.5px; color: var(--text); }
+        .dropdown a:hover { background: var(--cream); color: var(--gold-dark); }
+        .dd-sep { height: 1px; background: var(--border); margin: 6px 12px; }
+        .dd-label { padding: 6px 18px 4px; font-size: 11px; text-transform: uppercase; letter-spacing: .08em; color: var(--text-muted); }
+
+        /* ============ HERO SECTION (REVISI) ============ */
+        .hero { background: var(--cream); padding: 56px 0 0; border-bottom: 1px solid var(--border); }
+        .hero-grid { display: grid; grid-template-columns: 1.05fr 1fr; gap: 64px; align-items: start; margin-bottom: 48px; }
+
+        .hero-eyebrow { font-size: 12px; font-weight: 600; letter-spacing: .15em; color: var(--gold-dark); text-transform: uppercase; display: flex; align-items: center; gap: 12px; margin-bottom: 18px; }
+        .hero-eyebrow::before { content: ""; width: 32px; height: 2px; background: var(--gold); }
+        .hero-title { font-family: 'Source Serif 4', serif; font-size: 50px; font-weight: 700; color: var(--navy); line-height: 1.1; letter-spacing: -1.5px; margin-bottom: 22px; }
+        .hero-title em { font-style: italic; color: var(--gold-dark); }
+        .hero-lead { font-size: 16.5px; color: var(--text-muted); max-width: 520px; margin-bottom: 28px; }
+
+        .hero-cta { display: flex; gap: 12px; margin-bottom: 36px; }
+        .btn { display: inline-flex; align-items: center; padding: 12px 22px; font-size: 14px; font-weight: 600; border: 1px solid; cursor: pointer; }
+        .btn-primary { background: var(--navy); color: #fff; border-color: var(--navy); }
+        .btn-primary:hover { background: var(--navy-deep); }
+        .btn-outline { background: transparent; color: var(--navy); border-color: var(--navy); }
+        .btn-outline:hover { background: var(--navy); color: #fff; }
+
+        .hero-stats { display: grid; grid-template-columns: repeat(4, 1fr); border-top: 1px solid var(--border); }
+        .hero-stat { padding: 22px 0; border-right: 1px solid var(--border); }
+        .hero-stat:last-child { border-right: 0; padding-right: 0; }
+        .hero-stat:not(:first-child) { padding-left: 22px; }
+        .hero-stat-num { font-family: 'Source Serif 4', serif; font-size: 30px; font-weight: 700; color: var(--navy); line-height: 1; }
+        .hero-stat-lbl { font-size: 12px; color: var(--text-muted); text-transform: uppercase; letter-spacing: .06em; margin-top: 6px; }
+
+        /* HERO IMAGE STAGE (KOTAK FOTO) */
+        .hero-stage { position: relative; }
+        .hero-frame { position: relative; height: 480px; background: var(--navy); overflow: hidden; }
+        .hero-slide { position: absolute; inset: 0; opacity: 0; transition: opacity .8s; }
+        .hero-slide.active { opacity: 1; }
+        .hero-slide img { width: 100%; height: 100%; object-fit: cover; }
+        .hero-slide::after { content: ""; position: absolute; inset: 0; background: linear-gradient(to top, rgba(0,27,61,0.85) 0%, rgba(0,27,61,0.3) 50%, transparent 100%); }
+        .hero-caption { position: absolute; left: 0; right: 0; bottom: 0; padding: 24px 28px; color: #fff; z-index: 2; }
+        .hero-caption-tag { display: inline-block; background: var(--gold); color: var(--navy-deep); font-size: 10.5px; font-weight: 700; letter-spacing: .12em; padding: 4px 10px; text-transform: uppercase; margin-bottom: 10px; }
+        .hero-caption-text { font-family: 'Source Serif 4', serif; font-size: 20px; line-height: 1.3; font-weight: 600; max-width: 90%; }
+        .hero-nav { position: absolute; top: 50%; transform: translateY(-50%); width: 100%; display: flex; justify-content: space-between; padding: 0 14px; z-index: 3; }
+        .hero-nav button { width: 38px; height: 38px; background: rgba(255,255,255,0.92); border: 0; font-size: 16px; cursor: pointer; color: var(--navy); font-weight: 700; }
+        .hero-nav button:hover { background: var(--gold); }
+        .hero-dots { position: absolute; bottom: 14px; right: 18px; display: flex; gap: 6px; z-index: 3; }
+        .hero-dots .dot { width: 22px; height: 3px; background: rgba(255,255,255,0.5); cursor: pointer; }
+        .hero-dots .dot.on { background: var(--gold); }
+
+        /* ============ SECTION DEFAULTS ============ */
+        section { padding: 80px 0; }
+        .section-eyebrow { font-size: 12px; font-weight: 600; letter-spacing: .15em; color: var(--gold-dark); text-transform: uppercase; margin-bottom: 12px; display: flex; align-items: center; gap: 12px; }
+        .section-eyebrow::before { content: ""; width: 24px; height: 2px; background: var(--gold); }
+        .section-title { font-family: 'Source Serif 4', serif; font-size: 36px; font-weight: 700; color: var(--navy); line-height: 1.2; margin-bottom: 14px; }
+        .section-desc { font-size: 15.5px; color: var(--text-muted); max-width: 720px; }
+        .section-head { display: flex; justify-content: space-between; align-items: flex-end; gap: 32px; margin-bottom: 48px; flex-wrap: wrap; }
+        .section-head .desc { flex: 1; min-width: 300px; }
+
+        /* ============ PRODI SECTION ============ */
+        .prodi { background: var(--bg); }
+        .prodi-list { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0; border-top: 2px solid var(--navy); border-bottom: 2px solid var(--navy); }
+        .prodi-item { padding: 36px 32px 32px; border-right: 1px solid var(--border); position: relative; }
+        .prodi-item:last-child { border-right: 0; }
+        .prodi-num { font-family: 'Source Serif 4', serif; font-size: 36px; font-weight: 700; color: var(--gold); line-height: 1; margin-bottom: 12px; }
+        .prodi-strata { font-size: 11px; font-weight: 600; color: var(--text-muted); letter-spacing: .1em; text-transform: uppercase; margin-bottom: 6px; }
+        .prodi-item h3 { font-family: 'Source Serif 4', serif; font-size: 22px; font-weight: 700; color: var(--navy); line-height: 1.2; margin-bottom: 14px; }
+        .prodi-visi { font-size: 13.5px; line-height: 1.55; color: var(--text); padding: 14px 0; border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); margin-bottom: 14px; font-style: italic; }
+        .prodi-visi::before { content: "Visi: "; font-style: normal; font-weight: 600; color: var(--gold-dark); font-size: 11px; letter-spacing: .08em; text-transform: uppercase; display: block; margin-bottom: 4px; }
+        .prodi-kaprodi { font-size: 12.5px; color: var(--text-muted); }
+        .prodi-kaprodi strong { display: block; color: var(--navy); font-size: 13.5px; margin-bottom: 2px; }
+
+        /* ============ BERITA SECTION (REVISI TOTAL) ============ */
+        .berita { background: var(--cream); }
+        .berita-grid { display: grid; grid-template-columns: 1.1fr 1fr; gap: 40px; align-items: start; }
+        .berita-main { background: #fff; border: 1px solid var(--border); }
+        .berita-main-img { aspect-ratio: 16/10; overflow: hidden; background: var(--cream); }
+        .berita-main-img img { width: 100%; height: 100%; object-fit: cover; }
+        .berita-main-body { padding: 28px 32px 32px; }
+        .berita-main-tag { display: inline-block; background: var(--navy); color: var(--gold); font-size: 10.5px; font-weight: 700; letter-spacing: .12em; padding: 4px 10px; text-transform: uppercase; margin-bottom: 14px; }
+        .berita-meta { font-size: 12px; color: var(--text-muted); margin-bottom: 10px; text-transform: uppercase; letter-spacing: .06em; }
+        .berita-main h2 { font-family: 'Source Serif 4', serif; font-size: 28px; line-height: 1.25; color: var(--navy); margin-bottom: 14px; font-weight: 700; }
+        .berita-main p { font-size: 14.5px; color: var(--text-muted); }
+        .berita-main-link { display: inline-block; margin-top: 18px; font-size: 13px; font-weight: 600; color: var(--gold-dark); border-bottom: 2px solid var(--gold); padding-bottom: 2px; }
+
+        /* SIDE: UPDATE TERKINI (LAYOUT BENER) */
+        .berita-side { background: #fff; border: 1px solid var(--border); }
+        .berita-side-head { padding: 18px 24px; border-bottom: 2px solid var(--navy); display: flex; align-items: center; justify-content: space-between; }
+        .berita-side-head h3 { font-family: 'Source Serif 4', serif; font-size: 20px; color: var(--navy); }
+        .berita-side-head .sub { font-size: 11.5px; color: var(--gold-dark); font-weight: 600; letter-spacing: .08em; text-transform: uppercase; }
+        .berita-side-list { padding: 0; }
+        .berita-side-item { display: grid; grid-template-columns: 96px 1fr; gap: 18px; padding: 18px 24px; border-bottom: 1px solid var(--border); align-items: start; transition: background .15s; }
+        .berita-side-item:last-child { border-bottom: 0; }
+        .berita-side-item:hover { background: var(--cream); }
+        .berita-side-img { aspect-ratio: 1; background: var(--cream); overflow: hidden; flex-shrink: 0; }
+        .berita-side-img img { width: 100%; height: 100%; object-fit: cover; }
+        .berita-side-item .date { font-size: 11px; color: var(--gold-dark); font-weight: 600; letter-spacing: .08em; text-transform: uppercase; margin-bottom: 4px; }
+        .berita-side-item h4 { font-family: 'Source Serif 4', serif; font-size: 15px; line-height: 1.35; color: var(--text); font-weight: 600; }
+        .berita-side-item:hover h4 { color: var(--navy); }
+
+        /* ============ LABORATORIUM SECTION (REVISI: GAMBAR + KONEKTOR) ============ */
+        .lab { background: var(--bg); }
+        .lab-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0; border-top: 2px solid var(--navy); border-bottom: 2px solid var(--navy); }
+        .lab-item { padding: 0; border-right: 1px solid var(--border); border-bottom: 1px solid var(--border); position: relative; }
+        .lab-item:nth-child(3n) { border-right: 0; }
+        .lab-item:nth-last-child(-n+3) { border-bottom: 0; }
+        .lab-img { aspect-ratio: 4/3; overflow: hidden; background: var(--cream); }
+        .lab-img img { width: 100%; height: 100%; object-fit: cover; transition: transform .4s; }
+        .lab-item:hover .lab-img img { transform: scale(1.05); }
+        .lab-body { padding: 18px 22px 22px; }
+        .lab-code { font-family: 'Source Serif 4', serif; font-size: 11px; font-weight: 700; color: var(--gold-dark); letter-spacing: .15em; }
+        .lab-body h3 { font-family: 'Source Serif 4', serif; font-size: 17px; color: var(--navy); margin: 4px 0 6px; font-weight: 700; }
+        .lab-body p { font-size: 12.5px; color: var(--text-muted); line-height: 1.5; }
+
+        /* ============ FOOTER ============ */
+        footer { background: var(--navy-deep); color: rgba(255,255,255,0.75); padding: 56px 0 28px; font-size: 13.5px; }
+        footer h5 { font-family: 'Source Serif 4', serif; font-size: 15px; color: #fff; margin-bottom: 16px; }
+        footer a { color: rgba(255,255,255,0.75); }
+        footer a:hover { color: var(--gold); }
+        .footer-grid { display: grid; grid-template-columns: 1.4fr 1fr 1fr 1fr; gap: 48px; margin-bottom: 40px; }
+        .footer-bot { border-top: 1px solid rgba(255,255,255,0.12); padding-top: 22px; display: flex; justify-content: space-between; font-size: 12px; color: rgba(255,255,255,0.55); }
+
+        @media (max-width: 900px) {
+            .hero-grid { grid-template-columns: 1fr; }
+            .hero-title { font-size: 36px; }
+            .hero-stats { grid-template-columns: repeat(2, 1fr); }
+            .hero-stat { border-bottom: 1px solid var(--border); }
+            .berita-grid { grid-template-columns: 1fr; }
+            .prodi-list, .lab-grid { grid-template-columns: 1fr; }
+            .prodi-item, .lab-item { border-right: 0; border-bottom: 1px solid var(--border); }
+            .footer-grid { grid-template-columns: 1fr 1fr; }
+            .section-title { font-size: 28px; }
+        }
+    </style>
+</head>
+<body>
+
+<!-- utility bar -->
+<div class="utility-bar">
+    <div class="container">
+        <div><i style="color:var(--gold);">●</i> &nbsp; Universitas Negeri Gorontalo</div>
+        <div>
+            <a href="https://www.ung.ac.id/" target="_blank">UNG</a>
+            <a href="https://ft.ung.ac.id/" target="_blank">Fakultas Teknik</a>
+            <a href="https://siat.ung.ac.id/" target="_blank">SIAT</a>
+        </div>
+    </div>
+</div>
+
+<header class="header">
+    <div class="container">
+        <div class="brand">
+            <div class="brand-logo"><img src="assets/logo.jpg" alt="Logo Jurusan"></div>
+            <div class="brand-text">
+                <h1>Jurusan Teknik Elektro &amp; Komputer</h1>
+                <span>Fakultas Teknik &bull; Universitas Negeri Gorontalo</span>
+            </div>
+        </div>
+        <nav>
+            <ul class="nav-menu">
+                <li class="active"><a href="index.html">Beranda</a></li>
+                <li>
+                    <a href="profil.html">Profil</a>
+                    <div class="dropdown">
+                        <a href="profil.html#sejarah">Sejarah</a>
+                        <a href="profil.html#visi-misi">Visi &amp; Misi</a>
+                        <a href="profil.html#struktur">Struktur Organisasi</a>
+                        <a href="profil.html#pimpinan">Pimpinan Jurusan</a>
+                        <div class="dd-sep"></div>
+                        <div class="dd-label">Tenaga Pendidik</div>
+                        <a href="profil.html#dosen">Dosen Teknik Elektro</a>
+                        <a href="profil.html#dosen">Dosen Teknik Komputer</a>
+                        <a href="profil.html#dosen">Dosen Pend. Vok. Elektro</a>
+                    </div>
+                </li>
+                <li>
+                    <a href="prodi.html">Program Studi</a>
+                    <div class="dropdown">
+                        <a href="prodi.html#te">S1 Teknik Elektro</a>
+                        <a href="prodi.html#tk">S1 Teknik Komputer</a>
+                        <a href="prodi.html#pve">S1 Pendidikan Vokasional Elektro</a>
+                    </div>
+                </li>
+                <li>
+                    <a href="akademik.html">Akademik</a>
+                    <div class="dropdown">
+                        <a href="akademik.html#kurikulum-te">Kurikulum OBE — Teknik Elektro</a>
+                        <a href="akademik.html#kurikulum-kkni">Kurikulum KKNI</a>
+                        <a href="akademik.html#kurikulum-tk">Kurikulum OBE — Teknik Komputer</a>
+                        <a href="akademik.html#sop">Panduan Akademik</a>
+                        <a href="akademik.html#kalender">Kalender Akademik</a>
+                    </div>
+                </li>
+                <li><a href="penelitian.html">Penelitian</a></li>
+                <li><a href="pengabdian.html">Pengabdian</a></li>
+                <li><a href="berita.html">Berita</a></li>
+                <li><a href="kontak.html">Kontak</a></li>
+            </ul>
+        </nav>
+    </div>
+</header>
+
+<!-- HERO (REVISI: hapus kotak virtual lab & program studi dari kanan) -->
+<section class="hero">
+    <div class="container">
+        <div class="hero-grid">
+            <div>
+                <div class="hero-eyebrow">Jurusan Teknik Elektro &amp; Komputer</div>
+                <h1 class="hero-title">Membangun <em>Insan Teknik</em> Yang Berdaya Saing Global</h1>
+                <p class="hero-lead">Tiga program studi sarjana yang mengintegrasikan pendidikan, penelitian, dan pengabdian di bidang elektro, komputer, dan pendidikan vokasional — untuk kawasan Indonesia Timur.</p>
+                <div class="hero-cta">
+                    <a href="profil.html" class="btn btn-primary">Tentang Jurusan</a>
+                    <a href="prodi.html" class="btn btn-outline">Program Studi</a>
+                </div>
+            </div>
+            <div class="hero-stage">
+                <div class="hero-frame" id="heroFrame">
+                    <!-- slides injected by JS -->
+                </div>
+                <div class="hero-nav">
+                    <button id="heroPrev" aria-label="Sebelumnya">&#10094;</button>
+                    <button id="heroNext" aria-label="Berikutnya">&#10095;</button>
+                </div>
+                <div class="hero-dots" id="heroDots"></div>
+            </div>
+        </div>
+        <div class="hero-stats" id="heroStats">
+            <div class="hero-stat"><div class="hero-stat-num">—</div><div class="hero-stat-lbl">Memuat...</div></div>
+        </div>
+    </div>
+</section>
+
+<!-- PRODI (REVISI: TAMBAH VISI) -->
+<section class="prodi">
+    <div class="container">
+        <div class="section-head">
+            <div class="desc">
+                <div class="section-eyebrow">Program Studi</div>
+                <h2 class="section-title">Tiga Program Studi Sarjana</h2>
+                <p class="section-desc">Kurikulum berbasis OBE dan KKNI, dengan dosen berpengalaman dan fasilitas laboratorium yang lengkap.</p>
+            </div>
+        </div>
+        <div class="prodi-list" id="prodiList">
+            <div class="prodi-item"><div class="prodi-num">—</div><h3>Memuat data program studi...</h3></div>
+        </div>
+    </div>
+</section>
+
+<!-- BERITA (REVISI: GAMBAR DI SIDE UPDATE TERKINI) -->
+<section class="berita">
+    <div class="container">
+        <div class="section-head">
+            <div class="desc">
+                <div class="section-eyebrow">Berita &amp; Informasi</div>
+                <h2 class="section-title">Kabar Jurusan</h2>
+                <p class="section-desc">Update kegiatan, prestasi, dan pengumuman terbaru dari Jurusan Teknik Elektro dan Komputer.</p>
+            </div>
+        </div>
+        <div class="berita-grid">
+            <article class="berita-main" id="beritaMain">
+                <div class="berita-main-img">
+                    <img src="" alt="Berita utama" id="beritaMainImg">
+                </div>
+                <div class="berita-main-body">
+                    <span class="berita-main-tag">Berita Utama</span>
+                    <div class="berita-meta">Memuat...</div>
+                    <h2>Sedang mengambil data berita utama...</h2>
+                    <p>Silakan cek jaringan Anda.</p>
+                    <a href="berita.html" class="berita-main-link">Baca selengkapnya &rarr;</a>
+                </div>
+            </article>
+            <div class="berita-side">
+                <div class="berita-side-head">
+                    <h3>Update Terkini</h3>
+                    <span class="sub" id="beritaCount">—</span>
+                </div>
+                <div class="berita-side-list" id="beritaSide">
+                    <div class="berita-side-item">
+                        <div class="berita-side-img" style="background:var(--cream);"></div>
+                        <div>
+                            <div class="date">Memuat...</div>
+                            <h4>Sedang mengambil data berita...</h4>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- LABORATORIUM (REVISI: GAMBAR DARI WEB ASLI, KONEKTOR ANTAR LAB) -->
+<section class="lab">
+    <div class="container">
+        <div class="section-head">
+            <div class="desc">
+                <div class="section-eyebrow">Fasilitas</div>
+                <h2 class="section-title">Laboratorium &amp; Ruang Praktikum</h2>
+                <p class="section-desc">Enam laboratorium dengan peralatan terapan untuk mendukung kegiatan praktikum, penelitian, dan pengabdian.</p>
+            </div>
+        </div>
+        <div class="lab-grid">
+            <div class="lab-item">
+                <div class="lab-img"><img src="assets/lab-tenaga-listrik.jpg" alt="Laboratorium Dasar Teknik Tenaga Listrik"></div>
+                <div class="lab-body">
+                    <div class="lab-code">LAB / 01</div>
+                    <h3>Dasar Teknik Tenaga Listrik</h3>
+                    <p>Praktikum dasar kelistrikan, pengukuran, dan mesin listrik.</p>
+                </div>
+            </div>
+            <div class="lab-item">
+                <div class="lab-img"><img src="assets/lab-elektronika.jpg" alt="Laboratorium Elektronika"></div>
+                <div class="lab-body">
+                    <div class="lab-code">LAB / 02</div>
+                    <h3>Elektronika</h3>
+                    <p>Rangkaian analog, digital, mikroprosesor, dan sistem tertanam.</p>
+                </div>
+            </div>
+            <div class="lab-item">
+                <div class="lab-img"><img src="assets/lab-kontrol.jpg" alt="Laboratorium Sistem Kontrol"></div>
+                <div class="lab-body">
+                    <div class="lab-code">LAB / 03</div>
+                    <h3>Sistem Kontrol</h3>
+                    <p>Kendali otomatis, PLC, dan instrumentasi industri.</p>
+                </div>
+            </div>
+            <div class="lab-item">
+                <div class="lab-img"><img src="assets/lab-komputer.jpg" alt="Laboratorium Komputer"></div>
+                <div class="lab-body">
+                    <div class="lab-code">LAB / 04</div>
+                    <h3>Komputer</h3>
+                    <p>Pemrograman, jaringan, basisdata, dan kecerdasan buatan.</p>
+                </div>
+            </div>
+            <div class="lab-item">
+                <div class="lab-img"><img src="assets/lab-bahasa.jpg" alt="Laboratorium Bahasa"></div>
+                <div class="lab-body">
+                    <div class="lab-code">LAB / 05</div>
+                    <h3>Bahasa</h3>
+                    <p>Pengembangan kemampuan bahasa Inggris dan komunikasi teknis.</p>
+                </div>
+            </div>
+            <div class="lab-item">
+                <div class="lab-img" style="background:linear-gradient(135deg,var(--navy) 0%, var(--navy-deep) 100%); display:flex;align-items:center;justify-content:center;color:var(--gold);font-family:'Source Serif 4', serif;font-size:14px;font-weight:600;letter-spacing:.1em;">EDU&nbsp;CENTER</div>
+                <div class="lab-body">
+                    <div class="lab-code">FASILITAS / 06</div>
+                    <h3>Pendidikan Vokasional</h3>
+                    <p>Workshop dan teaching factory untuk calon pendidik teknik.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<footer>
+    <div class="container">
+        <div class="footer-grid">
+            <div>
+                <h5>Jurusan Teknik Elektro &amp; Komputer</h5>
+                <p>Fakultas Teknik, Universitas Negeri Gorontalo<br>Jl. Jend. Sudirman No. 6, Kota Gorontalo 96128<br>Telp: (0435) 821125</p>
+            </div>
+            <div>
+                <h5>Program Studi</h5>
+                <p><a href="prodi.html#te">S1 Teknik Elektro</a></p>
+                <p><a href="prodi.html#tk">S1 Teknik Komputer</a></p>
+                <p><a href="prodi.html#pve">S1 Pend. Vok. Elektro</a></p>
+            </div>
+            <div>
+                <h5>Akademik</h5>
+                <p><a href="akademik.html#kurikulum-te">Kurikulum OBE &mdash; TE</a></p>
+                <p><a href="akademik.html#kurikulum-kkni">Kurikulum KKNI</a></p>
+                <p><a href="akademik.html#kurikulum-tk">Kurikulum OBE &mdash; TK</a></p>
+            </div>
+            <div>
+                <h5>Tautan</h5>
+                <p><a href="https://www.ung.ac.id/" target="_blank">UNG</a></p>
+                <p><a href="https://ft.ung.ac.id/" target="_blank">Fakultas Teknik</a></p>
+                <p><a href="https://siat.ung.ac.id/" target="_blank">SIAT</a></p>
+            </div>
+        </div>
+        <div class="footer-bot">
+            <div>&copy; 2026 Jurusan Teknik Elektro dan Komputer &mdash; Fakultas Teknik UNG</div>
+            <div>Diperbarui: 25 Juli 2026</div>
+        </div>
+    </div>
+</footer>
+
+<script>
+    const API = 'https://temp.ikad-developer.my.id/elektro';
+
+    // VISI prodi (manual — bukan dari API)
+    const VISI = {
+        'teknik elektro': 'Mengembangkan Teknologi Bidang Elektro Yang Berorientasi Pada Energi Baru Terbarukan Berbasis Potensi Kawasan',
+        'teknik komputer': 'Mengembangkan Teknologi Sistem Komputer Berorientasi Sistem Tertanam Yang Berdampak Pada Kemajuan Kawasan'
+    };
+
+    // ---- HERO SLIDER ----
+    (function() {
+        const frame = document.getElementById('heroFrame');
+        const dotsWrap = document.getElementById('heroDots');
+        if (!frame) return;
+        fetch(API + '/list-gambar-beranda')
+            .then(r => r.json())
+            .then(data => {
+                if (!Array.isArray(data) || !data.length) return;
+                const slides = data.slice(0, 6).map((it, i) => `
+                    <div class="hero-slide ${i === 0 ? 'active' : ''}">
+                        <img src="${it.gambar}" alt="${it.judul}">
+                        <div class="hero-caption">
+                            <span class="hero-caption-tag">FOTO</span>
+                            <div class="hero-caption-text">${it.judul}</div>
+                        </div>
+                    </div>
+                `).join('');
+                frame.innerHTML = slides;
+                const dots = data.slice(0, 6).map((_, i) => `<div class="dot ${i === 0 ? 'on' : ''}" data-i="${i}"></div>`).join('');
+                dotsWrap.innerHTML = dots;
+                let idx = 0;
+                const total = 6;
+                const show = (n) => {
+                    document.querySelectorAll('.hero-slide').forEach((s, i) => s.classList.toggle('active', i === n));
+                    document.querySelectorAll('.hero-dots .dot').forEach((d, i) => d.classList.toggle('on', i === n));
+                    idx = n;
+                };
+                const next = () => show((idx + 1) % total);
+                const prev = () => show((idx - 1 + total) % total);
+                document.getElementById('heroNext').onclick = next;
+                document.getElementById('heroPrev').onclick = prev;
+                dotsWrap.querySelectorAll('.dot').forEach(d => d.onclick = () => show(parseInt(d.dataset.i)));
+                setInterval(next, 5000);
+            });
+    })();
+
+    // ---- HERO STATS ----
+    (function() {
+        const wrap = document.getElementById('heroStats');
+        if (!wrap) return;
+        Promise.all([
+            fetch(API + '/program-studi').then(r => r.json()),
+            fetch(API + '/daftar-dosen').then(r => r.json()),
+            fetch(API + '/statistik-mahasiswa').then(r => r.json()),
+            fetch(API + '/data-alumni').then(r => r.json())
+        ]).then(([prodi, dosen, stat]) => {
+            const totalDosen = Array.isArray(dosen) ? dosen.length : 0;
+            const statFilled = Array.isArray(stat) ? stat.filter(s => (s['jumlah-masuk'] || 0) > 0) : [];
+            const latest = statFilled.length ? statFilled[statFilled.length - 1] : (Array.isArray(stat) && stat.length ? stat[stat.length - 1] : null);
+            const mhsAktif = latest ? (latest['jumlah-masuk'] || 0) : 0;
+            const totalLulus = Array.isArray(stat) ? stat.reduce((s, x) => s + (x['jumlah-lulus'] || 0), 0) : 0;
+            const prodiCount = Array.isArray(prodi) ? prodi.length : 0;
+            wrap.innerHTML = `
+                <div class="hero-stat"><div class="hero-stat-num">${prodiCount}</div><div class="hero-stat-lbl">Program Studi</div></div>
+                <div class="hero-stat"><div class="hero-stat-num">${totalDosen}</div><div class="hero-stat-lbl">Tenaga Pendidik</div></div>
+                <div class="hero-stat"><div class="hero-stat-num">${mhsAktif}</div><div class="hero-stat-lbl">Mahasiswa Baru ${latest ? latest.tahun : ''}</div></div>
+                <div class="hero-stat"><div class="hero-stat-num">${totalLulus}</div><div class="hero-stat-lbl">Total Alumni</div></div>
+            `;
+        });
+    })();
+
+    // ---- PRODI LIST (DENGAN VISI) ----
+    (function() {
+        const list = document.getElementById('prodiList');
+        if (!list) return;
+        fetch(API + '/program-studi')
+            .then(r => r.json())
+            .then(data => {
+                if (!Array.isArray(data) || !data.length) return;
+                list.innerHTML = data.map((item, i) => {
+                    const [name, info] = Object.entries(item)[0];
+                    const nameKey = name.toLowerCase();
+                    let visi = '';
+                    for (const k in VISI) { if (nameKey.includes(k)) { visi = VISI[k]; break; } }
+                    return `
+                        <div class="prodi-item">
+                            <div class="prodi-num">${String(i + 1).padStart(2, '0')}</div>
+                            <div class="prodi-strata">Sarjana &mdash; S1</div>
+                            <h3>${name.replace(/^S1\s/, '')}</h3>
+                            ${visi ? `<div class="prodi-visi">${visi}</div>` : ''}
+                            <div class="prodi-kaprodi">
+                                <strong>${info.kaprodi || '—'}</strong>
+                                ${info.keterangan || 'Ketua Program Studi'} &middot; ${info['bidang-keahlian'] || ''}
+                            </div>
+                        </div>
+                    `;
+                }).join('');
+            });
+    })();
+
+    // ---- BERITA FEATURED ----
+    (function() {
+        const main = document.getElementById('beritaMain');
+        if (!main) return;
+        fetch(API + '/list-berita')
+            .then(r => r.json())
+            .then(data => {
+                if (!Array.isArray(data) || !data.length) return;
+                const item = data[0];
+                const d = new Date(item.tanggal);
+                const dateStr = d.toLocaleDateString('id-ID', { day: 'numeric', month: 'long', year: 'numeric' });
+                document.getElementById('beritaMainImg').src = item.gambar;
+                document.getElementById('beritaMainImg').alt = item.judul;
+                main.querySelector('.berita-meta').textContent = dateStr + ' • Berita Utama';
+                main.querySelector('h2').textContent = item.judul;
+            });
+    })();
+
+    // ---- BERITA SIDE: UPDATE TERKINI (DENGAN GAMBAR) ----
+    (function() {
+        const side = document.getElementById('beritaSide');
+        const count = document.getElementById('beritaCount');
+        if (!side) return;
+        fetch(API + '/list-berita')
+            .then(r => r.json())
+            .then(data => {
+                if (!Array.isArray(data) || !data.length) return;
+                const items = data.slice(1, 6);
+                side.innerHTML = items.map(it => {
+                    const d = new Date(it.tanggal);
+                    const ds = d.toLocaleDateString('id-ID', { day: 'numeric', month: 'short', year: 'numeric' });
+                    return `
+                        <a href="#" class="berita-side-item">
+                            <div class="berita-side-img"><img src="${it.gambar}" alt=""></div>
+                            <div>
+                                <div class="date">${ds}</div>
+                                <h4>${it.judul}</h4>
+                            </div>
+                        </a>
+                    `;
+                }).join('');
+                count.textContent = `${items.length} berita`;
+            });
+    })();
+</script>
+
+</body>
+</html>
