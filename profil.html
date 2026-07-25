@@ -52,7 +52,12 @@
         .dropdown a { display: block; padding: 9px 18px; font-size: 13.5px; color: var(--text); }
         .dropdown a:hover { background: var(--soft); color: var(--accent-dark); }
         .dd-sep { height: 1px; background: var(--border); margin: 6px 12px; }
-        .dd-label { padding: 6px 18px 4px; font-size: 11px; text-transform: uppercase; letter-spacing: .08em; color: var(--text-muted); }
+        .dd-label { display: block; padding: 8px 18px 4px; font-size: 11px; font-weight: 700; color: var(--text-muted); text-transform: uppercase; letter-spacing: .08em; }
+        .dd-group { padding: 4px 0; }
+        .dd-header { display: block; padding: 8px 18px 4px; font-size: 11.5px; font-weight: 700; color: var(--navy); text-transform: uppercase; letter-spacing: .06em; }
+        .dd-group a { padding-left: 18px; padding-right: 18px; }
+        /* Dropdown khusus Kurikulum (lebih lebar karena isi nested) */
+        .nav-menu > li:has(.dd-group) .dropdown { min-width: 280px; }
 
         /* ============ HERO SECTION (REVISI) ============ */
         .hero { background: var(--soft); padding: 56px 0 0; border-bottom: 1px solid var(--border); }
@@ -270,41 +275,51 @@
         </div>
         <nav>
             <ul class="nav-menu">
-                <li class="active"><a href="index.html">Beranda</a></li>
-                <li>
+                <li><a href="index.html">Beranda</a></li>
+                <li class="active">
                     <a href="profil.html">Profil</a>
                     <div class="dropdown">
                         <a href="profil.html#sejarah">Sejarah</a>
                         <a href="profil.html#visi-misi">Visi &amp; Misi</a>
                         <a href="profil.html#struktur">Struktur Organisasi</a>
-                        <a href="profil.html#pimpinan">Pimpinan Jurusan</a>
-                        <div class="dd-sep"></div>
-                        <div class="dd-label">Tenaga Pendidik</div>
-                        <a href="profil.html#dosen">Dosen Teknik Elektro</a>
-                        <a href="profil.html#dosen">Dosen Teknik Komputer</a>
+                        <a href="dosen.html">Tenaga Pendidik</a>
                     </div>
                 </li>
                 <li>
-                    <a href="prodi.html">Program Studi</a>
+                    <a href="kurikulum.html">Kurikulum</a>
                     <div class="dropdown">
-                        <a href="prodi.html#te">S1 Teknik Elektro</a>
-                        <a href="prodi.html#tk">S1 Teknik Komputer</a>
+                        <div class="dd-group">
+                            <div class="dd-header">S1 Pendidikan Vokasional Rekayasa Elektro</div>
+                            <a href="kurikulum.html#pv-2025">Kurikulum 2025</a>
+                        </div>
+                        <div class="dd-sep"></div>
+                        <div class="dd-group">
+                            <div class="dd-header">S1 Teknik Elektro</div>
+                            <a href="kurikulum.html#te-2025">Kurikulum 2025</a>
+                            <a href="kurikulum.html#te-2017">Kurikulum 2017</a>
+                        </div>
+                        <div class="dd-sep"></div>
+                        <div class="dd-group">
+                            <div class="dd-header">S1 Teknik Komputer</div>
+                            <a href="kurikulum.html#tk-2025">Kurikulum 2025</a>
+                        </div>
                     </div>
                 </li>
                 <li>
                     <a href="akademik.html">Akademik</a>
                     <div class="dropdown">
-                        <a href="akademik.html#kurikulum-te">Kurikulum OBE — Teknik Elektro</a>
-                        <a href="akademik.html#kurikulum-kkni">Kurikulum KKNI</a>
-                        <a href="akademik.html#kurikulum-tk">Kurikulum OBE — Teknik Komputer</a>
-                        <a href="akademik.html#sop">Panduan Akademik</a>
-                        <a href="akademik.html#kalender">Kalender Akademik</a>
+                        <a href="akademik.html#panduan-sop">Dokumen Panduan dan SOP</a>
+                        <a href="akademik.html#penjamin-mutu">Dokumen Dan Penjamin Mutu</a>
+                        <a href="akademik.html#dokumen-kurikulum">Dokumen Kurikulum</a>
+                        <a href="akademik.html#akreditas">Dokumen Akreditas</a>
+                        <a href="akademik.html#laporan-kinerja">Laporan Kinerja</a>
                     </div>
                 </li>
-                <li><a href="penelitian.html">Penelitian</a></li>
-                <li><a href="pengabdian.html">Pengabdian</a></li>
+                <li><a href="mahasiswa.html">Mahasiswa</a></li>
+                <li><a href="publikasi.html">Publikasi</a></li>
+                <li><a href="fasilitas.html">Fasilitas</a></li>
+                <li><a href="alumni.html">Alumni</a></li>
                 <li><a href="berita.html">Berita</a></li>
-                <li><a href="kontak.html">Kontak</a></li>
             </ul>
         </nav>
     </div>
