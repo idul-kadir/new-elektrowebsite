@@ -1,0 +1,23 @@
+/* ============ DOSEN PAGE STYLES ============ */
+.dosen-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 20px; }
+.dosen-card { background: #fff; border: 1px solid var(--border); padding: 24px 16px; text-align: center; transition: border-color .15s, box-shadow .15s; }
+.dosen-card:hover { border-color: var(--accent); box-shadow: 0 4px 14px rgba(15, 35, 70, 0.06); }
+.dosen-foto-wrap { width: 120px; height: 152px; margin: 0 auto 18px; position: relative; background: var(--soft); overflow: hidden; }
+.dosen-foto { width: 100%; height: 100%; object-fit: cover; display: block; }
+.dosen-foto-fallback { position: absolute; inset: 0; display: none; align-items: center; justify-content: center; font-family: 'Source Serif 4', serif; font-weight: 700; font-size: 32px; color: var(--navy); background: var(--soft); }
+.dosen-body { text-align: center; }
+.dosen-nama { font-family: 'Source Serif 4', serif; font-weight: 600; color: var(--navy); font-size: 14.5px; line-height: 1.35; margin-bottom: 4px; }
+.dosen-bidang { font-size: 12.5px; color: var(--text-muted); font-style: italic; margin-bottom: 8px; }
+.dosen-scholar { display: inline-flex; align-items: center; justify-content: center; width: 26px; height: 26px; color: var(--navy); border: 1px solid var(--border); border-radius: 50%; transition: color .15s, border-color .15s; }
+.dosen-scholar:hover { color: var(--accent); border-color: var(--accent); }
+.dosen-scholar svg { width: 12px; height: 12px; }
+
+@media (max-width: 900px) {
+    .dosen-grid { grid-template-columns: repeat(2, 1fr); gap: 12px; }
+    .dosen-card { padding: 18px 10px; }
+    .dosen-foto-wrap { width: 88px; height: 112px; }
+    .dosen-nama { font-size: 13px; }
+}
+@media (max-width: 420px) {
+    .dosen-grid { grid-template-columns: 1fr 1fr; }
+}

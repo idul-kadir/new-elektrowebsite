@@ -646,12 +646,8 @@
             .then(r => r.json())
             .then(data => {
                 if (!Array.isArray(data) || !data.length) return;
-                // Filter: hanya prodi yang tercantum di website resmi
-                const filtered = data.filter(item => {
-                    const name = Object.keys(item)[0].toLowerCase();
-                    return !name.includes('vokasional');
-                });
-                list.innerHTML = filtered.map((item, i) => {
+                // Tampilkan semua prodi
+                list.innerHTML = data.map((item, i) => {
                     const [name, info] = Object.entries(item)[0];
                     const nameKey = name.toLowerCase();
                     let visi = '';

@@ -3,13 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tenaga Pendidik — Jurusan Teknik Elektro dan Komputer UNG</title>
-    <meta name="description" content="Daftar tenaga pendidik (dosen) Jurusan Teknik Elektro dan Komputer, Fakultas Teknik, Universitas Negeri Gorontalo.">
+    <title>Jurusan Teknik Elektro dan Komputer - Universitas Negeri Gorontalo</title>
+    <link rel="icon" href="assets/logo.jpg" type="image/jpeg">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,400;8..60,600;8..60,700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-<style>
-        :root {
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Source+Serif+4:ital,wght@0,400;0,600;0,700;1,600&display=swap" rel="stylesheet">
+    <style>
+:root {
             --navy: #1E3A8A;
             --navy-deep: #0F1E47;
             --navy-light: #3B82F6;
@@ -108,10 +108,6 @@
         .section-desc { font-size: 15.5px; color: var(--text-muted); max-width: 720px; }
         .section-head { display: flex; justify-content: space-between; align-items: flex-end; gap: 32px; margin-bottom: 48px; flex-wrap: wrap; }
         .section-head .desc { flex: 1; min-width: 300px; }
-        .section-head-split { align-items: flex-start; }
-        .section-head-left { flex: 0 0 auto; }
-        .section-head-right { flex: 0 0 auto; text-align: right; }
-        .section-head-right .section-title { margin-bottom: 0; }
 
         /* ============ PRODI SECTION ============ */
         .prodi { background: var(--bg); }
@@ -188,80 +184,6 @@
             .section-title { font-size: 28px; }
         }
     
-        /* ============ PROFIL PAGE SPECIFIC ============ */
-        .page-banner { background: var(--navy); color: #fff; padding: 60px 0 50px; border-bottom: 4px solid var(--accent); }
-        .page-banner .container { display: flex; align-items: flex-end; justify-content: space-between; gap: 32px; flex-wrap: wrap; }
-        .breadcrumb { font-size: 12px; color: rgba(255,255,255,0.7); letter-spacing: .05em; text-transform: uppercase; margin-bottom: 12px; }
-        .breadcrumb a { color: rgba(255,255,255,0.7); }
-        .breadcrumb a:hover { color: var(--accent); }
-        .page-banner h1 { font-family: 'Source Serif 4', serif; font-size: 42px; font-weight: 700; line-height: 1.15; max-width: 720px; }
-        .page-banner .lede { color: rgba(255,255,255,0.85); max-width: 540px; font-size: 15px; margin-top: 12px; }
-        .page-banner-meta { font-size: 12px; color: rgba(255,255,255,0.65); text-align: right; }
-        .page-banner-meta strong { display: block; color: var(--accent); font-size: 28px; font-family: 'Source Serif 4', serif; font-weight: 700; }
-
-        #sejarah { background: var(--soft); }
-        .sejarah-grid { display: grid; grid-template-columns: 1.1fr 1fr; gap: 56px; align-items: start; }
-        .sejarah-prose { font-size: 15.5px; color: var(--text); }
-        .sejarah-prose p { margin-bottom: 16px; }
-        .sejarah-prose strong { color: var(--navy); }
-        .ketua-list { background: #fff; border: 1px solid var(--border); border-left: 4px solid var(--accent); }
-        .ketua-list h4 { background: var(--navy); color: #fff; font-family: 'Source Serif 4', serif; padding: 16px 22px; font-size: 16px; }
-        .ketua-list table { width: 100%; border-collapse: collapse; font-size: 14px; }
-        .ketua-list th, .ketua-list td { padding: 10px 22px; text-align: left; border-bottom: 1px solid var(--border); }
-        .ketua-list th { background: var(--soft); font-weight: 600; font-size: 12px; letter-spacing: .05em; text-transform: uppercase; color: var(--text-muted); }
-        .ketua-list td:first-child { color: var(--accent-dark); font-family: 'Source Serif 4', serif; font-weight: 600; width: 90px; }
-
-        #visi-misi .vm-grid { display: grid; grid-template-columns: 1fr 1.2fr; gap: 48px; align-items: start; }
-        .vm-card { background: var(--soft); border-top: 4px solid var(--accent); padding: 36px 32px; }
-        .vm-card .lbl { font-size: 12px; font-weight: 600; color: var(--accent-dark); letter-spacing: .15em; text-transform: uppercase; margin-bottom: 14px; }
-        .vm-card h3 { font-family: 'Source Serif 4', serif; font-size: 22px; color: var(--navy); line-height: 1.4; margin-bottom: 18px; }
-        .vm-misi { background: #fff; border: 1px solid var(--border); border-left: 4px solid var(--navy); }
-        .vm-misi h4 { padding: 22px 28px 14px; font-family: 'Source Serif 4', serif; font-size: 20px; color: var(--navy); border-bottom: 1px solid var(--border); }
-        .vm-misi ol { padding: 18px 28px 26px 50px; }
-        .vm-misi li { font-size: 14.5px; margin-bottom: 12px; }
-        .vm-misi li strong { color: var(--navy); display: block; margin-bottom: 2px; }
-
-        .tujuan { margin-top: 36px; background: var(--navy); color: #fff; padding: 36px 40px; }
-        .tujuan h4 { font-family: 'Source Serif 4', serif; font-size: 22px; margin-bottom: 18px; }
-        .tujuan ul { list-style: none; column-count: 2; column-gap: 32px; }
-        .tujuan li { padding: 6px 0 6px 24px; position: relative; font-size: 14px; line-height: 1.5; }
-        .tujuan li::before { content: "✓"; position: absolute; left: 0; color: var(--accent); font-weight: 700; }
-
-        #struktur { background: var(--soft); }
-        .pimpinan-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 24px; }
-        .pimpinan-card { background: #fff; border: 1px solid var(--border); padding: 24px; transition: border-color .15s, box-shadow .15s; }
-        .pimpinan-card:hover { border-color: var(--accent); box-shadow: 0 4px 14px rgba(15, 35, 70, 0.06); }
-        .pimpinan-foto-wrap { width: 96px; height: 96px; margin: 0 auto 18px; position: relative; background: var(--soft); border-radius: 50%; overflow: hidden; }
-        .pimpinan-foto { width: 100%; height: 100%; object-fit: cover; display: block; }
-        .pimpinan-foto-fallback { position: absolute; inset: 0; display: none; align-items: center; justify-content: center; font-family: 'Source Serif 4', serif; font-weight: 700; font-size: 28px; color: var(--navy); background: var(--soft); }
-        .pimpinan-body { text-align: center; }
-        .pimpinan-jabatan { font-size: 11px; font-weight: 600; color: var(--accent-dark); letter-spacing: .12em; text-transform: uppercase; margin-bottom: 8px; line-height: 1.4; min-height: 30px; display: flex; align-items: center; justify-content: center; }
-        .pimpinan-nama { font-family: 'Source Serif 4', serif; font-weight: 600; color: var(--navy); font-size: 15.5px; line-height: 1.35; margin-bottom: 6px; }
-        .pimpinan-bidang { font-size: 13px; color: var(--text-muted); font-style: italic; line-height: 1.4; }
-        .pimpinan-scholar { display: inline-flex; align-items: center; justify-content: center; width: 28px; height: 28px; margin-top: 10px; color: var(--navy); border: 1px solid var(--border); border-radius: 50%; transition: color .15s, border-color .15s; }
-        .pimpinan-scholar:hover { color: var(--accent); border-color: var(--accent); }
-
-        @media (max-width: 900px) {
-            .sejarah-grid, #visi-misi .vm-grid { grid-template-columns: 1fr; }
-            .tujuan ul { column-count: 1; }
-            .page-banner h1 { font-size: 32px; }
-            .section-title { font-size: 28px; }
-        }
-
-    
-        /* ============ DOSEN GRID ============ */
-        #dosen .dosen-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 20px; }
-        .dosen-card { background: #fff; border: 1px solid var(--border); padding: 20px 16px; text-align: center; transition: border-color .15s, box-shadow .15s; }
-        .dosen-card:hover { border-color: var(--accent); box-shadow: 0 4px 14px rgba(15, 35, 70, 0.06); }
-        .dosen-foto-wrap { width: 100px; height: 130px; margin: 0 auto 14px; position: relative; background: var(--soft); overflow: hidden; }
-        .dosen-foto { width: 100%; height: 100%; object-fit: cover; object-position: top; display: block; }
-        .dosen-foto-fallback { position: absolute; inset: 0; display: none; align-items: center; justify-content: center; font-family: 'Source Serif 4', serif; font-weight: 700; font-size: 28px; color: var(--navy); background: var(--soft); }
-        .dosen-nama { font-family: 'Source Serif 4', serif; font-weight: 600; color: var(--navy); font-size: 14px; line-height: 1.35; margin-bottom: 4px; min-height: 38px; }
-        .dosen-bidang { font-size: 12px; color: var(--text-muted); font-style: italic; line-height: 1.4; min-height: 34px; }
-        .dosen-scholar { display: inline-flex; align-items: center; justify-content: center; width: 28px; height: 28px; margin-top: 8px; color: var(--navy); border: 1px solid var(--border); border-radius: 50%; transition: color .15s, border-color .15s; }
-        .dosen-scholar:hover { color: var(--accent); border-color: var(--accent); }
-
-
         /* ============ HAMBURGER (mobile) ============ */
         .hamburger { display: none; background: none; border: 0; padding: 8px; cursor: pointer; color: var(--navy); }
         .hamburger svg { display: block; }
@@ -375,12 +297,9 @@
             .pimpinan-grid { grid-template-columns: 1fr; }
             .dosen-grid { grid-template-columns: 1fr 1fr; }
         }
-
-</style>
+    </style>
 </head>
 <body>
-
-<!-- utility bar -->
 <div class="utility-bar">
     <div class="container">
         <div><i style="color:var(--accent);">●</i> &nbsp; Universitas Negeri Gorontalo</div>
@@ -403,8 +322,8 @@
         </div>
         <nav>
             <ul class="nav-menu" id="primary-nav">
-                <li><a href="index.html">Beranda</a></li>
-                <li class="active">
+                <li class="active"><a href="index.html">Beranda</a></li>
+                <li>
                     <a href="profil.html">Profil</a>
                     <div class="dropdown">
                         <a href="profil.html#sejarah">Sejarah</a>
@@ -461,160 +380,3 @@
         <div class="backdrop" id="menuBackdrop"></div>
     </div>
 </header>
-
-<!-- page banner -->
-<section class="page-banner">
-    <div class="container">
-        <div>
-            <div class="breadcrumb"><a href="index.html">Beranda</a> &nbsp;&rsaquo;&nbsp; <a href="profil.html">Profil</a> &nbsp;&rsaquo;&nbsp; Tenaga Pendidik</div>
-            <h1>Tenaga Pendidik</h1>
-            <p class="lede">Daftar dosen Jurusan Teknik Elektro dan Komputer, Fakultas Teknik, Universitas Negeri Gorontalo.</p>
-        </div>
-        <div class="page-banner-meta">
-            <strong id="dosenCount">—</strong>
-            Tenaga Pendidik
-        </div>
-    </div>
-</section>
-
-<!-- TENAGA PENDIDIK -->
-<section id="dosen" style="background: var(--soft);">
-    <div class="container">
-        <div class="section-head">
-            <div class="section-eyebrow">Tenaga Pendidik</div>
-            <h2 class="section-title">Dosen Jurusan</h2>
-            <p class="section-desc">Sumber data: <a href="https://temp.ikad-developer.my.id/elektro/daftar-dosen" target="_blank" rel="noopener" style="color:var(--accent);">Sistem Informasi Jurusan (SIATEK)</a>.</p>
-        </div>
-        <div class="dosen-grid" id="dosenGrid">
-            <div class="dosen-card" style="grid-column: 1 / -1; padding: 40px; color: var(--text-muted); text-align: center;">Memuat data tenaga pendidik...</div>
-        </div>
-    </div>
-</section>
-
-<footer>
-    <div class="container">
-        <div class="footer-grid">
-            <div>
-                <h5>Jurusan Teknik Elektro &amp; Komputer</h5>
-                <p>Fakultas Teknik, Universitas Negeri Gorontalo<br>Jl. Jend. Sudirman No. 6, Kota Gorontalo 96128<br>Telp: (0435) 821125</p>
-            </div>
-            <div>
-                <h5>Program Studi</h5>
-                <p><a href="prodi.html#te">S1 Teknik Elektro</a></p>
-                <p><a href="prodi.html#tk">S1 Teknik Komputer</a></p>
-            </div>
-            <div>
-                <h5>Akademik</h5>
-                <p><a href="akademik.html#kurikulum-te">Kurikulum OBE &mdash; TE</a></p>
-                <p><a href="akademik.html#kurikulum-kkni">Kurikulum KKNI</a></p>
-                <p><a href="akademik.html#kurikulum-tk">Kurikulum OBE &mdash; TK</a></p>
-            </div>
-            <div>
-                <h5>Tautan</h5>
-                <p><a href="https://www.ung.ac.id/" target="_blank">UNG</a></p>
-                <p><a href="https://ft.ung.ac.id/" target="_blank">Fakultas Teknik</a></p>
-                <p><a href="https://siat.ung.ac.id/" target="_blank">SIAT</a></p>
-            </div>
-        </div>
-        <div class="footer-bot">
-            <div>&copy; 2026 Jurusan Teknik Elektro dan Komputer &mdash; Fakultas Teknik UNG</div>
-            <div>Diperbarui: 25 Juli 2026</div>
-        </div>
-    </div>
-</footer>
-
-<script>
-    const API = 'https://temp.ikad-developer.my.id/elektro';
-
-    // ---- TENAGA PENDIDIK ----
-    // Data dari API https://temp.ikad-developer.my.id/elektro/daftar-dosen
-    // Field: nama, profil, scholar, bidang keahlian
-    (function() {
-        const grid = document.getElementById('dosenGrid');
-        const countEl = document.getElementById('dosenCount');
-        if (!grid) return;
-        fetch(API + '/daftar-dosen')
-            .then(r => r.json())
-            .then(data => {
-                if (!Array.isArray(data) || !data.length) return;
-                if (countEl) countEl.textContent = data.length;
-                const cards = data.map(p => {
-                    const nama = (p.nama || '').trim();
-                    const parts = nama.split(/[\s,]+/).filter(s => s && !/^[A-Z]\.?$|ST|MT|S\.Pd|M\.Eng|S\.Kom|M\.Kom|S\.Si|M\.Si|Ph\.D|CDSEA|ASEAN|IPU|Eng/i.test(s));
-                    const initials = (parts[0] ? parts[0][0] : '') + (parts[1] ? parts[1][0] : '');
-                    const fbText = initials.toUpperCase() || '—';
-                    const foto = p.profil ? `<img class="dosen-foto" src="${p.profil}" alt="${nama}" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">` : '';
-                    const fb = `<div class="dosen-foto-fallback">${fbText}</div>`;
-                    const scholar = p.scholar ? `<a href="${p.scholar}" target="_blank" rel="noopener" class="dosen-scholar" title="Google Scholar" aria-label="Google Scholar"><svg viewBox="0 0 24 24" width="14" height="14" fill="currentColor"><path d="M5.242 13.769L0 9.5 12 0l12 9.5-5.242 4.269C17.548 11.249 14.978 9.5 12 9.5c-2.977 0-5.548 1.748-6.758 4.269zM12 10a7 7 0 1 0 0 14 7 7 0 0 0 0-14z"/></svg></a>` : '';
-                    return `
-                        <div class="dosen-card">
-                            <div class="dosen-foto-wrap">
-                                ${foto}
-                                ${fb}
-                            </div>
-                            <div class="dosen-body">
-                                <div class="dosen-nama">${nama}</div>
-                                ${p['bidang keahlian'] ? `<div class="dosen-bidang">${p['bidang keahlian']}</div>` : ''}
-                                ${scholar}
-                            </div>
-                        </div>
-                    `;
-                }).join('');
-                grid.innerHTML = cards;
-            })
-            .catch(() => {
-                grid.innerHTML = '<div class="dosen-card" style="grid-column: 1 / -1; padding:32px;color:#c00;">Gagal memuat data tenaga pendidik.</div>';
-            });
-    })();
-
-    // ---- MOBILE MENU ----
-    (function() {
-        const btn = document.getElementById('hamburgerBtn');
-        const backdrop = document.getElementById('menuBackdrop');
-        if (!btn) return;
-
-        function closeMenu() {
-            document.body.classList.remove('menu-open');
-            btn.setAttribute('aria-expanded', 'false');
-            document.querySelectorAll('.nav-menu > li.is-open').forEach(li => li.classList.remove('is-open'));
-            document.querySelectorAll('.nav-menu > li > a[aria-expanded]').forEach(a => a.setAttribute('aria-expanded', 'false'));
-        }
-        function openMenu() {
-            document.body.classList.add('menu-open');
-            btn.setAttribute('aria-expanded', 'true');
-        }
-
-        btn.addEventListener('click', () => {
-            if (document.body.classList.contains('menu-open')) closeMenu();
-            else openMenu();
-        });
-        if (backdrop) backdrop.addEventListener('click', closeMenu);
-
-        // Click dropdown toggle (untuk touch + mobile)
-        document.querySelectorAll('.nav-menu > li > a').forEach(a => {
-            const li = a.parentElement;
-            if (!li.querySelector('.dropdown')) return;
-            a.addEventListener('click', (e) => {
-                if (window.matchMedia('(max-width: 900px)').matches) {
-                    e.preventDefault();
-                    const open = li.classList.toggle('is-open');
-                    a.setAttribute('aria-expanded', open ? 'true' : 'false');
-                }
-            });
-        });
-
-        // Close menu saat klik link dropdown
-        document.querySelectorAll('.nav-menu .dropdown a').forEach(a => {
-            a.addEventListener('click', () => closeMenu());
-        });
-
-        document.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeMenu(); });
-        window.addEventListener('resize', () => {
-            if (!window.matchMedia('(max-width: 900px)').matches) closeMenu();
-        });
-    })();
-
-</script>
-
-</body>
-</html>
