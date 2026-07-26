@@ -2,8 +2,19 @@
 // template/header.php
 // Include di atas setiap halaman PHP
 
+// Deteksi halaman aktif otomatis dari PHP_SELF.
+// Juga bisa di-override via $currentPage = 'xxx' di halaman pemanggil.
 $page = basename($_SERVER['PHP_SELF'], '.php');
+$currentPage = isset($currentPage) ? $currentPage : $page;
 $pageTitle = isset($pageTitle) ? $pageTitle : 'Jurusan Teknik Elektro dan Komputer - Universitas Negeri Gorontalo';
+
+// Helper kecil untuk menandai <li> aktif pada menu
+if (!function_exists('isActive')) {
+    function isActive($key) {
+        global $currentPage;
+        return $currentPage === $key ? ' class="active"' : '';
+    }
+}
 ?>
 
 <!DOCTYPE html>
@@ -306,6 +317,9 @@ $pageTitle = isset($pageTitle) ? $pageTitle : 'Jurusan Teknik Elektro dan Komput
             .dosen-grid { grid-template-columns: 1fr 1fr; }
         }
     </style>
+    <?php if (!empty($pageCss) && is_array($pageCss)): foreach ($pageCss as $css): ?>
+    <link rel="stylesheet" href="<?php echo htmlspecialchars($css); ?>">
+    <?php endforeach; endif; ?>
 </head>
 <body>
 <div class="utility-bar">
@@ -324,20 +338,18 @@ $pageTitle = isset($pageTitle) ? $pageTitle : 'Jurusan Teknik Elektro dan Komput
         <div class="brand">
             <div class="brand-logo"><img src="assets/logo.jpg" alt="Logo Jurusan"></div>
             <div class="brand-text">
-                <h1>Jurusan Teknik Elektro &amp; Komputer</h1>
+                <h1>Jurusan Teknik Elektro & Komputer</h1>
                 <span>Fakultas Teknik &bull; Universitas Negeri Gorontalo</span>
             </div>
         </div>
         <nav>
             <ul class="nav-menu" id="primary-nav">
-                <li class="active"><a href="index.html">Beranda</a></li>
-                <li>
-                    <a href="profil.html">Profil</a>
+                <li<?php echo isActive('index'); ?>><a href="index">Beranda</a></li>
+                <li<?php echo isActive('profil'); ?>>
+                    <a href="profil">Profil</a>
                     <div class="dropdown">
-                        <a href="profil.html#sejarah">Sejarah</a>
-                        <a href="profil.html#visi-misi">Visi &amp; Misi</a>
-                        <a href="profil.html#struktur">Struktur Organisasi</a>
-                        <a href="dosen.html">Tenaga Pendidik</a>
+                        <a href="profil">Tentang Jurusan</a>
+                        <a href="dosen">Tenaga Pendidik</a>
                     </div>
                 </li>
                 <li>

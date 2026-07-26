@@ -3,7 +3,7 @@ $pageTitle = 'Profil Jurusan — Jurusan Teknik Elektro dan Komputer';
 $pageDesc = 'Profil, sejarah, visi misi, dan struktur organisasi Jurusan Teknik Elektro dan Komputer UNG.';
 $currentPage = 'profil';
 $pageCss = ['assets/profil.css'];
-include 'header.php';
+include 'template/header.php';
 ?>
 
 <!-- page banner -->
@@ -11,7 +11,7 @@ include 'header.php';
     <div class="container">
         <div>
             <div class="breadcrumb"><a href="index.php">Beranda</a> &nbsp;&rsaquo;&nbsp; Profil</div>
-            <h1>Profil Jurusan Teknik Elektro &amp; Komputer</h1>
+            <h1>Profil Jurusan Teknik Elektro & Komputer</h1>
             <p class="lede">Mengenal lebih dekat sejarah, visi-misi, dan struktur organisasi Jurusan Teknik Elektro dan Komputer, Fakultas Teknik UNG.</p>
         </div>
         <div class="page-banner-meta">
@@ -63,7 +63,7 @@ include 'header.php';
 <section id="visi-misi">
     <div class="container">
         <div class="section-head">
-            <div class="section-eyebrow">02 &mdash; Visi, Misi &amp; Tujuan</div>
+            <div class="section-eyebrow">02 &mdash; Visi, Misi & Tujuan</div>
             <h2 class="section-title">Komitmen Kami</h2>
             <p class="section-desc">Visi dan misi yang menjadi arah pengembangan Jurusan, program studi, dan seluruh civitas akademika.</p>
         </div>
@@ -78,7 +78,7 @@ include 'header.php';
                 <h4>Misi</h4>
                 <ol>
                     <li><strong>Pendidikan Berkualitas</strong>Menyelenggarakan pendidikan tinggi teknik elektro dan komputer berbasis OBE dengan standar nasional pendidikan tinggi.</li>
-                    <li><strong>Penelitian &amp; Inovasi</strong>Mengembangkan riset terapan di bidang tenaga listrik, telekomunikasi, IoT, dan kecerdasan buatan.</li>
+                    <li><strong>Penelitian & Inovasi</strong>Mengembangkan riset terapan di bidang tenaga listrik, telekomunikasi, IoT, dan kecerdasan buatan.</li>
                     <li><strong>Pengabdian Masyarakat</strong>Menerapkan ipteks untuk menjawab kebutuhan industri, pemerintah, dan masyarakat di kawasan Indonesia Timur.</li>
                     <li><strong>Tata Kelola Akuntabel</strong>Mewujudkan sistem manajemen jurusan yang transparan, partisipatif, dan berstandar akreditasi unggul.</li>
                 </ol>
@@ -106,7 +106,7 @@ include 'header.php';
     <div class="container">
         <div class="section-head">
             <div class="section-eyebrow">03 &mdash; Struktur Organisasi</div>
-            <h2 class="section-title">Pimpinan Jurusan &amp; Program Studi</h2>
+            <h2 class="section-title">Pimpinan Jurusan & Program Studi</h2>
             <p class="section-desc">Susunan kepemimpinan Jurusan Teknik Elektro dan Komputer.</p>
         </div>
         <div class="pimpinan-grid" id="strukturTable">
@@ -115,12 +115,15 @@ include 'header.php';
     </div>
 </section>
 
-<?php include 'footer.php'; ?>
+<?php include 'template/footer.php'; ?>
 
 <script>
-    const API = 'https://temp.ikad-developer.my.id/elektro';
+    // API base sudah dideklarasikan di footer.php sebagai `const API`
+    // (di sini kita reuse supaya tidak bentrok deklarasi ulang)
 
     // ---- STRUKTUR ORGANISASI ----
+    // Data dari API https://temp.ikad-developer.my.id/elektro/struktur-organisasi
+    // Field: nama, keterangan, profil, scholar, bidang keahlian
     (function() {
         const grid = document.getElementById('strukturTable');
         if (!grid) return;
@@ -134,4 +137,30 @@ include 'header.php';
                     const initials = (parts[0] ? parts[0][0] : '') + (parts[1] ? parts[1][0] : '');
                     const fbText = initials.toUpperCase() || '—';
                     const foto = p.profil ? `<img class="pimpinan-foto" src="${p.profil}" alt="${nama}" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">` : '';
-                    const fb = `<div class="pimpinan-foto-fallback">${fbText}
+                    const fb = `<div class="pimpinan-foto-fallback">${fbText}</div>`;
+                    const scholar = p.scholar ? `<a href="${p.scholar}" target="_blank" rel="noopener" class="pimpinan-scholar" title="Google Scholar" aria-label="Google Scholar"><svg viewBox="0 0 24 24" width="14" height="14" fill="currentColor"><path d="M5.242 13.769L0 9.5 12 0l12 9.5-5.242 4.269C17.548 11.249 14.978 9.5 12 9.5c-2.977 0-5.548 1.748-6.758 4.269zM12 10a7 7 0 1 0 0 14 7 7 0 0 0 0-14z"/></svg></a>` : '';
+                    return `
+                        <div class="pimpinan-card">
+                            <div class="pimpinan-foto-wrap">
+                                ${foto}
+                                ${fb}
+                            </div>
+                            <div class="pimpinan-body">
+                                <div class="pimpinan-jabatan">${p.keterangan || ''}</div>
+                                <div class="pimpinan-nama">${nama}</div>
+                                ${p['bidang keahlian'] ? `<div class="pimpinan-bidang">${p['bidang keahlian']}</div>` : ''}
+                                ${scholar}
+                            </div>
+                        </div>
+                    `;
+                }).join('');
+                grid.innerHTML = cards;
+            })
+            .catch(() => {
+                grid.innerHTML = '<div class="pimpinan-card" style="padding:32px;color:#c00;">Gagal memuat data struktur organisasi.</div>';
+            });
+    })();
+</script>
+
+</body>
+</html>
