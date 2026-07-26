@@ -305,16 +305,17 @@ if (!function_exists('isActive')) {
             .pimpinan-card { padding: 18px 12px; }
             .pimpinan-foto-wrap { width: 80px; height: 80px; }
             .pimpinan-nama { font-size: 14px; }
-            .dosen-grid { grid-template-columns: repeat(2, 1fr); gap: 12px; }
-            .dosen-card { padding: 16px 10px; }
-            .dosen-foto-wrap { width: 88px; height: 112px; }
-            .dosen-nama { font-size: 13px; }
+            .dosen-grid { grid-template-columns: repeat(2, 1fr); gap: 16px; }
+            .dosen-card { padding: 0; border-radius: 8px; }
+            .dosen-foto-wrap { aspect-ratio: 3 / 4; }
+            .dosen-body { padding: 16px 18px 18px; }
+            .dosen-nama { font-size: 15px; }
             .footer-bot { flex-direction: column; gap: 8px; text-align: center; }
         }
         @media (max-width: 420px) {
             .brand-text h1 { font-size: 14px; }
             .pimpinan-grid { grid-template-columns: 1fr; }
-            .dosen-grid { grid-template-columns: 1fr 1fr; }
+            .dosen-grid { grid-template-columns: 1fr; gap: 14px; }
         }
     </style>
     <?php if (!empty($pageCss) && is_array($pageCss)): foreach ($pageCss as $css): ?>
