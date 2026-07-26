@@ -12,6 +12,8 @@ $pageTitle = isset($pageTitle) ? $pageTitle : 'Jurusan Teknik Elektro dan Komput
 if (!function_exists('isActive')) {
     function isActive($key) {
         global $currentPage;
+        // Halaman 'dosen' juga membuat menu 'profil' aktif
+        if ($key === 'profil' && $currentPage === 'dosen') return ' class="active"';
         return $currentPage === $key ? ' class="active"' : '';
     }
 }
