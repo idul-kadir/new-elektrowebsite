@@ -355,23 +355,23 @@ if (!function_exists('isActive')) {
                         <a href="dosen">Tenaga Pendidik</a>
                     </div>
                 </li>
-                <li>
-                    <a href="kurikulum.html">Kurikulum</a>
+                <li<?php echo isActive('kurikulum'); ?>>
+                    <a href="kurikulum">Kurikulum</a>
                     <div class="dropdown">
                         <div class="dd-group">
                             <div class="dd-header">S1 Pendidikan Vokasional Rekayasa Elektro</div>
-                            <a href="kurikulum.html#pv-2025">Kurikulum 2025</a>
+                            <a href="kurikulum-pv.php">Kurikulum OBE 2025</a>
                         </div>
                         <div class="dd-sep"></div>
                         <div class="dd-group">
                             <div class="dd-header">S1 Teknik Elektro</div>
-                            <a href="kurikulum.html#te-2025">Kurikulum 2025</a>
-                            <a href="kurikulum.html#te-2017">Kurikulum 2017</a>
+                            <a href="kurikulum-te.php">Kurikulum OBE 2025</a>
+                            <a href="kurikulum-kkni.php">Kurikulum KKNI 2017</a>
                         </div>
                         <div class="dd-sep"></div>
                         <div class="dd-group">
                             <div class="dd-header">S1 Teknik Komputer</div>
-                            <a href="kurikulum.html#tk-2025">Kurikulum 2025</a>
+                            <a href="kurikulum-tk.php">Kurikulum OBE 2025</a>
                         </div>
                     </div>
                 </li>
