@@ -393,11 +393,11 @@ if (!function_exists('isActive')) {
                         <a href="dokumen-penjamin-mutu">Dokumen Penjamin Mutu</a>
                         <a href="dokumen-kurikulum">Dokumen Kurikulum</a>
                         <a href="dokumen-akreditas">Dokumen Akreditasi</a>
-                        <a href="#">Laporan Kinerja</a>
+                        <a href="laporan-kinerja">Laporan Kinerja</a>
                     </div>
                 </li>
                 <li><a href="#">Mahasiswa</a></li>
-                <li><a href="#">Publikasi</a></li>
+                <li<?php echo isActive('publikasi'); ?>><a href="publikasi">Publikasi</a></li>
                 <li><a href="#">Fasilitas</a></li>
                 <li><a href="#">Alumni</a></li>
                 <li><a href="#">Berita</a></li>
