@@ -386,10 +386,10 @@ if (!function_exists('isActive')) {
                         </div>
                     </div>
                 </li>
-                <li>
+                <li<?php echo isActive('akademik'); ?>>
                     <a href="#" class="dropdown-trigger">Akademik</a>
                     <div class="dropdown">
-                        <a href="#">Dokumen Panduan dan SOP</a>
+                        <a href="panduan-sop">Panduan dan SOP</a>
                         <a href="#">Dokumen Dan Penjamin Mutu</a>
                         <a href="#">Dokumen Kurikulum</a>
                         <a href="#">Dokumen Akreditas</a>
