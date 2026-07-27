@@ -48,8 +48,10 @@ $dosenCount = count($dosenData);
 <section id="tenaga-pendidik">
     <div class="container">
         <div class="section-head">
-            <div class="section-eyebrow">Tenaga Pendidik</div>
-            <h2 class="section-title">Daftar Dosen</h2>
+            <div class="section-head-left">
+                <div class="section-eyebrow">Tenaga Pendidik</div>
+                <h2 class="section-title">Daftar Dosen</h2>
+            </div>
             <p class="section-desc">Seluruh dosen aktif Jurusan Teknik Elektro dan Komputer, Universitas Negeri Gorontalo.</p>
         </div>
         
