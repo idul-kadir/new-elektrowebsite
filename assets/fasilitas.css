@@ -1,0 +1,203 @@
+/* ============================================================
+   FASILITAS PAGE STYLES (Sinkron dengan halaman lain)
+   ============================================================ */
+
+/* ============ PAGE BANNER ============ */
+.page-banner { background: var(--navy); color: #fff; padding: 60px 0 50px; border-bottom: 4px solid var(--accent); }
+.page-banner .container { display: flex; align-items: flex-end; justify-content: space-between; gap: 32px; flex-wrap: wrap; }
+.breadcrumb { font-size: 12px; color: rgba(255,255,255,0.7); letter-spacing: .05em; text-transform: uppercase; margin-bottom: 12px; }
+.breadcrumb a { color: rgba(255,255,255,0.7); }
+.breadcrumb a:hover { color: var(--accent); }
+.page-banner h1 { font-family: 'Source Serif 4', serif; font-size: 42px; font-weight: 700; line-height: 1.15; max-width: 720px; }
+.page-banner .lede { color: rgba(255,255,255,0.85); max-width: 540px; font-size: 15px; margin-top: 12px; }
+.page-banner-meta { font-size: 12px; color: rgba(255,255,255,0.65); text-align: right; }
+.page-banner-meta strong { display: block; color: var(--accent); font-size: 28px; font-family: 'Source Serif 4', serif; font-weight: 700; }
+
+/* ============ SECTION FASILITAS ============ */
+#fasilitas { background: var(--bg); }
+
+/* Pola split (eyebrow kiri, title kanan) — konsisten dengan halaman lain */
+#fasilitas .section-head { margin-bottom: 28px; }
+#fasilitas .section-head-split { align-items: flex-start; }
+#fasilitas .section-head-left { flex: 0 0 auto; }
+#fasilitas .section-head-right { flex: 0 0 auto; text-align: right; }
+#fasilitas .section-head-right .section-title { margin-bottom: 0; }
+
+/* ============================================================
+   FEATURED CARD (semua fasilitas, vertikal)
+   ============================================================ */
+.fas-featured {
+    display: grid;
+    grid-template-columns: 1.05fr 1fr;
+    gap: 0;
+    margin-bottom: 32px;
+    background: #fff;
+    border: 1px solid var(--border);
+    border-top: 4px solid var(--accent);
+    border-radius: 14px;
+    overflow: hidden;
+    box-shadow: 0 4px 18px rgba(15, 35, 70, 0.06);
+    transition: box-shadow .25s ease, transform .25s ease;
+}
+.fas-featured:hover {
+    box-shadow: 0 14px 38px rgba(15, 35, 70, 0.12);
+    transform: translateY(-3px);
+}
+
+.fas-featured-media {
+    position: relative;
+    aspect-ratio: 4 / 3;
+    overflow: hidden;
+    background: var(--navy);
+}
+.fas-featured-media img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform .45s ease;
+}
+.fas-featured:hover .fas-featured-media img {
+    transform: scale(1.04);
+}
+
+.fas-featured-body {
+    padding: 36px 40px 40px;
+    display: flex;
+    flex-direction: column;
+    min-height: 100%;
+}
+.fas-featured-body h3 {
+    font-family: 'Source Serif 4', serif;
+    font-size: 28px;
+    color: var(--navy);
+    line-height: 1.2;
+    margin: 8px 0 14px;
+    font-weight: 700;
+}
+.fas-featured-body p {
+    font-size: 14.5px;
+    line-height: 1.7;
+    color: var(--text);
+    margin: 0 0 22px;
+}
+
+.fas-featured-list {
+    list-style: none;
+    margin: 0;
+    padding: 20px 22px;
+    background: var(--soft);
+    border-radius: 10px;
+    border-left: 3px solid var(--accent);
+}
+.fas-featured-list li {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 13.5px;
+    color: var(--text);
+    padding: 7px 0;
+    line-height: 1.4;
+}
+.fas-featured-list li svg {
+    color: var(--accent-dark);
+    flex-shrink: 0;
+}
+.fas-featured-list li + li {
+    border-top: 1px dashed var(--border);
+}
+
+/* ============================================================
+   META & BADGES
+   ============================================================ */
+.fas-meta {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 4px;
+}
+
+.fas-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    font-family: 'Source Serif 4', serif;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: .14em;
+    padding: 5px 10px;
+    text-transform: uppercase;
+    border-radius: 4px;
+}
+.fas-badge-lab {
+    background: var(--navy);
+    color: var(--accent);
+}
+.fas-badge-unit {
+    background: var(--accent);
+    color: var(--navy-deep);
+}
+.fas-badge-featured {
+    position: absolute;
+    top: 16px;
+    left: 16px;
+    background: var(--accent);
+    color: var(--navy-deep);
+    box-shadow: 0 4px 10px rgba(0,0,0,0.18);
+    z-index: 2;
+}
+
+.fas-code {
+    font-family: 'Source Serif 4', serif;
+    font-size: 12px;
+    font-weight: 700;
+    color: var(--text-muted);
+    letter-spacing: .15em;
+}
+
+/* ============================================================
+   SUMBER LINK (footer card, opsional)
+   ============================================================ */
+.fas-source {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    margin-top: auto;
+    padding-top: 18px;
+    font-size: 12px;
+    color: var(--text-muted);
+    text-decoration: none;
+    border-top: 1px dashed var(--border);
+    letter-spacing: .04em;
+    transition: color .2s ease;
+}
+.fas-source:hover {
+    color: var(--accent-dark);
+}
+.fas-source svg {
+    flex-shrink: 0;
+}
+
+/* ============================================================
+   RESPONSIVE
+   ============================================================ */
+@media (max-width: 900px) {
+    .page-banner { padding: 40px 0 36px; }
+    .page-banner h1 { font-size: 30px; }
+    .page-banner-meta { text-align: left; }
+    .page-banner-meta strong { font-size: 22px; }
+    .section-title { font-size: 26px; }
+
+    .fas-featured { grid-template-columns: 1fr; }
+    .fas-featured-media { aspect-ratio: 16 / 10; }
+    .fas-featured-body { padding: 28px 26px 30px; }
+    .fas-featured-body h3 { font-size: 22px; }
+}
+
+@media (max-width: 600px) {
+    .section-head-split { flex-direction: column; align-items: flex-start; }
+    .section-head-split .section-head-right { text-align: left; }
+    #fasilitas .section-head-split .section-head-right .section-title { margin-bottom: 14px; }
+
+    .fas-featured-body { padding: 24px 22px 26px; }
+    .fas-featured-list { padding: 16px 18px; }
+}

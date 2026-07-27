@@ -140,6 +140,10 @@ if (!function_exists('isActive')) {
         .section-desc { font-size: 15.5px; color: var(--text-muted); max-width: 720px; }
         .section-head { display: flex; justify-content: space-between; align-items: flex-end; gap: 32px; margin-bottom: 48px; flex-wrap: wrap; }
         .section-head .desc { flex: 1; min-width: 300px; }
+        .section-head-split { align-items: flex-start; }
+        .section-head-left { flex: 0 0 auto; }
+        .section-head-right { flex: 0 0 auto; text-align: right; }
+        .section-head-right .section-title { margin-bottom: 0; }
 
         /* ============ PRODI SECTION ============ */
         .prodi { background: var(--bg); }
@@ -398,7 +402,7 @@ if (!function_exists('isActive')) {
                 </li>
                 <li><a href="#">Mahasiswa</a></li>
                 <li<?php echo isActive('publikasi'); ?>><a href="publikasi">Publikasi</a></li>
-                <li><a href="#">Fasilitas</a></li>
+                <li<?php echo isActive('fasilitas'); ?>><a href="fasilitas">Fasilitas</a></li>
                 <li><a href="#">Alumni</a></li>
                 <li><a href="#">Berita</a></li>
             </ul>
