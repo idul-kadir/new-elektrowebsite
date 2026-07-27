@@ -1,0 +1,352 @@
+/* ============================================================
+   assets/akreditas.css — Style Halaman Dokumen Akreditasi
+   Layout accordion per kategori C1-C9
+   ============================================================ */
+
+/* ============ TOOLBAR ============ */
+.dokumen-toolbar {
+    background: #fff;
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 18px;
+    margin-bottom: 24px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.03);
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+    align-items: center;
+    justify-content: space-between;
+}
+.dokumen-search {
+    position: relative;
+    flex: 1;
+    min-width: 240px;
+    max-width: 360px;
+}
+.dokumen-search .search-icon {
+    position: absolute;
+    left: 12px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 18px;
+    height: 18px;
+    stroke: var(--text-muted);
+    pointer-events: none;
+}
+#search-input {
+    width: 100%;
+    padding: 10px 14px 10px 40px;
+    font-family: 'Inter', sans-serif;
+    font-size: 14px;
+    color: var(--text);
+    background: var(--soft);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    transition: all .2s ease;
+}
+#search-input:focus {
+    outline: none;
+    background: #fff;
+    border-color: var(--accent);
+    box-shadow: 0 0 0 3px rgba(249, 115, 22, 0.12);
+}
+#search-input::placeholder { color: var(--text-muted); }
+
+.dokumen-filter {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    align-items: center;
+}
+.tahun-chip {
+    display: inline-flex;
+    align-items: center;
+    padding: 6px 13px;
+    font-family: 'Inter', sans-serif;
+    font-size: 13px;
+    font-weight: 500;
+    color: var(--text);
+    background: var(--soft);
+    border: 1px solid var(--border);
+    border-radius: 99px;
+    cursor: pointer;
+    transition: all .18s ease;
+}
+.tahun-chip:hover {
+    border-color: var(--accent);
+    color: var(--accent-dark);
+    background: #fff;
+}
+.tahun-chip.active {
+    background: var(--navy);
+    border-color: var(--navy);
+    color: #fff;
+}
+
+/* ============ STATE MESSAGES ============ */
+.loading-state,
+.error-state,
+.empty-state {
+    padding: 56px 24px;
+    text-align: center;
+    font-size: 14.5px;
+    color: var(--text-muted);
+    background: #fff;
+    border: 1px solid var(--border);
+    border-radius: 12px;
+}
+.error-state {
+    color: var(--accent-dark);
+    border-color: var(--accent);
+    background: #FEF2F2;
+}
+.loading-state p,
+.error-state p,
+.empty-state p { margin: 0; }
+.spinner {
+    width: 36px;
+    height: 36px;
+    border: 3px solid var(--border);
+    border-top-color: var(--accent);
+    border-radius: 50%;
+    animation: akred-spin .8s linear infinite;
+    margin: 0 auto 14px;
+}
+@keyframes akred-spin { to { transform: rotate(360deg); } }
+
+/* ============ ACCORDION ============ */
+.akred-accordion {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+.akred-cat {
+    background: #fff;
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    overflow: hidden;
+    transition: box-shadow .2s ease, border-color .2s ease;
+}
+.akred-cat:hover {
+    border-color: var(--accent);
+}
+.akred-cat[data-open="true"] {
+    box-shadow: 0 4px 14px rgba(15, 30, 71, 0.06);
+    border-color: var(--accent);
+}
+
+/* header kategori */
+.akred-cat-head {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    padding: 18px 22px;
+    background: #fff;
+    border: none;
+    cursor: pointer;
+    text-align: left;
+    font-family: 'Inter', sans-serif;
+    transition: background .2s ease;
+}
+.akred-cat-head:hover { background: var(--soft); }
+
+.akred-cat-code {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 48px;
+    height: 36px;
+    padding: 0 10px;
+    background: var(--navy);
+    color: #fff;
+    font-family: 'Source Serif 4', serif;
+    font-size: 16px;
+    font-weight: 700;
+    border-radius: 8px;
+    flex-shrink: 0;
+}
+.akred-cat[data-open="true"] .akred-cat-code {
+    background: var(--accent);
+}
+
+.akred-cat-label {
+    flex: 1;
+    font-size: 15px;
+    font-weight: 600;
+    color: var(--navy);
+    line-height: 1.4;
+    text-transform: uppercase;
+    letter-spacing: .02em;
+}
+
+.akred-cat-count {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 28px;
+    height: 24px;
+    padding: 0 10px;
+    background: var(--soft);
+    color: var(--text-muted);
+    font-size: 12px;
+    font-weight: 700;
+    border-radius: 99px;
+}
+.akred-cat[data-open="true"] .akred-cat-count {
+    background: rgba(249, 115, 22, 0.12);
+    color: var(--accent-dark);
+}
+
+.akred-cat-toggle {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 32px;
+    height: 32px;
+    color: var(--text-muted);
+    transition: transform .25s ease, color .25s ease;
+}
+.akred-cat-toggle svg { width: 18px; height: 18px; }
+.akred-cat[data-open="true"] .akred-cat-toggle {
+    transform: rotate(180deg);
+    color: var(--accent);
+}
+
+/* body accordion */
+.akred-cat-body {
+    padding: 0 22px 18px;
+    border-top: 1px solid var(--border);
+    background: #fafbfc;
+}
+.akred-cat-empty {
+    padding: 20px 0 4px;
+    margin: 0;
+    font-size: 13.5px;
+    color: var(--text-muted);
+    font-style: italic;
+    text-align: center;
+}
+
+/* list item */
+.akred-list {
+    list-style: none;
+    margin: 16px 0 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+.akred-item {
+    background: #fff;
+    border: 1px solid var(--border);
+    border-left: 4px solid var(--accent);
+    border-radius: 8px;
+    transition: border-color .2s ease, transform .2s ease, box-shadow .2s ease;
+}
+.akred-item:hover {
+    border-left-color: var(--navy);
+    transform: translateX(2px);
+    box-shadow: 0 4px 12px rgba(15, 30, 71, 0.06);
+}
+
+.akred-link {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 16px;
+    padding: 14px 18px;
+    text-decoration: none;
+    color: inherit;
+}
+
+.akred-item-main {
+    flex: 1;
+    min-width: 0;
+}
+
+.akred-jenis-badge {
+    display: inline-block;
+    font-family: 'Inter', sans-serif;
+    font-size: 10.5px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: .06em;
+    padding: 3px 9px;
+    border-radius: 99px;
+    margin-bottom: 8px;
+}
+.akred-jenis-sk {
+    background: rgba(30, 58, 138, 0.1);
+    color: var(--navy);
+}
+.akred-jenis-dokumen {
+    background: rgba(249, 115, 22, 0.1);
+    color: var(--accent-dark);
+}
+.akred-jenis-berita-acara {
+    background: rgba(34, 197, 94, 0.12);
+    color: #15803D;
+}
+.akred-jenis-lainnya {
+    background: rgba(107, 114, 128, 0.12);
+    color: #4B5563;
+}
+
+.akred-item-title {
+    font-family: 'Source Serif 4', serif;
+    font-size: 15.5px;
+    font-weight: 600;
+    color: var(--navy);
+    line-height: 1.4;
+    margin: 0 0 4px;
+}
+.akred-item-desc {
+    font-size: 12.5px;
+    color: var(--text-muted);
+    line-height: 1.5;
+    margin: 0;
+}
+
+.akred-item-meta {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 6px;
+    flex-shrink: 0;
+}
+.akred-tahun {
+    font-family: 'Source Serif 4', serif;
+    font-size: 14px;
+    font-weight: 700;
+    color: var(--accent-dark);
+}
+.akred-open {
+    font-size: 12px;
+    font-weight: 600;
+    color: var(--accent);
+}
+
+/* ============ RESPONSIVE ============ */
+@media (max-width: 768px) {
+    .dokumen-toolbar { flex-direction: column; align-items: stretch; }
+    .dokumen-search { max-width: 100%; }
+    .akred-cat-head {
+        flex-wrap: wrap;
+        gap: 10px;
+        padding: 14px 16px;
+    }
+    .akred-cat-code { min-width: 40px; height: 32px; font-size: 14px; }
+    .akred-cat-label {
+        flex: 1 0 calc(100% - 110px);
+        font-size: 14px;
+    }
+    .akred-cat-body { padding: 0 16px 14px; }
+    .akred-link { flex-direction: column; align-items: stretch; gap: 10px; padding: 12px 14px; }
+    .akred-item-meta { flex-direction: row; justify-content: space-between; align-items: center; }
+}
+
+@media (max-width: 480px) {
+    .akred-cat-label { font-size: 13px; }
+    .akred-item-title { font-size: 14.5px; }
+}

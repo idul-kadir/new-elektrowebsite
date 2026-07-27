@@ -392,7 +392,7 @@ if (!function_exists('isActive')) {
                         <a href="panduan-sop">Panduan dan SOP</a>
                         <a href="dokumen-penjamin-mutu">Dokumen Penjamin Mutu</a>
                         <a href="dokumen-kurikulum">Dokumen Kurikulum</a>
-                        <a href="#">Dokumen Akreditas</a>
+                        <a href="dokumen-akreditas">Dokumen Akreditasi</a>
                         <a href="#">Laporan Kinerja</a>
                     </div>
                 </li>
