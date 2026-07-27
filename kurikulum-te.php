@@ -81,7 +81,7 @@ $konsentrasiLabels = [
 <section class="page-banner">
     <div class="container">
         <div>
-            <div class="breadcrumb"><a href="index.php">Beranda</a> &nbsp;&rsaquo;&nbsp; <a href="kurikulum.php">Kurikulum</a> &nbsp;&rsaquo;&nbsp; Kurikulum OBE 2025</div>
+            <div class="breadcrumb"><a href="index.php">Beranda</a> &nbsp;&rsaquo;&nbsp; Kurikulum &nbsp;&rsaquo;&nbsp; Kurikulum OBE 2025</div>
             <h1>Kurikulum OBE 2025 &mdash; S1 Teknik Elektro</h1>
             <p class="lede">Kurikulum Outcome-Based Education Program Studi Sarjana Teknik Elektro, berbasis capaian pembelajaran lulusan dan berorientasi pada energi baru terbarukan.</p>
         </div>
@@ -104,47 +104,47 @@ $konsentrasiLabels = [
             </div>
         </div>
         <p class="section-desc" style="margin-top:-32px;margin-bottom:48px;max-width:720px;">
-            Kurikulum OBE 2025 dirancang untuk menghasilkan lulusan yang memiliki capaian pembelajaran terstruktur, relevan dengan kebutuhan industri, dan siap bersaing di tingkat nasional maupun global.
+            Kurikulum 2025 disusun berdasarkan <em>Outcome-Based Education</em> dengan menyederhanakan CPL dari 39 (SN DIKTI) menjadi 11 CPL sesuai rekomendasi Forum Pendidikan Tinggi Teknik Elektro Indonesia (Fortei), sehingga setiap CPL dapat diukur secara terstruktur.
         </p>
 
-        <!-- VISI KEILMUAN -->
-        <h3 class="subsection-heading">Visi Keilmuan Program Studi</h3>
-        <div class="kurikulum-visi-card">
-            Menghasilkan lulusan sarjana teknik elektro yang <strong>profesional, berdaya saing global, dan berorientasi pada energi baru terbarukan</strong> melalui pendekatan pendidikan berbasis capaian (<em>Outcome-Based Education</em>).
-        </div>
-
-        <!-- PENGELOLA PROGRAM STUDI -->
-        <?php if ($kaprodi): ?>
-        <h3 class="subsection-heading">Pengelola Program Studi</h3>
-        <div class="kaprodi-card">
-            <div class="kpc-photo">
-                <img src="<?php echo htmlspecialchars($kaprodi['profil']); ?>"
-                     alt="Foto <?php echo htmlspecialchars($kaprodi['kaprodi']); ?>"
-                     onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
-                <div class="kpc-initial" style="display:none;"><?php echo htmlspecialchars(getInitials($kaprodi['kaprodi'])); ?></div>
+        <!-- VISI + PENGELOLA GRID 7/5 -->
+        <div class="visi-kaprodi-grid">
+            <div class="vk-col vk-col-visi">
+                <h3 class="subsection-heading">Visi Keilmuan Program Studi</h3>
+                <div class="kurikulum-visi-card">
+                    <strong>"Mengembangkan Teknologi Bidang Elektro yang berorientasi pada Energi Baru Terbarukan Berbasis Potensi Kawasan."</strong>
+                </div>
             </div>
-            <div class="kpc-info">
-                <div class="kpc-label"><?php echo htmlspecialchars($kaprodi['keterangan'] ?? 'Ketua Program Studi'); ?></div>
-                <div class="kpc-name"><?php echo htmlspecialchars($kaprodi['kaprodi']); ?></div>
-                <?php if (!empty($kaprodi['bidang'])): ?>
-                <div class="kpc-bidang"><em><?php echo htmlspecialchars($kaprodi['bidang']); ?></em></div>
-                <?php endif; ?>
-                <?php if (!empty($kaprodi['scholar'])): ?>
-                <a href="<?php echo htmlspecialchars($kaprodi['scholar']); ?>" target="_blank" rel="noopener" class="kpc-link">Google Scholar ↗</a>
-                <?php endif; ?>
+            <?php if ($kaprodi): ?>
+            <div class="vk-col vk-col-kaprodi">
+                <h3 class="subsection-heading">Pengelola Program Studi</h3>
+                <div class="kaprodi-card">
+                    <div class="kpc-photo">
+                        <img src="<?php echo htmlspecialchars($kaprodi['profil']); ?>"
+                             alt="Foto <?php echo htmlspecialchars($kaprodi['kaprodi']); ?>"
+                             onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
+                        <div class="kpc-initial" style="display:none;"><?php echo htmlspecialchars(getInitials($kaprodi['kaprodi'])); ?></div>
+                    </div>
+                    <div class="kpc-info">
+                        <div class="kpc-label"><?php echo htmlspecialchars($kaprodi['keterangan'] ?? 'Ketua Program Studi'); ?></div>
+                        <div class="kpc-name"><?php echo htmlspecialchars($kaprodi['kaprodi']); ?></div>
+                        <?php if (!empty($kaprodi['bidang'])): ?>
+                        <div class="kpc-bidang"><em><?php echo htmlspecialchars($kaprodi['bidang']); ?></em></div>
+                        <?php endif; ?>
+                        <?php if (!empty($kaprodi['scholar'])): ?>
+                        <a href="<?php echo htmlspecialchars($kaprodi['scholar']); ?>" target="_blank" rel="noopener" class="kpc-link">Google Scholar ↗</a>
+                        <?php endif; ?>
+                    </div>
+                </div>
             </div>
+            <?php endif; ?>
         </div>
-        <?php endif; ?>
 
         <!-- TUJUAN PENDIDIKAN PROGRAM STUDI (TPPS) -->
         <h3 class="subsection-heading">Tujuan Pendidikan Program Studi (TPPS)</h3>
         <ol class="tpps-list">
-            <li>Menghasilkan lulusan yang memiliki integritas, profesional, dan mampu menerapkan etika rekayasa di bidang teknik elektro.</li>
-            <li>Menguasai ilmu dasar teknik, rekayasa, dan teknologi elektro (tenaga listrik, telekomunikasi, elektronika, dan kontrol) untuk pemecahan masalah nyata.</li>
-            <li>Mampu merancang, menganalisis, dan mengimplementasikan sistem elektro yang efisien dan berkelanjutan, khususnya berbasis energi baru terbarukan.</li>
-            <li>Memiliki keterampilan komunikasi, kerja tim, dan kepemimpinan yang efektif di lingkungan multidisiplin.</li>
-            <li>Memiliki kesadaran belajar sepanjang hayat dan kemampuan beradaptasi terhadap perkembangan teknologi.</li>
-            <li>Berkontribusi aktif dalam penelitian terapan dan pengabdian kepada masyarakat di kawasan Indonesia Timur.</li>
+            <li><strong>TPPS - 1:</strong> Menghasilkan lulusan yang mampu menerapkan ilmu dan teknologi untuk menyelesaikan permasalahan teknik elektro yang kreatif, inovatif, dan beretika, serta adaptif terhadap perkembangan teknologi global dan kebutuhan masyarakat lokal.</li>
+            <li><strong>TPPS - 2:</strong> Menghasilkan lulusan yang memiliki jiwa kepemimpinan, etika dan berintegritas serta berjiwa entrepreneurship.</li>
         </ol>
 
         <!-- PROFIL LULUSAN -->
@@ -152,48 +152,50 @@ $konsentrasiLabels = [
         <div class="profil-lulusan-grid">
             <div class="profil-card">
                 <div class="profil-card-num">PL-1</div>
-                <h4>Perekayasa Sistem Elektro</h4>
-                <p>Merancang, membangun, dan menguji sistem elektro (tenaga, telekomunikasi, kontrol, elektronika) sesuai standar teknis dan keselamatan.</p>
+                <h4>Engineering Science</h4>
+                <p>Perekayasa atau profesional yang mampu menerapkan pengetahuan tentang prinsip-prinsip teknik elektro yang menjadi landasan praktik, serta mendefinisikan, menyelidiki, dan menganalisis masalah teknik elektro yang kompleks menggunakan data dan teknologi informasi yang sesuai.</p>
+                <p class="profil-kerja"><em>Bidang Kerja:</em> Perekayasa, Perencana, Analis, Konsultan, Manajer, Pendidik, Entrepreneur</p>
             </div>
             <div class="profil-card">
                 <div class="profil-card-num">PL-2</div>
-                <h4>Perencana Sistem Tenaga &amp; Telekomunikasi</h4>
-                <p>Merencanakan instalasi dan jaringan tenaga listrik serta sistem telekomunikasi, termasuk analisis kebutuhan dan studi kelayakan.</p>
+                <h4>Engineering Design</h4>
+                <p>Perekayasa atau profesional yang mampu merancang atau mengembangkan solusi untuk masalah teknik elektro yang kompleks dengan mempertimbangkan berbagai pandangan dan memperhatikan pandangan pemangku kepentingan, serta mengevaluasi hasil dan dampak dari kegiatan rekayasa yang dilakukan.</p>
             </div>
             <div class="profil-card">
                 <div class="profil-card-num">PL-3</div>
-                <h4>Analis &amp; Konsultan Teknologi</h4>
-                <p>Menganalisis data dan performa sistem elektro, serta memberikan rekomendasi teknis untuk peningkatan efisiensi dan keandalan.</p>
+                <h4>Soft Skill</h4>
+                <p>Perekayasa atau profesional yang memiliki jiwa kepemimpinan yang baik, standar etika dan integritas yang tinggi, dan pembelajaran sepanjang hayat untuk mempertahankan keunggulan dalam inovasi.</p>
             </div>
             <div class="profil-card">
                 <div class="profil-card-num">PL-4</div>
-                <h4>Wirausahawan / Technopreneur</h4>
-                <p>Membangun usaha berbasis teknologi elektro, khususnya energi terbarukan dan solusi kelistrikan kawasan.</p>
+                <h4>Entrepreneur</h4>
+                <p>Perekayasa atau profesional yang memiliki jiwa entrepreneur dan mampu mengembangkan potensi kawasan.</p>
             </div>
         </div>
 
         <!-- CAPAIAN PEMBELAJARAN LULUSAN (CPL) -->
         <h3 class="subsection-heading">Capaian Pembelajaran Lulusan (CPL)</h3>
+        <p class="cpl-note">CPL Program Studi Teknik Elektro UNG mengacu pada CPL yang direkomendasikan oleh Forum Pendidikan Tinggi Teknik Elektro Indonesia (Fortei).</p>
         <div class="cpl-table-wrap">
             <table class="cpl-table">
                 <thead>
                     <tr>
                         <th style="width:90px;">Kode</th>
-                        <th>Deskripsi Capaian</th>
+                        <th>Uraian CPL</th>
                     </tr>
                 </thead>
                 <tbody>
-                    <tr><td class="cpl-num">CPL-1</td><td class="cpl-desc">Menunjukkan karakter religius, nasionalisme, dan integritas akademik sesuai Pancasila.</td></tr>
-                    <tr><td class="cpl-num">CPL-2</td><td class="cpl-desc">Berkontribusi dalam peningkatan mutu kehidupan bermasyarakat, berbangsa, dan bernegara.</td></tr>
-                    <tr><td class="cpl-num">CPL-3</td><td class="cpl-desc">Mampu bekerja sama, berkomunikasi efektif, dan beradaptasi dalam tim multidisiplin.</td></tr>
-                    <tr><td class="cpl-num">CPL-4</td><td class="cpl-desc">Menguasai konsep matematika, sains, dan ilmu dasar rekayasa untuk menyelesaikan permasalahan elektro.</td></tr>
-                    <tr><td class="cpl-num">CPL-5</td><td class="cpl-desc">Menguasai prinsip rekayasa elektro (tenaga, telekomunikasi, kontrol, elektronika) dan alat bantu rekayasa modern.</td></tr>
-                    <tr><td class="cpl-num">CPL-6</td><td class="cpl-desc">Mampu merancang sistem elektro dengan memperhatikan aspek keselamatan, keberlanjutan, dan energi baru terbarukan.</td></tr>
-                    <tr><td class="cpl-num">CPL-7</td><td class="cpl-desc">Mampu menganalisis, memodelkan, dan menyelesaikan masalah rekayasa elektro berbasis data dan eksperimen.</td></tr>
-                    <tr><td class="cpl-num">CPL-8</td><td class="cpl-desc">Mampu mengimplementasikan solusi teknologi pada sistem tenaga listrik, telekomunikasi, atau sistem tertanam.</td></tr>
-                    <tr><td class="cpl-num">CPL-9</td><td class="cpl-desc">Memiliki kesadaran belajar sepanjang hayat dan kemampuan mengikuti perkembangan IPTEK.</td></tr>
-                    <tr><td class="cpl-num">CPL-10</td><td class="cpl-desc">Memiliki pemahaman terhadap isu kontemporer (energi, lingkungan, kemaritiman) dalam konteks rekayasa elektro.</td></tr>
-                    <tr><td class="cpl-num">CPL-11</td><td class="cpl-desc">Memiliki jiwa kewirausahaan dan kemampuan mengelola proyek rekayasa sederhana.</td></tr>
+                    <tr><td class="cpl-num">CPL-1</td><td class="cpl-desc">Kemampuan menerapkan pengetahuan matematika, ilmu pengetahuan alam dan/atau material, teknologi informasi dan keteknikan untuk mendapatkan pemahaman menyeluruh tentang prinsip-prinsip teknik elektro.</td></tr>
+                    <tr><td class="cpl-num">CPL-2</td><td class="cpl-desc">Kemampuan mendesain komponen, sistem dan/atau proses teknik elektro untuk memenuhi kebutuhan yang diharapkan di dalam batasan-batasan realistis, misalnya hukum, ekonomi, lingkungan, sosial, politik, kesehatan dan keselamatan, keberlanjutan serta untuk mengenali dan/atau memanfaatkan potensi sumber daya lokal dan nasional dengan wawasan global.</td></tr>
+                    <tr><td class="cpl-num">CPL-3</td><td class="cpl-desc">Kemampuan mendesain dan melaksanakan eksperimen laboratorium dan/atau lapangan serta menganalisis dan mengartikan data untuk memperkuat penilaian teknik elektro.</td></tr>
+                    <tr><td class="cpl-num">CPL-4</td><td class="cpl-desc">Mengidentifikasi, merumuskan, menganalisis dan menyelesaikan permasalahan teknik elektro.</td></tr>
+                    <tr><td class="cpl-num">CPL-5</td><td class="cpl-desc">Kemampuan menerapkan metode, keterampilan dan piranti teknik yang modern yang diperlukan untuk praktik teknik elektro.</td></tr>
+                    <tr><td class="cpl-num">CPL-6</td><td class="cpl-desc">Kemampuan berkomunikasi secara efektif baik lisan maupun tulisan.</td></tr>
+                    <tr><td class="cpl-num">CPL-7</td><td class="cpl-desc">Kemampuan merencanakan, menyelesaikan dan mengevaluasi tugas di dalam batasan-batasan yang ada.</td></tr>
+                    <tr><td class="cpl-num">CPL-8</td><td class="cpl-desc">Kemampuan bekerja dalam tim lintas disiplin dan lintas budaya.</td></tr>
+                    <tr><td class="cpl-num">CPL-9</td><td class="cpl-desc">Kemampuan untuk bertanggung jawab kepada masyarakat dan mematuhi etika profesi dalam menyelesaikan permasalahan teknik.</td></tr>
+                    <tr><td class="cpl-num">CPL-10</td><td class="cpl-desc">Kemampuan memahami kebutuhan akan pembelajaran sepanjang hayat, termasuk akses terhadap pengetahuan terkait isu-isu kekinian yang relevan.</td></tr>
+                    <tr><td class="cpl-num">CPL-11</td><td class="cpl-desc">Kemampuan inovasi dan mengembangkan potensi kawasan untuk kesejahteraan masyarakat.</td></tr>
                 </tbody>
             </table>
         </div>

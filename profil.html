@@ -46,6 +46,7 @@
         .nav-menu { list-style: none; display: flex; gap: 4px; }
         .nav-menu > li { position: relative; }
         .nav-menu > li > a { display: block; padding: 10px 14px; font-size: 14px; font-weight: 500; color: var(--text); }
+        .nav-menu > li > a.dropdown-trigger::after { content: "▾"; margin-left: 6px; font-size: 10px; opacity: 0.6; }
         .nav-menu > li > a:hover, .nav-menu > li:hover > a, .nav-menu > li.active > a { color: var(--accent-dark); }
         .dropdown { position: absolute; top: 100%; left: 0; background: #fff; border: 1px solid var(--border); border-top: 3px solid var(--accent); min-width: 240px; padding: 8px 0; opacity: 0; visibility: hidden; transform: translateY(8px); transition: all .18s; z-index: 99; }
         .nav-menu > li:hover .dropdown { opacity: 1; visibility: visible; transform: translateY(0); }
@@ -390,33 +391,33 @@
         </div>
         <nav>
             <ul class="nav-menu" id="primary-nav">
-                <li><a href="index.html">Beranda</a></li>
+                <li><a href="index.php">Beranda</a></li>
                 <li class="active">
-                    <a href="profil.html">Profil</a>
+                    <a href="#" class="dropdown-trigger">Profil</a>
                     <div class="dropdown">
-                        <a href="profil.html#sejarah">Sejarah</a>
-                        <a href="profil.html#visi-misi">Visi &amp; Misi</a>
-                        <a href="profil.html#struktur">Struktur Organisasi</a>
-                        <a href="dosen.html">Tenaga Pendidik</a>
+                        <a href="profil.php#sejarah">Sejarah</a>
+                        <a href="profil.php#visi-misi">Visi &amp; Misi</a>
+                        <a href="profil.php#struktur">Struktur Organisasi</a>
+                        <a href="dosen.php">Tenaga Pendidik</a>
                     </div>
                 </li>
                 <li>
-                    <a href="kurikulum.html">Kurikulum</a>
+                    <a href="#" class="dropdown-trigger">Kurikulum</a>
                     <div class="dropdown">
                         <div class="dd-group">
                             <div class="dd-header">S1 Pendidikan Vokasional Rekayasa Elektro</div>
-                            <a href="kurikulum.html#pv-2025">Kurikulum 2025</a>
+                            <a href="kurikulum-pv.php">Kurikulum OBE 2025</a>
                         </div>
                         <div class="dd-sep"></div>
                         <div class="dd-group">
                             <div class="dd-header">S1 Teknik Elektro</div>
-                            <a href="kurikulum.html#te-2025">Kurikulum 2025</a>
-                            <a href="kurikulum.html#te-2017">Kurikulum 2017</a>
+                            <a href="kurikulum-te.php">Kurikulum OBE 2025</a>
+                            <a href="kurikulum-kkni.php">Kurikulum KKNI 2017</a>
                         </div>
                         <div class="dd-sep"></div>
                         <div class="dd-group">
                             <div class="dd-header">S1 Teknik Komputer</div>
-                            <a href="kurikulum.html#tk-2025">Kurikulum 2025</a>
+                            <a href="kurikulum-tk.php">Kurikulum OBE 2025</a>
                         </div>
                     </div>
                 </li>
@@ -453,7 +454,7 @@
 <section class="page-banner">
     <div class="container">
         <div>
-            <div class="breadcrumb"><a href="index.html">Beranda</a> &nbsp;&rsaquo;&nbsp; Profil</div>
+            <div class="breadcrumb"><a href="index.php">Beranda</a> &nbsp;&rsaquo;&nbsp; Profil</div>
             <h1>Profil Jurusan Teknik Elektro &amp; Komputer</h1>
             <p class="lede">Mengenal lebih dekat sejarah, visi-misi, dan struktur organisasi Jurusan Teknik Elektro dan Komputer, Fakultas Teknik UNG.</p>
         </div>

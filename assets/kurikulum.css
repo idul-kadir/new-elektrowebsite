@@ -243,6 +243,13 @@
 }
 
 /* ============ 5. CPL (Capaian Pembelajaran Lulusan) ============ */
+.cpl-note {
+    font-size: 14px;
+    color: var(--text-muted);
+    font-style: italic;
+    margin: 0 0 18px;
+    max-width: 800px;
+}
 .cpl-table-wrap {
     background: #fff;
     border: 1px solid var(--border);
@@ -727,6 +734,56 @@
 .kl-meta em {
     color: var(--accent-dark);
     font-style: italic;
+}
+
+/* ============ VISI + KAPRODI GRID 8/4 ============ */
+.visi-kaprodi-grid {
+    display: grid;
+    grid-template-columns: 7fr 5fr;
+    gap: 32px;
+    align-items: start;
+    margin: 0 0 48px;
+}
+.visi-kaprodi-grid .vk-col-visi .subsection-heading {
+    margin-top: 0;
+}
+.visi-kaprodi-grid .vk-col-kaprodi .subsection-heading {
+    margin-top: 0;
+}
+.visi-kaprodi-grid .kurikulum-visi-card {
+    margin: 0;
+}
+.visi-kaprodi-grid .vk-col-kaprodi .kaprodi-card {
+    margin: 0;
+    flex-direction: row;
+    text-align: left;
+    padding: 16px 18px;
+    gap: 14px;
+    align-items: center;
+}
+.visi-kaprodi-grid .vk-col-kaprodi .kpc-photo {
+    width: 64px;
+    height: 64px;
+    flex-shrink: 0;
+}
+.visi-kaprodi-grid .vk-col-kaprodi .kpc-name {
+    font-size: 15px;
+}
+.visi-kaprodi-grid .vk-col-kaprodi .kpc-initial {
+    font-size: 24px;
+}
+.visi-kaprodi-grid .vk-col-kaprodi .kpc-label {
+    margin-bottom: 2px;
+}
+.visi-kaprodi-grid .vk-col-kaprodi .kpc-bidang {
+    margin-bottom: 4px;
+}
+
+@media (max-width: 900px) {
+    .visi-kaprodi-grid {
+        grid-template-columns: 1fr;
+        gap: 24px;
+    }
 }
 
 /* ============ KAPRODI CARD (FOTO + INFO) ============ */

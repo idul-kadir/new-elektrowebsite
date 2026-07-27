@@ -74,7 +74,7 @@ $konsentrasiLabels = [
 <section class="page-banner">
     <div class="container">
         <div>
-            <div class="breadcrumb"><a href="index.php">Beranda</a> &nbsp;&rsaquo;&nbsp; <a href="kurikulum.php">Kurikulum</a> &nbsp;&rsaquo;&nbsp; Teknik Komputer</div>
+            <div class="breadcrumb"><a href="index.php">Beranda</a> &nbsp;&rsaquo;&nbsp; Kurikulum &nbsp;&rsaquo;&nbsp; Teknik Komputer</div>
             <h1>Kurikulum OBE 2025 &mdash; S1 Teknik Komputer</h1>
             <p class="lede">Kurikulum Outcome-Based Education untuk program sarjana teknik komputer, berfokus pada sistem tertanam, jaringan, dan rekayasa perangkat lunak.</p>
         </div>
@@ -100,34 +100,38 @@ $konsentrasiLabels = [
             Kurikulum OBE 2025 yang menyiapkan lulusan sebagai insinyur komputer dengan keahlian di bidang <em>embedded systems</em>, jaringan, dan rekayasa perangkat lunak.
         </p>
 
-        <!-- VISI KEILMUAN -->
-        <h3 class="subsection-heading">Visi Keilmuan Program Studi</h3>
-        <div class="kurikulum-visi-card">
-            Menghasilkan lulusan sarjana teknik komputer yang <strong>profesional, berdaya saing global, dan berorientasi pada sistem tertanam</strong> melalui pendekatan pendidikan berbasis capaian (<em>Outcome-Based Education</em>).
-        </div>
-
-        <!-- PENGELOLA PROGRAM STUDI -->
-        <?php if ($kaprodi): ?>
-        <h3 class="subsection-heading">Pengelola Program Studi</h3>
-        <div class="kaprodi-card">
-            <div class="kpc-photo">
-                <img src="<?php echo htmlspecialchars($kaprodi['profil']); ?>"
-                     alt="Foto <?php echo htmlspecialchars($kaprodi['kaprodi']); ?>"
-                     onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
-                <div class="kpc-initial" style="display:none;"><?php echo htmlspecialchars(getInitials($kaprodi['kaprodi'])); ?></div>
+        <!-- VISI + PENGELOLA GRID 8/4 -->
+        <div class="visi-kaprodi-grid">
+            <div class="vk-col vk-col-visi">
+                <h3 class="subsection-heading">Visi Keilmuan Program Studi</h3>
+                <div class="kurikulum-visi-card">
+                    Menghasilkan lulusan sarjana teknik komputer yang <strong>profesional, berdaya saing global, dan berorientasi pada sistem tertanam</strong> melalui pendekatan pendidikan berbasis capaian (<em>Outcome-Based Education</em>).
+                </div>
             </div>
-            <div class="kpc-info">
-                <div class="kpc-label"><?php echo htmlspecialchars($kaprodi['keterangan'] ?? 'Ketua Program Studi'); ?></div>
-                <div class="kpc-name"><?php echo htmlspecialchars($kaprodi['kaprodi']); ?></div>
-                <?php if (!empty($kaprodi['bidang'])): ?>
-                <div class="kpc-bidang"><em><?php echo htmlspecialchars($kaprodi['bidang']); ?></em></div>
-                <?php endif; ?>
-                <?php if (!empty($kaprodi['scholar'])): ?>
-                <a href="<?php echo htmlspecialchars($kaprodi['scholar']); ?>" target="_blank" rel="noopener" class="kpc-link">Google Scholar ↗</a>
-                <?php endif; ?>
+            <?php if ($kaprodi): ?>
+            <div class="vk-col vk-col-kaprodi">
+                <h3 class="subsection-heading">Pengelola Program Studi</h3>
+                <div class="kaprodi-card">
+                    <div class="kpc-photo">
+                        <img src="<?php echo htmlspecialchars($kaprodi['profil']); ?>"
+                             alt="Foto <?php echo htmlspecialchars($kaprodi['kaprodi']); ?>"
+                             onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
+                        <div class="kpc-initial" style="display:none;"><?php echo htmlspecialchars(getInitials($kaprodi['kaprodi'])); ?></div>
+                    </div>
+                    <div class="kpc-info">
+                        <div class="kpc-label"><?php echo htmlspecialchars($kaprodi['keterangan'] ?? 'Ketua Program Studi'); ?></div>
+                        <div class="kpc-name"><?php echo htmlspecialchars($kaprodi['kaprodi']); ?></div>
+                        <?php if (!empty($kaprodi['bidang'])): ?>
+                        <div class="kpc-bidang"><em><?php echo htmlspecialchars($kaprodi['bidang']); ?></em></div>
+                        <?php endif; ?>
+                        <?php if (!empty($kaprodi['scholar'])): ?>
+                        <a href="<?php echo htmlspecialchars($kaprodi['scholar']); ?>" target="_blank" rel="noopener" class="kpc-link">Google Scholar ↗</a>
+                        <?php endif; ?>
+                    </div>
+                </div>
             </div>
+            <?php endif; ?>
         </div>
-        <?php endif; ?>
 
         <!-- TUJUAN PENDIDIKAN PROGRAM STUDI (TPPS) -->
         <h3 class="subsection-heading">Tujuan Pendidikan Program Studi (TPPS)</h3>

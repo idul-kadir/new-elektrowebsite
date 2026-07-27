@@ -127,7 +127,7 @@ $staticKonsentrasi = [
 <section class="page-banner">
     <div class="container">
         <div>
-            <div class="breadcrumb"><a href="index.php">Beranda</a> &nbsp;&rsaquo;&nbsp; <a href="kurikulum.php">Kurikulum</a> &nbsp;&rsaquo;&nbsp; KKNI 2017 Teknik Elektro</div>
+            <div class="breadcrumb"><a href="index.php">Beranda</a> &nbsp;&rsaquo;&nbsp; Kurikulum &nbsp;&rsaquo;&nbsp; KKNI 2017 Teknik Elektro</div>
             <h1>Kurikulum KKNI &mdash; MBKM (S1 &mdash; Teknik Elektro)</h1>
             <p class="lede">Kurikulum KKNI 2017 program sarjana teknik elektro, terintegrasi dengan kebijakan Merdeka Belajar &mdash; Kampus Merdeka (MBKM).</p>
         </div>
@@ -141,41 +141,45 @@ $staticKonsentrasi = [
 <!-- SECTION VISI -->
 <section id="visi" class="prodi-section kkni-section">
     <div class="container">
-        <h3 class="subsection-heading">Visi Program Studi</h3>
-        <div class="kurikulum-visi-card kkni-visi-card">
-            Menjadi Program Studi yang Unggul dan Berdaya Saing dalam bidang <strong>Energi, Isyarat Elektronika, dan Informasi</strong> di Kawasan Timur Indonesia Tahun 2024.
-        </div>
+        <div class="visi-kaprodi-grid">
+            <div class="vk-col vk-col-visi">
+                <h3 class="subsection-heading">Visi Program Studi</h3>
+                <div class="kurikulum-visi-card kkni-visi-card">
+                    Menjadi Program Studi yang Unggul dan Berdaya Saing dalam bidang <strong>Energi, Isyarat Elektronika, dan Informasi</strong> di Kawasan Timur Indonesia Tahun 2024.
+                </div>
 
-        <!-- MISI -->
-        <h3 class="subsection-heading">Misi</h3>
-        <ol class="kkni-misi-list">
-            <li>Menyelenggarakan pendidikan teknik elektro sebagai satu kesatuan yang utuh dari ketiga dimensi yakni: energi, isyarat, dan informasi.</li>
-            <li>Melaksanakan penelitian dan pengabdian pada masyarakat di bidang energi, isyarat dan informasi.</li>
-            <li>Menyebarluaskan produk-produk di bidang teknik elektro melalui penggunaan teknologi informasi dan kerjasama dengan berbagai pihak.</li>
-        </ol>
-
-        <!-- PENGELOLA PRODI -->
-        <?php if ($kaprodi): ?>
-        <h3 class="subsection-heading">Pengelola Program Studi</h3>
-        <div class="kaprodi-card">
-            <div class="kpc-photo">
-                <img src="<?php echo htmlspecialchars($kaprodi['profil']); ?>"
-                     alt="Foto <?php echo htmlspecialchars($kaprodi['kaprodi']); ?>"
-                     onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
-                <div class="kpc-initial" style="display:none;"><?php echo htmlspecialchars(getInitials($kaprodi['kaprodi'])); ?></div>
+                <!-- MISI -->
+                <h3 class="subsection-heading">Misi</h3>
+                <ol class="kkni-misi-list">
+                    <li>Menyelenggarakan pendidikan teknik elektro sebagai satu kesatuan yang utuh dari ketiga dimensi yakni: energi, isyarat, dan informasi.</li>
+                    <li>Melaksanakan penelitian dan pengabdian pada masyarakat di bidang energi, isyarat dan informasi.</li>
+                    <li>Menyebarluaskan produk-produk di bidang teknik elektro melalui penggunaan teknologi informasi dan kerjasama dengan berbagai pihak.</li>
+                </ol>
             </div>
-            <div class="kpc-info">
-                <div class="kpc-label"><?php echo htmlspecialchars($kaprodi['keterangan'] ?? 'Ketua Program Studi'); ?></div>
-                <div class="kpc-name"><?php echo htmlspecialchars($kaprodi['kaprodi']); ?></div>
-                <?php if (!empty($kaprodi['bidang'])): ?>
-                <div class="kpc-bidang"><em><?php echo htmlspecialchars($kaprodi['bidang']); ?></em></div>
-                <?php endif; ?>
-                <?php if (!empty($kaprodi['scholar'])): ?>
-                <a href="<?php echo htmlspecialchars($kaprodi['scholar']); ?>" target="_blank" rel="noopener" class="kpc-link">Google Scholar ↗</a>
-                <?php endif; ?>
+            <?php if ($kaprodi): ?>
+            <div class="vk-col vk-col-kaprodi">
+                <h3 class="subsection-heading">Pengelola Program Studi</h3>
+                <div class="kaprodi-card">
+                    <div class="kpc-photo">
+                        <img src="<?php echo htmlspecialchars($kaprodi['profil']); ?>"
+                             alt="Foto <?php echo htmlspecialchars($kaprodi['kaprodi']); ?>"
+                             onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
+                        <div class="kpc-initial" style="display:none;"><?php echo htmlspecialchars(getInitials($kaprodi['kaprodi'])); ?></div>
+                    </div>
+                    <div class="kpc-info">
+                        <div class="kpc-label"><?php echo htmlspecialchars($kaprodi['keterangan'] ?? 'Ketua Program Studi'); ?></div>
+                        <div class="kpc-name"><?php echo htmlspecialchars($kaprodi['kaprodi']); ?></div>
+                        <?php if (!empty($kaprodi['bidang'])): ?>
+                        <div class="kpc-bidang"><em><?php echo htmlspecialchars($kaprodi['bidang']); ?></em></div>
+                        <?php endif; ?>
+                        <?php if (!empty($kaprodi['scholar'])): ?>
+                        <a href="<?php echo htmlspecialchars($kaprodi['scholar']); ?>" target="_blank" rel="noopener" class="kpc-link">Google Scholar ↗</a>
+                        <?php endif; ?>
+                    </div>
+                </div>
             </div>
+            <?php endif; ?>
         </div>
-        <?php endif; ?>
 
         <!-- NARASI KURIKULUM -->
         <h3 class="subsection-heading">Kurikulum</h3>

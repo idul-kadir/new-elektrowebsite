@@ -13,7 +13,7 @@ include 'template/header.php';
                 <h1 class="hero-title">Membangun <em>Insan Teknik</em> Yang Berdaya Saing Global</h1>
                 <p class="hero-lead">Program studi sarjana yang mengintegrasikan pendidikan, penelitian, dan pengabdian di bidang elektro dan komputer — untuk kawasan Indonesia Timur.</p>
                 <div class="hero-cta">
-                    <a href="profil.html" class="btn btn-primary">Tentang Jurusan</a>
+                    <a href="profil.php" class="btn btn-primary">Tentang Jurusan</a>
                     <a href="prodi.html" class="btn btn-outline">Program Studi</a>
                 </div>
             </div>

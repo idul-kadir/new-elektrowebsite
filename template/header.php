@@ -68,17 +68,19 @@ if (!function_exists('isActive')) {
         .nav-menu > li { position: relative; }
         .nav-menu > li > a { display: block; padding: 10px 14px; font-size: 14px; font-weight: 500; color: var(--text); }
         .nav-menu > li > a:hover, .nav-menu > li:hover > a, .nav-menu > li.active > a { color: var(--accent-dark); }
+        .nav-menu > li > a.dropdown-trigger::after { content: "▾"; margin-left: 6px; font-size: 10px; opacity: 0.6; }
+        .nav-menu > li:hover > a.dropdown-trigger::after, .nav-menu > li.active > a.dropdown-trigger::after { opacity: 1; }
         .dropdown { position: absolute; top: 100%; left: 0; background: #fff; border: 1px solid var(--border); border-top: 3px solid var(--accent); min-width: 240px; padding: 8px 0; opacity: 0; visibility: hidden; transform: translateY(8px); transition: all .18s; z-index: 99; }
         .nav-menu > li:hover .dropdown { opacity: 1; visibility: visible; transform: translateY(0); }
         .dropdown a { display: block; padding: 9px 18px; font-size: 13.5px; color: var(--text); }
         .dropdown a:hover { background: var(--soft); color: var(--accent-dark); }
-        .dd-sep { height: 1px; background: var(--border); margin: 6px 12px; }
+        .dd-sep { height: 1px; background: var(--border); margin: 6px 0; }
         .dd-label { display: block; padding: 8px 18px 4px; font-size: 11px; font-weight: 700; color: var(--text-muted); text-transform: uppercase; letter-spacing: .08em; }
-        .dd-group { padding: 4px 0; }
-        .dd-header { display: block; padding: 8px 18px 4px; font-size: 11.5px; font-weight: 700; color: var(--navy); text-transform: uppercase; letter-spacing: .06em; }
+        .dd-group { padding: 6px 0; }
+        .dd-header { display: block; padding: 6px 18px 4px; font-size: 11.5px; font-weight: 700; color: var(--navy); text-transform: uppercase; letter-spacing: .06em; }
         .dd-group a { padding-left: 18px; padding-right: 18px; }
         /* Dropdown khusus Kurikulum (lebih lebar karena isi nested) */
-        .nav-menu > li:has(.dd-group) .dropdown { min-width: 280px; }
+        .nav-menu > li:has(.dd-group) .dropdown { min-width: 320px; }
 
         /* ============ HERO SECTION (REVISI) ============ */
         .hero { background: var(--soft); padding: 56px 0 0; border-bottom: 1px solid var(--border); }
@@ -349,14 +351,14 @@ if (!function_exists('isActive')) {
             <ul class="nav-menu" id="primary-nav">
                 <li<?php echo isActive('index'); ?>><a href="index">Beranda</a></li>
                 <li<?php echo isActive('profil'); ?>>
-                    <a href="profil">Profil</a>
+                    <a href="#" class="dropdown-trigger">Profil</a>
                     <div class="dropdown">
                         <a href="profil">Tentang Jurusan</a>
                         <a href="dosen">Tenaga Pendidik</a>
                     </div>
                 </li>
                 <li<?php echo isActive('kurikulum'); ?>>
-                    <a href="kurikulum">Kurikulum</a>
+                    <a href="#" class="dropdown-trigger">Kurikulum</a>
                     <div class="dropdown">
                         <div class="dd-group">
                             <div class="dd-header">S1 Pendidikan Vokasional Rekayasa Elektro</div>
@@ -376,7 +378,7 @@ if (!function_exists('isActive')) {
                     </div>
                 </li>
                 <li>
-                    <a href="akademik.html">Akademik</a>
+                    <a href="#" class="dropdown-trigger">Akademik</a>
                     <div class="dropdown">
                         <a href="akademik.html#panduan-sop">Dokumen Panduan dan SOP</a>
                         <a href="akademik.html#penjamin-mutu">Dokumen Dan Penjamin Mutu</a>
