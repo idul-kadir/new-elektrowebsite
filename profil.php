@@ -10,7 +10,7 @@ include 'template/header.php';
 <section class="page-banner">
     <div class="container">
         <div>
-            <div class="breadcrumb"><a href="index.php">Beranda</a> &nbsp;&rsaquo;&nbsp; Profil</div>
+            <div class="breadcrumb"><a href="beranda">Beranda</a> &nbsp;&rsaquo;&nbsp; Profil</div>
             <h1>Profil Jurusan Teknik Elektro & Komputer</h1>
             <p class="lede">Mengenal lebih dekat sejarah, visi-misi, dan struktur organisasi Jurusan Teknik Elektro dan Komputer, Fakultas Teknik UNG.</p>
         </div>

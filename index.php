@@ -13,8 +13,8 @@ include 'template/header.php';
                 <h1 class="hero-title">Membangun <em>Insan Teknik</em> Yang Berdaya Saing Global</h1>
                 <p class="hero-lead">Program studi sarjana yang mengintegrasikan pendidikan, penelitian, dan pengabdian di bidang elektro dan komputer — untuk kawasan Indonesia Timur.</p>
                 <div class="hero-cta">
-                    <a href="profil.php" class="btn btn-primary">Tentang Jurusan</a>
-                    <a href="prodi.html" class="btn btn-outline">Program Studi</a>
+                    <a href="profil" class="btn btn-primary">Tentang Jurusan</a>
+                    <a href="#" class="btn btn-outline">Program Studi</a>
                 </div>
             </div>
             <div class="hero-stage">
@@ -70,7 +70,7 @@ include 'template/header.php';
                     <div class="berita-meta">Memuat...</div>
                     <h2>Sedang mengambil data berita utama...</h2>
                     <p>Silakan cek jaringan Anda.</p>
-                    <a href="berita.html" class="berita-main-link">Baca selengkapnya &rarr;</a>
+                    <a href="#" class="berita-main-link">Baca selengkapnya &rarr;</a>
                 </div>
             </article>
             <div class="berita-side">

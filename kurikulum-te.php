@@ -81,7 +81,7 @@ $konsentrasiLabels = [
 <section class="page-banner">
     <div class="container">
         <div>
-            <div class="breadcrumb"><a href="index.php">Beranda</a> &nbsp;&rsaquo;&nbsp; Kurikulum &nbsp;&rsaquo;&nbsp; Kurikulum OBE 2025</div>
+            <div class="breadcrumb"><a href="beranda">Beranda</a> &nbsp;&rsaquo;&nbsp; Kurikulum &nbsp;&rsaquo;&nbsp; Kurikulum OBE 2025</div>
             <h1>Kurikulum OBE 2025 &mdash; S1 Teknik Elektro</h1>
             <p class="lede">Kurikulum Outcome-Based Education Program Studi Sarjana Teknik Elektro, berbasis capaian pembelajaran lulusan dan berorientasi pada energi baru terbarukan.</p>
         </div>

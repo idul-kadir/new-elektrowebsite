@@ -6,6 +6,10 @@ RewriteCond %{REQUEST_FILENAME} -f [OR]
 RewriteCond %{REQUEST_FILENAME} -d
 RewriteRule ^ - [L]
 
+# /beranda (atau /beranda/) -> /index.php
+# Pretty URL khusus untuk halaman beranda.
+RewriteRule ^beranda/?$ index.php [L]
+
 # Otherwise, if the URL doesn't end with .php, try to append it
 # Example: /profil -> /profil.php
 RewriteCond %{REQUEST_URI} !\.[a-zA-Z0-9]{2,5}$

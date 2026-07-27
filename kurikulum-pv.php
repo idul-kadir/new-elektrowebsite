@@ -74,7 +74,7 @@ $konsentrasiLabels = [
 <section class="page-banner">
     <div class="container">
         <div>
-            <div class="breadcrumb"><a href="index.php">Beranda</a> &nbsp;&rsaquo;&nbsp; Kurikulum &nbsp;&rsaquo;&nbsp; PV Rekayasa Elektro</div>
+            <div class="breadcrumb"><a href="beranda">Beranda</a> &nbsp;&rsaquo;&nbsp; Kurikulum &nbsp;&rsaquo;&nbsp; PV Rekayasa Elektro</div>
             <h1>Kurikulum OBE 2025 &mdash; S1 Pendidikan Vokasional Rekayasa Elektro</h1>
             <p class="lede">Kurikulum Outcome-Based Education untuk program sarjana pendidikan vokasional bidang rekayasa elektro, memadukan kompetensi kejuruan dan pedagogi.</p>
         </div>

@@ -74,7 +74,7 @@ $konsentrasiLabels = [
 <section class="page-banner">
     <div class="container">
         <div>
-            <div class="breadcrumb"><a href="index.php">Beranda</a> &nbsp;&rsaquo;&nbsp; Kurikulum &nbsp;&rsaquo;&nbsp; Teknik Komputer</div>
+            <div class="breadcrumb"><a href="beranda">Beranda</a> &nbsp;&rsaquo;&nbsp; Kurikulum &nbsp;&rsaquo;&nbsp; Teknik Komputer</div>
             <h1>Kurikulum OBE 2025 &mdash; S1 Teknik Komputer</h1>
             <p class="lede">Kurikulum Outcome-Based Education untuk program sarjana teknik komputer, berfokus pada sistem tertanam, jaringan, dan rekayasa perangkat lunak.</p>
         </div>

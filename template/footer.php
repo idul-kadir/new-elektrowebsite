@@ -16,9 +16,9 @@
             </div>
             <div>
                 <h5>Akademik</h5>
-                <p><a href="akademik.html#kurikulum-te">Kurikulum OBE &mdash; TE</a></p>
-                <p><a href="akademik.html#kurikulum-kkni">Kurikulum KKNI</a></p>
-                <p><a href="akademik.html#kurikulum-tk">Kurikulum OBE &mdash; TK</a></p>
+                <p><a href="kurikulum-te">Kurikulum OBE &mdash; TE</a></p>
+                <p><a href="kurikulum-kkni">Kurikulum KKNI</a></p>
+                <p><a href="kurikulum-tk">Kurikulum OBE &mdash; TK</a></p>
             </div>
             <div>
                 <h5>Tautan</h5>
@@ -146,7 +146,7 @@ const API = 'https://temp.ikad-developer.my.id/elektro';
                 if (!Array.isArray(data) || !data.length) return;
                 list.innerHTML = data.map(item => {
                     const name = Object.keys(item)[0];
-                    return `<li style="margin-bottom:8px;"><a href="prodi.html">${name.replace(/^S1\s/, '')}</a></li>`;
+                    return `<li style="margin-bottom:8px;"><a href="#">${name.replace(/^S1\s/, '')}</a></li>`;
                 }).join('');
             });
     })();
@@ -219,13 +219,14 @@ const API = 'https://temp.ikad-developer.my.id/elektro';
         });
         if (backdrop) backdrop.addEventListener('click', closeMenu);
 
-        // Click dropdown toggle (untuk touch + mobile)
+        // Click dropdown toggle (parent link membuka dropdown, bukan navigate)
         document.querySelectorAll('.nav-menu > li > a').forEach(a => {
             const li = a.parentElement;
             if (!li.querySelector('.dropdown')) return;
             a.addEventListener('click', (e) => {
+                // Cegah navigasi: parent hanya pemicu dropdown.
+                e.preventDefault();
                 if (window.matchMedia('(max-width: 900px)').matches) {
-                    e.preventDefault();
                     const open = li.classList.toggle('is-open');
                     a.setAttribute('aria-expanded', open ? 'true' : 'false');
                 }

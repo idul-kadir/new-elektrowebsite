@@ -33,7 +33,7 @@ $dosenCount = count($dosenData);
 <section class="page-banner">
     <div class="container">
         <div>
-            <div class="breadcrumb"><a href="index.php">Beranda</a> &nbsp;&rsaquo;&nbsp; Tenaga Pendidik</div>
+            <div class="breadcrumb"><a href="beranda">Beranda</a> &nbsp;&rsaquo;&nbsp; Tenaga Pendidik</div>
             <h1>Tenaga Pendidik Jurusan Teknik Elektro & Komputer</h1>
             <p class="lede">Dosen dan tenaga pendidik yang mengampu mata kuliah di program studi S1 Teknik Elektro dan S1 Teknik Komputer.</p>
         </div>

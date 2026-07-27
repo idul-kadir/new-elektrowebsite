@@ -127,7 +127,7 @@ $staticKonsentrasi = [
 <section class="page-banner">
     <div class="container">
         <div>
-            <div class="breadcrumb"><a href="index.php">Beranda</a> &nbsp;&rsaquo;&nbsp; Kurikulum &nbsp;&rsaquo;&nbsp; KKNI 2017 Teknik Elektro</div>
+            <div class="breadcrumb"><a href="beranda">Beranda</a> &nbsp;&rsaquo;&nbsp; Kurikulum &nbsp;&rsaquo;&nbsp; KKNI 2017 Teknik Elektro</div>
             <h1>Kurikulum KKNI &mdash; MBKM (S1 &mdash; Teknik Elektro)</h1>
             <p class="lede">Kurikulum KKNI 2017 program sarjana teknik elektro, terintegrasi dengan kebijakan Merdeka Belajar &mdash; Kampus Merdeka (MBKM).</p>
         </div>

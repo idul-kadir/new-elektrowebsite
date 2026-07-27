@@ -3,8 +3,17 @@
 // Include di atas setiap halaman PHP
 
 // Deteksi halaman aktif otomatis dari PHP_SELF.
+// Strip .php agar aktif baik diakses via /beranda maupun /beranda.php.
 // Juga bisa di-override via $currentPage = 'xxx' di halaman pemanggil.
-$page = basename($_SERVER['PHP_SELF'], '.php');
+$page = basename($_SERVER['PHP_SELF']);
+if (substr($page, -4) === '.php') $page = substr($page, 0, -4);
+
+// /beranda -> index.php: paksa currentPage='beranda' agar menu Beranda tetap aktif.
+$reqUri = isset($_SERVER['REQUEST_URI']) ? parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH) : '';
+if ($page === 'index' || $reqUri === '/beranda' || $reqUri === '/beranda/') {
+    $page = 'beranda';
+}
+
 $currentPage = isset($currentPage) ? $currentPage : $page;
 $pageTitle = isset($pageTitle) ? $pageTitle : 'Jurusan Teknik Elektro dan Komputer - Universitas Negeri Gorontalo';
 
@@ -349,7 +358,7 @@ if (!function_exists('isActive')) {
         </div>
         <nav>
             <ul class="nav-menu" id="primary-nav">
-                <li<?php echo isActive('index'); ?>><a href="index">Beranda</a></li>
+                <li<?php echo isActive('beranda'); ?>><a href="beranda">Beranda</a></li>
                 <li<?php echo isActive('profil'); ?>>
                     <a href="#" class="dropdown-trigger">Profil</a>
                     <div class="dropdown">
@@ -362,36 +371,36 @@ if (!function_exists('isActive')) {
                     <div class="dropdown">
                         <div class="dd-group">
                             <div class="dd-header">S1 Pendidikan Vokasional Rekayasa Elektro</div>
-                            <a href="kurikulum-pv.php">Kurikulum OBE 2025</a>
+                            <a href="kurikulum-pv">Kurikulum OBE 2025</a>
                         </div>
                         <div class="dd-sep"></div>
                         <div class="dd-group">
                             <div class="dd-header">S1 Teknik Elektro</div>
-                            <a href="kurikulum-te.php">Kurikulum OBE 2025</a>
-                            <a href="kurikulum-kkni.php">Kurikulum KKNI 2017</a>
+                            <a href="kurikulum-te">Kurikulum OBE 2025</a>
+                            <a href="kurikulum-kkni">Kurikulum KKNI 2017</a>
                         </div>
                         <div class="dd-sep"></div>
                         <div class="dd-group">
                             <div class="dd-header">S1 Teknik Komputer</div>
-                            <a href="kurikulum-tk.php">Kurikulum OBE 2025</a>
+                            <a href="kurikulum-tk">Kurikulum OBE 2025</a>
                         </div>
                     </div>
                 </li>
                 <li>
                     <a href="#" class="dropdown-trigger">Akademik</a>
                     <div class="dropdown">
-                        <a href="akademik.html#panduan-sop">Dokumen Panduan dan SOP</a>
-                        <a href="akademik.html#penjamin-mutu">Dokumen Dan Penjamin Mutu</a>
-                        <a href="akademik.html#dokumen-kurikulum">Dokumen Kurikulum</a>
-                        <a href="akademik.html#akreditas">Dokumen Akreditas</a>
-                        <a href="akademik.html#laporan-kinerja">Laporan Kinerja</a>
+                        <a href="#">Dokumen Panduan dan SOP</a>
+                        <a href="#">Dokumen Dan Penjamin Mutu</a>
+                        <a href="#">Dokumen Kurikulum</a>
+                        <a href="#">Dokumen Akreditas</a>
+                        <a href="#">Laporan Kinerja</a>
                     </div>
                 </li>
-                <li><a href="mahasiswa.html">Mahasiswa</a></li>
-                <li><a href="publikasi.html">Publikasi</a></li>
-                <li><a href="fasilitas.html">Fasilitas</a></li>
-                <li><a href="alumni.html">Alumni</a></li>
-                <li><a href="berita.html">Berita</a></li>
+                <li><a href="#">Mahasiswa</a></li>
+                <li><a href="#">Publikasi</a></li>
+                <li><a href="#">Fasilitas</a></li>
+                <li><a href="#">Alumni</a></li>
+                <li><a href="#">Berita</a></li>
             </ul>
         </nav>
             <button class="hamburger" id="hamburgerBtn" aria-label="Buka menu" aria-expanded="false" aria-controls="primary-nav">

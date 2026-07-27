@@ -10,7 +10,7 @@ include 'template/header.php';
 <section class="page-banner">
     <div class="container">
         <div>
-            <div class="breadcrumb"><a href="index.php">Beranda</a> &nbsp;&rsaquo;&nbsp; Kurikulum</div>
+            <div class="breadcrumb"><a href="beranda">Beranda</a> &nbsp;&rsaquo;&nbsp; Kurikulum</div>
             <h1>Kurikulum Jurusan Teknik Elektro &amp; Komputer</h1>
             <p class="lede">Kurikulum berbasis OBE (Outcome-Based Education) untuk setiap program studi sarjana di Jurusan Teknik Elektro dan Komputer, Fakultas Teknik UNG.</p>
         </div>
@@ -72,7 +72,7 @@ include 'template/header.php';
         <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:24px;margin-top:8px;">
 
             <!-- CARD: PV REKAYASA ELEKTRO -->
-            <a href="kurikulum-pv.php" style="display:block;background:#fff;border:1px solid var(--border);border-top:4px solid var(--accent);padding:32px 28px;transition:border-color .2s, box-shadow .2s, transform .2s;text-decoration:none;color:inherit;">
+            <a href="kurikulum-pv" style="display:block;background:#fff;border:1px solid var(--border);border-top:4px solid var(--accent);padding:32px 28px;transition:border-color .2s, box-shadow .2s, transform .2s;text-decoration:none;color:inherit;">
                 <div style="font-size:11px;font-weight:700;color:var(--accent-dark);letter-spacing:.1em;text-transform:uppercase;margin-bottom:10px;">S1 PENDIDIKAN VOKASIONAL</div>
                 <h3 style="font-family:'Source Serif 4',serif;font-size:22px;color:var(--navy);margin-bottom:10px;line-height:1.25;">Rekayasa Elektro</h3>
                 <p style="font-size:13.5px;color:var(--text-muted);line-height:1.6;margin-bottom:18px;">Kurikulum OBE 2025 untuk program sarjana pendidikan vokasional bidang rekayasa elektro.</p>
@@ -83,7 +83,7 @@ include 'template/header.php';
             </a>
 
             <!-- CARD: TEKNIK ELEKTRO OBE -->
-            <a href="kurikulum-te.php" style="display:block;background:#fff;border:1px solid var(--border);border-top:4px solid var(--accent);padding:32px 28px;transition:border-color .2s, box-shadow .2s, transform .2s;text-decoration:none;color:inherit;">
+            <a href="kurikulum-te" style="display:block;background:#fff;border:1px solid var(--border);border-top:4px solid var(--accent);padding:32px 28px;transition:border-color .2s, box-shadow .2s, transform .2s;text-decoration:none;color:inherit;">
                 <div style="font-size:11px;font-weight:700;color:var(--accent-dark);letter-spacing:.1em;text-transform:uppercase;margin-bottom:10px;">S1 TEKNIK ELEKTRO</div>
                 <h3 style="font-family:'Source Serif 4',serif;font-size:22px;color:var(--navy);margin-bottom:10px;line-height:1.25;">Kurikulum OBE 2025</h3>
                 <p style="font-size:13.5px;color:var(--text-muted);line-height:1.6;margin-bottom:18px;">Kurikulum OBE 2025 dengan konsentrasi TTL (Tenaga Listrik) dan TET (Telekomunikasi).</p>
@@ -94,7 +94,7 @@ include 'template/header.php';
             </a>
 
             <!-- CARD: TEKNIK ELEKTRO KKNI -->
-            <a href="kurikulum-kkni.php" style="display:block;background:#fff;border:1px solid var(--border);border-top:4px solid var(--navy);padding:32px 28px;transition:border-color .2s, box-shadow .2s, transform .2s;text-decoration:none;color:inherit;">
+            <a href="kurikulum-kkni" style="display:block;background:#fff;border:1px solid var(--border);border-top:4px solid var(--navy);padding:32px 28px;transition:border-color .2s, box-shadow .2s, transform .2s;text-decoration:none;color:inherit;">
                 <div style="font-size:11px;font-weight:700;color:var(--accent-dark);letter-spacing:.1em;text-transform:uppercase;margin-bottom:10px;">S1 TEKNIK ELEKTRO</div>
                 <h3 style="font-family:'Source Serif 4',serif;font-size:22px;color:var(--navy);margin-bottom:10px;line-height:1.25;">Kurikulum KKNI 2017</h3>
                 <p style="font-size:13.5px;color:var(--text-muted);line-height:1.6;margin-bottom:18px;">Kurikulum KKNI 2017 (arsip) dengan 4 konsentrasi: STL, STK, SET, SKI.</p>
@@ -105,7 +105,7 @@ include 'template/header.php';
             </a>
 
             <!-- CARD: TEKNIK KOMPUTER OBE -->
-            <a href="kurikulum-tk.php" style="display:block;background:#fff;border:1px solid var(--border);border-top:4px solid var(--accent);padding:32px 28px;transition:border-color .2s, box-shadow .2s, transform .2s;text-decoration:none;color:inherit;">
+            <a href="kurikulum-tk" style="display:block;background:#fff;border:1px solid var(--border);border-top:4px solid var(--accent);padding:32px 28px;transition:border-color .2s, box-shadow .2s, transform .2s;text-decoration:none;color:inherit;">
                 <div style="font-size:11px;font-weight:700;color:var(--accent-dark);letter-spacing:.1em;text-transform:uppercase;margin-bottom:10px;">S1 TEKNIK KOMPUTER</div>
                 <h3 style="font-family:'Source Serif 4',serif;font-size:22px;color:var(--navy);margin-bottom:10px;line-height:1.25;">Kurikulum OBE 2025</h3>
                 <p style="font-size:13.5px;color:var(--text-muted);line-height:1.6;margin-bottom:18px;">Kurikulum OBE 2025 untuk program studi sarjana teknik komputer.</p>
