@@ -233,8 +233,8 @@ if (!function_exists('isActive')) {
             .hero-title { font-size: 38px; }
             .section-title { font-size: 30px; }
         }
-        @media (max-width: 900px) {
-            .hamburger { display: flex; align-items: center; justify-content: center; }
+        @media (max-width: 1100px) {
+            .hamburger { display: flex; align-items: center; justify-content: center; margin-left: auto; }
             .header .container { height: 70px; }
             .brand-text h1 { font-size: 15.5px; }
             .brand-text span { display: none; }
@@ -352,7 +352,7 @@ if (!function_exists('isActive')) {
         <div class="brand">
             <div class="brand-logo"><img src="assets/logo.jpg" alt="Logo Jurusan"></div>
             <div class="brand-text">
-                <h1>Jurusan Teknik Elektro & Komputer</h1>
+                <h1>Jurusan Teknik Elektro &amp; Komputer</h1>
                 <span>Fakultas Teknik &bull; Universitas Negeri Gorontalo</span>
             </div>
         </div>
@@ -403,14 +403,13 @@ if (!function_exists('isActive')) {
                 <li><a href="#">Berita</a></li>
             </ul>
         </nav>
-            <button class="hamburger" id="hamburgerBtn" aria-label="Buka menu" aria-expanded="false" aria-controls="primary-nav">
-                <svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round">
-                    <line x1="4" y1="7" x2="20" y2="7"/>
-                    <line x1="4" y1="12" x2="20" y2="12"/>
-                    <line x1="4" y1="17" x2="20" y2="17"/>
-                </svg>
-            </button>
-        
+        <button class="hamburger" id="hamburgerBtn" aria-label="Buka menu" aria-expanded="false" aria-controls="primary-nav">
+            <svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round">
+                <line x1="4" y1="7" x2="20" y2="7"/>
+                <line x1="4" y1="12" x2="20" y2="12"/>
+                <line x1="4" y1="17" x2="20" y2="17"/>
+            </svg>
+        </button>
         <div class="backdrop" id="menuBackdrop"></div>
     </div>
 </header>

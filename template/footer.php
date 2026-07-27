@@ -226,7 +226,7 @@ const API = 'https://temp.ikad-developer.my.id/elektro';
             a.addEventListener('click', (e) => {
                 // Cegah navigasi: parent hanya pemicu dropdown.
                 e.preventDefault();
-                if (window.matchMedia('(max-width: 900px)').matches) {
+                if (window.matchMedia('(max-width: 1100px)').matches) {
                     const open = li.classList.toggle('is-open');
                     a.setAttribute('aria-expanded', open ? 'true' : 'false');
                 }
@@ -240,7 +240,7 @@ const API = 'https://temp.ikad-developer.my.id/elektro';
 
         document.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeMenu(); });
         window.addEventListener('resize', () => {
-            if (!window.matchMedia('(max-width: 900px)').matches) closeMenu();
+            if (!window.matchMedia('(max-width: 1100px)').matches) closeMenu();
         });
     })();
 </script>
