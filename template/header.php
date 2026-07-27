@@ -371,18 +371,18 @@ if (!function_exists('isActive')) {
                     <div class="dropdown">
                         <div class="dd-group">
                             <div class="dd-header">S1 Pendidikan Vokasional Rekayasa Elektro</div>
-                            <a href="kurikulum-pv">Kurikulum OBE 2025</a>
+                            <a href="kurikulum-obe-pvre">Kurikulum OBE 2025</a>
                         </div>
                         <div class="dd-sep"></div>
                         <div class="dd-group">
                             <div class="dd-header">S1 Teknik Elektro</div>
-                            <a href="kurikulum-te">Kurikulum OBE 2025</a>
+                            <a href="kurikulum-obe-teknik-elektro">Kurikulum OBE 2025</a>
                             <a href="kurikulum-kkni">Kurikulum KKNI 2017</a>
                         </div>
                         <div class="dd-sep"></div>
                         <div class="dd-group">
                             <div class="dd-header">S1 Teknik Komputer</div>
-                            <a href="kurikulum-tk">Kurikulum OBE 2025</a>
+                            <a href="kurikulum-obe-teknik-komputer">Kurikulum OBE 2025</a>
                         </div>
                     </div>
                 </li>

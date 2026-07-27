@@ -16,9 +16,9 @@
             </div>
             <div>
                 <h5>Akademik</h5>
-                <p><a href="kurikulum-te">Kurikulum OBE &mdash; TE</a></p>
+                <p><a href="kur-obe-te">Kurikulum OBE &mdash; TE</a></p>
                 <p><a href="kurikulum-kkni">Kurikulum KKNI</a></p>
-                <p><a href="kurikulum-tk">Kurikulum OBE &mdash; TK</a></p>
+                <p><a href="kur-obe-tk">Kurikulum OBE &mdash; TK</a></p>
             </div>
             <div>
                 <h5>Tautan</h5>

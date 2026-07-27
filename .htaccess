@@ -10,6 +10,15 @@ RewriteRule ^ - [L]
 # Pretty URL khusus untuk halaman beranda.
 RewriteRule ^beranda/?$ index.php [L]
 
+# /kur-obe-tk -> /kur-obe-tk.php (alias URL untuk halaman Kurikulum OBE TK)
+RewriteRule ^kurikulum-obe-teknik-komputer/?$ kurikulum-obe-tk.php [L]
+
+# /kur-obe-te -> /kur-obe-te.php (alias URL untuk halaman Kurikulum OBE TE)
+RewriteRule ^kurikulum-obe-teknik-elektro/?$ kurikulum-te.php [L]
+
+# /kur-obe-pv -> /kur-obe-pv.php (alias URL untuk halaman Kurikulum OBE PV)
+RewriteRule ^kur-obe-pvre/?$ kurikulum-obe-pv.php [L]
+
 # Otherwise, if the URL doesn't end with .php, try to append it
 # Example: /profil -> /profil.php
 RewriteCond %{REQUEST_URI} !\.[a-zA-Z0-9]{2,5}$
