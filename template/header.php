@@ -390,8 +390,8 @@ if (!function_exists('isActive')) {
                     <a href="#" class="dropdown-trigger">Akademik</a>
                     <div class="dropdown">
                         <a href="panduan-sop">Panduan dan SOP</a>
-                        <a href="#">Dokumen Dan Penjamin Mutu</a>
-                        <a href="#">Dokumen Kurikulum</a>
+                        <a href="dokumen-penjamin-mutu">Dokumen Penjamin Mutu</a>
+                        <a href="dokumen-kurikulum">Dokumen Kurikulum</a>
                         <a href="#">Dokumen Akreditas</a>
                         <a href="#">Laporan Kinerja</a>
                     </div>
