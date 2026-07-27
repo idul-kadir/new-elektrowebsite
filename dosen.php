@@ -47,13 +47,15 @@ $dosenCount = count($dosenData);
 <!-- DOSEN SECTION -->
 <section id="tenaga-pendidik">
     <div class="container">
-        <div class="section-head">
+        <div class="section-head section-head-split">
             <div class="section-head-left">
                 <div class="section-eyebrow">Tenaga Pendidik</div>
+            </div>
+            <div class="section-head-right">
                 <h2 class="section-title">Daftar Dosen</h2>
             </div>
-            <p class="section-desc">Seluruh dosen aktif Jurusan Teknik Elektro dan Komputer, Universitas Negeri Gorontalo.</p>
         </div>
+        <p class="section-desc dosen-section-desc">Seluruh dosen aktif Jurusan Teknik Elektro dan Komputer, Universitas Negeri Gorontalo.</p>
         
         <?php if (!empty($dosenData)): ?>
         <div class="dosen-grid">

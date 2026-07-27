@@ -14,35 +14,19 @@
 /* ====== DAFTAR DOSEN ====== */
 #tenaga-pendidik { background: var(--soft); }
 
-/* Override section-head agar tampil vertikal di halaman dosen */
+/* Section head: split layout - eyebrow kiri, title kanan */
 #tenaga-pendidik .section-head {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    gap: 32px;
+    align-items: flex-start;
+}
+
+#tenaga-pendidik .section-head-right .section-title {
     margin-bottom: 0;
 }
 
-#tenaga-pendidik .section-head-left {
-    display: flex;
-    align-items: center;
-    gap: 16px;
-}
-
-#tenaga-pendidik .section-eyebrow {
-    margin-bottom: 0;
-    white-space: nowrap;
-}
-
-#tenaga-pendidik .section-title {
-    margin-bottom: 0;
-}
-
-#tenaga-pendidik .section-desc {
-    margin-top: 0;
-    padding-top: 12px;
-    border-top: 1px solid var(--border);
-    width: 100%;
+#tenaga-pendidik .dosen-section-desc {
+    margin-top: -32px;
+    margin-bottom: 48px;
+    max-width: 720px;
 }
 
 .dosen-grid {
