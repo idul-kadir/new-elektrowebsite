@@ -479,6 +479,7 @@
     align-items: center;
     flex-wrap: wrap;
     gap: 12px;
+    background-color: white;
 }
 .berita-back-btn {
     display: inline-flex;

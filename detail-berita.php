@@ -10,7 +10,7 @@
 //   4. Fetch /detail-berita/{link}
 
 $currentPage = 'berita';
-$pageCss = ['assets/berita.css'];
+$pageCss = ['assets/berita.css?v=' . filemtime('assets/berita.css')];
 $pageTitle = 'Detail Berita — Jurusan Teknik Elektro dan Komputer';
 
 // ---- AMBIL & VALIDASI SLUG ----
@@ -313,20 +313,20 @@ ob_end_flush();
             <!-- ============ SIDEBAR ============ -->
             <aside class="berita-sidebar">
 
-                <!-- Berita Terbaru -->
+                <!-- Berita Lainnya -->
                 <div class="berita-side-card">
                     <div class="berita-side-card-head">
                         <span class="side-icon">📰</span>
-                        <h4>Berita Terbaru</h4>
+                        <h4>Berita Lainnya</h4>
                     </div>
                     <div class="berita-side-list">
-                        <?php if (!empty($recentItems)): ?>
-                            <?php foreach ($recentItems as $i => $r):
+                        <?php if (!empty($relatedItems)): ?>
+                            <?php foreach ($relatedItems as $i => $r):
                                 $rImg   = $r['gambar'] ?? '';
                                 $rJudul = $r['judul'] ?? '(Tanpa judul)';
                                 $rSlug  = $r['keterangan'] ?? '';
                                 $rTgl   = tglIndo($r['tanggal'] ?? '');
-                                $rHref  = $rSlug !== '' ? 'berita?slug=' . rawurlencode($rSlug) : 'berita';
+                                $rHref  = $rSlug !== '' ? 'detail-berita?slug=' . rawurlencode($rSlug) : 'berita';
                                 $isActive = ($rSlug === $currentSlug);
                             ?>
                                 <a href="<?php echo $rHref; ?>" class="berita-side-item <?php echo $isActive ? 'is-active' : ''; ?>">
@@ -384,7 +384,7 @@ ob_end_flush();
                     $rJudul = $r['judul'] ?? '(Tanpa judul)';
                     $rSlug  = $r['keterangan'] ?? '';
                     $rTgl   = tglIndo($r['tanggal'] ?? '');
-                    $rHref  = $rSlug !== '' ? 'berita?slug=' . rawurlencode($rSlug) : 'berita';
+                    $rHref  = $rSlug !== '' ? 'detail-berita?slug=' . rawurlencode($rSlug) : 'berita';
                 ?>
                     <article class="berita-related-card">
                         <a class="berita-related-media" href="<?php echo $rHref; ?>" aria-label="<?php echo htmlspecialchars($rJudul); ?>">

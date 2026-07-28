@@ -114,7 +114,7 @@ include 'template/header.php';
         const slug  = encodeURIComponent(it.keterangan || '');
         const date  = tglIndo(it.tanggal);
         const dateHtml = date ? `<div class="berita-card-date">${date}</div>` : '';
-        const href = slug ? 'berita?slug=' + slug : '#';
+        const href = slug ? 'detail-berita?slug=' + slug : '#';
         return [
             '<article class="berita-card">',
                 '<a class="berita-card-media" href="' + href + '" aria-label="' + judul + '">',
