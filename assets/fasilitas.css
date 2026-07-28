@@ -34,7 +34,7 @@
     background: #fff;
     border: 1px solid var(--border);
     border-top: 4px solid var(--accent);
-    border-radius: 14px;
+    border-radius: 20px;
     overflow: hidden;
     box-shadow: 0 4px 18px rgba(15, 35, 70, 0.06);
     transition: box-shadow .25s ease, transform .25s ease;
@@ -86,7 +86,7 @@
     margin: 0;
     padding: 20px 22px;
     background: var(--soft);
-    border-radius: 10px;
+    border-radius: 14px;
     border-left: 3px solid var(--accent);
 }
 .fas-featured-list li {
@@ -126,7 +126,7 @@
     letter-spacing: .14em;
     padding: 5px 10px;
     text-transform: uppercase;
-    border-radius: 4px;
+    border-radius: 6px;
 }
 .fas-badge-lab {
     background: var(--navy);
@@ -152,29 +152,6 @@
     font-weight: 700;
     color: var(--text-muted);
     letter-spacing: .15em;
-}
-
-/* ============================================================
-   SUMBER LINK (footer card, opsional)
-   ============================================================ */
-.fas-source {
-    display: inline-flex;
-    align-items: center;
-    gap: 6px;
-    margin-top: auto;
-    padding-top: 18px;
-    font-size: 12px;
-    color: var(--text-muted);
-    text-decoration: none;
-    border-top: 1px dashed var(--border);
-    letter-spacing: .04em;
-    transition: color .2s ease;
-}
-.fas-source:hover {
-    color: var(--accent-dark);
-}
-.fas-source svg {
-    flex-shrink: 0;
 }
 
 /* ============================================================

@@ -1,0 +1,383 @@
+/* ============================================================
+   assets/alumni.css — Halaman Direktori Alumni
+   Style spesifik alumni. Selector lain (.page-banner,
+   .section-head-split, .dokumen-toolbar, .tahun-chip,
+   .loading-state, .spinner, .pub-loadmore-wrap,
+   .pub-loadmore-btn) di-reuse dari kurikulum.css & publikasi.css.
+   ============================================================ */
+
+/* ============ SECTION DEFAULTS override ============ */
+#alumni .prodi-section { padding-top: 64px; }
+#alumni .section-head { margin-bottom: 28px; }
+
+/* ============================================================
+   STATS ROW — 4 angka (Total, Tahun Aktif, Lulusan Terbaru, Rata-rata/Tahun)
+   ============================================================ */
+.alm-stats-row {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 18px;
+    margin: 0 0 48px;
+}
+.alm-stat {
+    background: #fff;
+    border: 1px solid var(--border);
+    border-top: 3px solid var(--accent);
+    border-radius: 12px;
+    padding: 22px 22px 20px;
+    transition: transform .2s ease, box-shadow .2s ease;
+}
+.alm-stat:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 24px rgba(15, 35, 70, 0.10);
+}
+.alm-stat-label {
+    display: block;
+    font-size: 11.5px;
+    font-weight: 600;
+    color: var(--text-muted);
+    letter-spacing: .12em;
+    text-transform: uppercase;
+    margin-bottom: 8px;
+}
+.alm-stat-value {
+    display: block;
+    font-family: 'Source Serif 4', serif;
+    font-size: 30px;
+    font-weight: 700;
+    color: var(--navy);
+    line-height: 1.1;
+}
+.alm-stat-value small {
+    font-family: 'Inter', sans-serif;
+    font-size: 13px;
+    font-weight: 500;
+    color: var(--text-muted);
+    margin-left: 4px;
+}
+
+/* ============================================================
+   TOOLBAR (search + chip tahun + sort) — tambahan wrapper
+   untuk chip & sort yang berada di kanan
+   ============================================================ */
+.alm-toolbar {
+    align-items: stretch;
+    flex-wrap: wrap;
+}
+.alm-toolbar > .dokumen-search {
+    /* search tetap seperti bawaan publikasi.css */
+}
+
+/* Form pencarian alumni: publikasi.css hanya men-target #pub-search,
+   jadi di sini kita tambah styling untuk id #alm-search agar konsisten */
+.alm-toolbar .dokumen-search #alm-search {
+    width: 100%;
+    padding: 10px 14px 10px 40px;
+    font-family: 'Inter', sans-serif;
+    font-size: 14px;
+    color: var(--text);
+    background: var(--soft);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    transition: all .2s ease;
+}
+.alm-toolbar .dokumen-search #alm-search:focus {
+    outline: none;
+    background: #fff;
+    border-color: var(--accent);
+    box-shadow: 0 0 0 3px rgba(249, 115, 22, 0.12);
+}
+.alm-toolbar-right {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    flex-wrap: wrap;
+}
+.alm-sort {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: var(--soft);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 0 12px 0 12px;
+    height: 40px;
+    transition: border-color .18s ease, background .18s ease;
+}
+.alm-sort:focus-within {
+    border-color: var(--accent);
+    background: #fff;
+    box-shadow: 0 0 0 3px rgba(249, 115, 22, 0.12);
+}
+.alm-sort-label {
+    font-size: 12px;
+    font-weight: 600;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    letter-spacing: .08em;
+}
+.alm-sort select {
+    border: 0;
+    background: transparent;
+    font-family: 'Inter', sans-serif;
+    font-size: 13.5px;
+    font-weight: 500;
+    color: var(--text);
+    padding: 0 4px;
+    cursor: pointer;
+    outline: none;
+    appearance: none;
+    -webkit-appearance: none;
+    background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='10' height='6' viewBox='0 0 10 6'><path fill='none' stroke='%23555' stroke-width='1.6' stroke-linecap='round' stroke-linejoin='round' d='M1 1l4 4 4-4'/></svg>");
+    background-repeat: no-repeat;
+    background-position: right 0 center;
+    padding-right: 16px;
+}
+.alm-sort select:focus { color: var(--navy); }
+
+/* ============================================================
+   RESULT META (counter)
+   ============================================================ */
+.alm-result-meta {
+    font-size: 13.5px;
+    color: var(--text-muted);
+    margin: 0 0 18px;
+}
+.alm-result-meta strong { color: var(--navy); font-weight: 700; }
+
+/* ============================================================
+   GRID — kartu horizontal (1 kolom di desktop supaya lebar)
+   ============================================================ */
+.alm-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 16px;
+}
+
+/* ============================================================
+   KARTU ALUMNI
+   ============================================================ */
+.alm-card {
+    display: grid;
+    grid-template-columns: 110px 1fr auto;
+    gap: 20px;
+    align-items: center;
+    background: #fff;
+    border: 1px solid var(--border);
+    border-top: 3px solid var(--accent);
+    border-radius: 14px;
+    padding: 18px 22px;
+    box-shadow: 0 2px 8px rgba(15, 35, 70, 0.04);
+    transition: transform .25s ease, box-shadow .25s ease, border-color .25s ease;
+}
+.alm-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 12px 28px rgba(15, 35, 70, 0.10);
+    border-color: var(--accent);
+}
+
+/* ---- Frame foto (bulat, 110px) ---- */
+.alm-photo-wrap {
+    position: relative;
+    width: 110px;
+    height: 110px;
+    flex-shrink: 0;
+    overflow: hidden;
+    border-radius: 50%;
+}
+.alm-photo {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    object-fit: cover;
+    object-position: center 20%;
+    background: var(--soft);
+    border: 3px solid var(--soft);
+    box-shadow: inset 0 0 0 1px var(--border);
+    display: block;
+    aspect-ratio: 1 / 1;
+}
+.alm-fallback {
+    /* tampil via onerror: img di-hide, sibling ini di-flex */
+    display: none;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    background: linear-gradient(135deg, var(--navy) 0%, var(--navy-deep) 100%);
+    color: var(--accent);
+    font-family: 'Source Serif 4', serif;
+    font-size: 32px;
+    font-weight: 700;
+    border: 3px solid var(--soft);
+    box-shadow: inset 0 0 0 1px rgba(255,255,255,0.06);
+    letter-spacing: -0.5px;
+}
+
+/* ---- Body ---- */
+.alm-body {
+    min-width: 0; /* biar line-clamp works */
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+.alm-meta-row {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+.alm-nim {
+    font-family: 'Inter', sans-serif;
+    font-size: 12px;
+    font-weight: 600;
+    color: var(--text-muted);
+    letter-spacing: .04em;
+    font-variant-numeric: tabular-nums;
+}
+.alm-year-badge {
+    display: inline-block;
+    font-family: 'Source Serif 4', serif;
+    font-size: 12.5px;
+    font-weight: 700;
+    color: var(--accent-dark);
+    background: rgba(249, 115, 22, 0.1);
+    padding: 3px 10px;
+    border-radius: 6px;
+}
+.alm-name {
+    font-family: 'Source Serif 4', serif;
+    font-size: 19px;
+    font-weight: 700;
+    color: var(--navy);
+    line-height: 1.25;
+    margin: 0;
+}
+.alm-name mark {
+    background: rgba(249, 115, 22, 0.22);
+    color: inherit;
+    padding: 0 2px;
+    border-radius: 3px;
+}
+.alm-judul {
+    font-size: 13.5px;
+    color: var(--text);
+    line-height: 1.55;
+    margin: 0;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    word-break: break-word;
+}
+.alm-judul.empty {
+    color: var(--text-muted);
+    font-style: italic;
+    opacity: 0.7;
+}
+
+/* ---- Action (tombol Lihat Foto) ---- */
+.alm-action {
+    display: flex;
+    align-items: center;
+    flex-shrink: 0;
+}
+.alm-photo-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 8px 14px;
+    font-family: 'Inter', sans-serif;
+    font-size: 12.5px;
+    font-weight: 600;
+    color: var(--navy);
+    background: var(--soft);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    text-decoration: none;
+    white-space: nowrap;
+    transition: all .18s ease;
+}
+.alm-photo-link:hover {
+    background: var(--navy);
+    color: #fff;
+    border-color: var(--navy);
+    transform: translateY(-1px);
+}
+.alm-photo-link svg {
+    width: 13px;
+    height: 13px;
+    flex-shrink: 0;
+}
+
+/* ============================================================
+   RESPONSIVE
+   ============================================================ */
+@media (max-width: 900px) {
+    .alm-stats-row {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 14px;
+    }
+    .alm-stat-value { font-size: 26px; }
+
+    .alm-card {
+        grid-template-columns: 88px 1fr auto;
+        gap: 16px;
+        padding: 16px 18px;
+    }
+    .alm-photo-wrap, .alm-photo, .alm-fallback {
+        width: 88px;
+        height: 88px;
+    }
+    .alm-fallback { font-size: 26px; }
+}
+
+@media (max-width: 640px) {
+    .alm-stats-row {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 10px;
+        margin-bottom: 32px;
+    }
+    .alm-stat { padding: 16px 14px; }
+    .alm-stat-value { font-size: 22px; }
+    .alm-stat-label { font-size: 10.5px; }
+
+    .alm-toolbar { padding: 14px; gap: 12px; }
+    .alm-toolbar-right {
+        width: 100%;
+        justify-content: space-between;
+    }
+    .alm-sort { flex: 1; }
+
+    .alm-card {
+        grid-template-columns: 64px 1fr;
+        gap: 14px;
+        padding: 14px;
+    }
+    .alm-photo-wrap {
+        grid-row: span 2;
+    }
+    .alm-photo-wrap, .alm-photo, .alm-fallback {
+        width: 64px;
+        height: 64px;
+    }
+    .alm-fallback { font-size: 20px; }
+
+    .alm-body {
+        gap: 4px;
+    }
+    .alm-name { font-size: 16px; }
+    .alm-judul { font-size: 13px; -webkit-line-clamp: 3; }
+
+    .alm-action {
+        grid-column: 2;
+        justify-content: flex-end;
+    }
+    .alm-photo-link { padding: 6px 10px; font-size: 11.5px; }
+
+    /* Sembunyikan meta row NIM di mobile agar hemat ruang */
+    .alm-nim { display: none; }
+}

@@ -403,7 +403,7 @@ if (!function_exists('isActive')) {
                 <li><a href="#">Mahasiswa</a></li>
                 <li<?php echo isActive('publikasi'); ?>><a href="publikasi">Publikasi</a></li>
                 <li<?php echo isActive('fasilitas'); ?>><a href="fasilitas">Fasilitas</a></li>
-                <li><a href="#">Alumni</a></li>
+                <li<?php echo isActive('alumni'); ?>><a href="alumni">Alumni</a></li>
                 <li><a href="#">Berita</a></li>
             </ul>
         </nav>

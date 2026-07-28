@@ -9,8 +9,8 @@ $currentPage = 'fasilitas';
 $pageCss = ['assets/fasilitas.css'];
 include 'template/header.php';
 
-// Data setiap fasilitas: judul, gambar, kategori (LAB/UNIT), kode urut, sumber,
-// paragraf deskripsi (verbatim dari sumber), dan daftar kegiatan (turunan dari sumber).
+// Data setiap fasilitas: judul, gambar, kategori (LAB/UNIT), kode urut,
+// paragraf deskripsi (salinan dari sumber), dan daftar kegiatan (turunan dari sumber).
 $facilities = [
     [
         'no'        => 1,
@@ -19,7 +19,6 @@ $facilities = [
         'imageAlt'  => 'Laboratorium Tegangan Tinggi',
         'category'  => 'LAB',
         'featured'  => true,
-        'source'    => 'https://elektro.ft.ung.ac.id/fasilitas',
         'desc'      => 'Kegiatan-kegiatan yang diselenggarakan oleh laboratorium ini meliputi pengujian sistem isolasi tegangan tinggi, pengujian peralatan tegangan tinggi, baik untuk pelaksanaan praktika maupun penelitian dan pengabdian pada masyarakat.',
         'activities'=> [
             'Pengujian sistem isolasi tegangan tinggi',
@@ -35,7 +34,6 @@ $facilities = [
         'imageAlt'  => 'Laboratorium Elektronika dan Telekomunikasi',
         'category'  => 'LAB',
         'featured'  => false,
-        'source'    => 'https://elektro.ft.ung.ac.id/fasilitas',
         'desc'      => 'Laboratorium elektronika dan telekomunikasi adalah fasilitas pendidikan yang dirancang untuk memfasilitasi para mahasiswa dalam mempelajari konsep-konsep dasar dan praktik-praktik yang berkaitan dengan bidang elektronika dan telekomunikasi. Fungsi utama laboratorium ini adalah untuk memberikan pengalaman langsung kepada mahasiswa dalam merancang, menguji, dan menganalisis sirkuit elektronik dan peralatan telekomunikasi.',
         'activities'=> [
             'Mempelajari konsep dasar elektronika & telekomunikasi',
@@ -52,7 +50,6 @@ $facilities = [
         'imageAlt'  => 'Laboratorium Dasar Tenaga Listrik',
         'category'  => 'LAB',
         'featured'  => false,
-        'source'    => 'https://elektro.ft.ung.ac.id/fasilitas',
         'desc'      => 'Laboratorium ini dilengkapi dengan berbagai peralatan dan instrumen yang digunakan untuk mengukur, mengontrol, dan memanipulasi energi listrik. Di laboratorium ini, mahasiswa dan peneliti dapat melakukan berbagai eksperimen, seperti menguji efisiensi transformator, mengukur daya listrik, dan merancang sistem tenaga listrik.',
         'activities'=> [
             'Mengukur, mengontrol & memanipulasi energi listrik',
@@ -68,7 +65,6 @@ $facilities = [
         'imageAlt'  => 'Perpustakaan Jurusan',
         'category'  => 'UNIT',
         'featured'  => false,
-        'source'    => 'https://elektro.ft.ung.ac.id/fasilitas',
         'desc'      => 'Perpustakaan jurusan adalah fasilitas pendidikan yang dirancang untuk memfasilitasi mahasiswa dan staf pengajar dalam memperoleh sumber daya yang berkaitan dengan bidang studi tertentu. Setiap jurusan biasanya memiliki perpustakaan sendiri yang terdiri dari kumpulan buku, jurnal, artikel, dan sumber daya lainnya yang spesifik untuk bidang studi tersebut.',
         'activities'=> [
             'Koleksi buku bidang studi',
@@ -85,7 +81,6 @@ $facilities = [
         'imageAlt'  => 'Laboratorium Teknik Kendali',
         'category'  => 'LAB',
         'featured'  => false,
-        'source'    => 'https://elektro.ft.ung.ac.id/fasilitas',
         'desc'      => 'Fasilitas pendidikan yang dirancang untuk membantu mahasiswa dan staf pengajar dalam mempelajari, menguji, dan menganalisis sistem kendali. Laboratorium ini dilengkapi dengan berbagai macam peralatan dan software yang digunakan untuk mempelajari konsep-konsep dasar dalam pengendalian sistem, seperti transfer function, PID control, dan state space.',
         'activities'=> [
             'Mempelajari sistem kendali',
@@ -103,7 +98,6 @@ $facilities = [
         'imageAlt'  => 'Laboratorium Komputer',
         'category'  => 'LAB',
         'featured'  => false,
-        'source'    => 'https://elektro.ft.ung.ac.id/fasilitas',
         'desc'      => 'Fasilitas pendidikan yang dirancang untuk membantu mahasiswa dan staf pengajar dalam mempelajari, mengembangkan, dan menguji perangkat lunak serta perangkat keras komputer. Laboratorium ini dilengkapi dengan berbagai macam komputer, server, printer, dan perangkat lunak yang digunakan untuk memfasilitasi praktikum, proyek, dan riset di bidang teknologi informasi.',
         'activities'=> [
             'Mempelajari perangkat lunak & keras komputer',
@@ -191,11 +185,6 @@ $totalFacilities = count($facilities);
                             <?php endforeach; ?>
                         </ul>
                     <?php endif; ?>
-
-                    <a class="fas-source" href="<?php echo htmlspecialchars($f['source']); ?>" target="_blank" rel="noopener" aria-label="Sumber: <?php echo htmlspecialchars($f['source']); ?>">
-                        <svg viewBox="0 0 24 24" width="12" height="12" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M14 3h7v7"/><path d="M10 14L21 3"/><path d="M21 14v7H3V3h7"/></svg>
-                        Sumber asli
-                    </a>
                 </div>
             </article>
         <?php endforeach; ?>
