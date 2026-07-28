@@ -404,7 +404,7 @@ if (!function_exists('isActive')) {
                 <li<?php echo isActive('publikasi'); ?>><a href="publikasi">Publikasi</a></li>
                 <li<?php echo isActive('fasilitas'); ?>><a href="fasilitas">Fasilitas</a></li>
                 <li<?php echo isActive('alumni'); ?>><a href="alumni">Alumni</a></li>
-                <li><a href="#">Berita</a></li>
+                <li<?php echo isActive('berita'); ?>><a href="berita">Berita</a></li>
             </ul>
         </nav>
         <button class="hamburger" id="hamburgerBtn" aria-label="Buka menu" aria-expanded="false" aria-controls="primary-nav">

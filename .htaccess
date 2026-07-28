@@ -24,3 +24,7 @@ RewriteRule ^kur-obe-pvre/?$ kurikulum-obe-pv.php [L]
 RewriteCond %{REQUEST_URI} !\.[a-zA-Z0-9]{2,5}$
 RewriteCond %{REQUEST_FILENAME}\.php -f
 RewriteRule ^([^/]+)$ $1.php [L]
+
+# /berita (atau /berita/) -> /berita.php
+# /berita?slug=xxx -> /detail-berita.php?slug=xxx (di-handle oleh berita.php)
+RewriteRule ^berita/?$ berita.php [L]
