@@ -96,7 +96,7 @@ if (!function_exists('isActive')) {
         }
         * { margin: 0; padding: 0; box-sizing: border-box; }
         html { scroll-behavior: smooth; }
-        body { font-family: 'Inter', -apple-system, sans-serif; color: var(--text); background: var(--bg); line-height: 1.6; -webkit-font-smoothing: antialiased; }
+        body { font-family: 'Inter', -apple-system, sans-serif; color: var(--text); background: var(--bg); line-height: 1.6; -webkit-font-smoothing: antialiased; overflow-x: hidden; }
         a { text-decoration: none; color: inherit; }
         img { display: block; max-width: 100%; }
         .container { max-width: 1280px; margin: 0 auto; padding: 0 32px; }

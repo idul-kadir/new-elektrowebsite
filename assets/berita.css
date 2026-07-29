@@ -72,6 +72,8 @@
     outline: none;
     transition: border-color .15s, box-shadow .15s;
     box-sizing: border-box;
+    -webkit-appearance: none;
+            appearance: none;
 }
 .berita-search input:focus {
     border-color: var(--accent);
@@ -82,9 +84,19 @@
     left: 16px;
     top: 50%;
     transform: translateY(-50%);
-    font-size: 18px;
+    width: 18px;
+    height: 18px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
     color: var(--text-muted);
     pointer-events: none;
+    z-index: 2;
+}
+.berita-search-icon svg {
+    display: block;
+    width: 100%;
+    height: 100%;
 }
 .berita-meta-info {
     font-size: 13px;
@@ -142,6 +154,7 @@
     display: grid;
     grid-template-columns: repeat(3, minmax(0, 1fr));
     gap: 26px;
+    min-width: 0;
 }
 .berita-card {
     background: #fff;
@@ -1284,8 +1297,62 @@
     .berita-article-title { font-size: 22px; }
     .berita-article-body p:first-child::first-letter { font-size: 3em; margin: 4px 8px 0 0; }
     .berita-toolbar { flex-direction: column; align-items: stretch; }
-    .berita-search { max-width: none; }
+    .berita-search { max-width: none; flex: 0 0 auto; width: 100%; }
+    .berita-search-icon { left: 16px; }
     .berita-sidebar { flex-direction: column; }
     .berita-related-head h2 { font-size: 22px; }
     .berita-article-hero img { max-height: 280px; }
+}
+@media (max-width: 480px) {
+    /* Page banner lebih ringkas */
+    .page-banner { padding: 36px 0 30px; }
+    .page-banner h1 { font-size: 24px; }
+    .page-banner .lede { font-size: 13.5px; margin-top: 8px; }
+    .page-banner-meta { font-size: 11px; }
+    .page-banner-meta strong { font-size: 20px; }
+
+    /* Toolbar lebih rapat */
+    .berita-toolbar { gap: 10px; margin-bottom: 20px; }
+
+    /* Loading/error/empty state tidak makan tempat */
+    .berita-state { padding: 28px 14px; }
+    .berita-state .err-icon { width: 46px; height: 46px; font-size: 22px; margin-bottom: 10px; }
+
+    /* Grid kartu: jamin tidak overflow horizontal */
+    .berita-grid { gap: 18px; }
+    .berita-card { min-width: 0; max-width: 100%; }
+    .berita-card-body { padding: 14px 16px 18px; gap: 8px; }
+    .berita-card-body h3 { font-size: 15.5px; line-height: 1.3; }
+    .berita-card-date { font-size: 10.5px; letter-spacing: .06em; }
+    .berita-card-link { font-size: 12px; }
+
+    /* Related cards (halaman detail) */
+    .berita-related { margin-top: 40px; }
+    .berita-related-head h2 { font-size: 20px; }
+    .berita-related-body { padding: 16px 18px 18px; }
+    .berita-related-body h3 { font-size: 15.5px; }
+
+    /* Tombol muat lebih banyak */
+    .berita-more-wrap { margin-top: 28px; }
+    .berita-more-btn { padding: 10px 22px; font-size: 13px; }
+}
+@media (max-width: 380px) {
+    /* Hero image pada detail lebih pendek */
+    .berita-article-hero img { max-height: 220px; }
+    .berita-article-title { font-size: 20px; }
+    .berita-article-head { padding: 18px 16px 14px; }
+    .berita-article-body { padding: 16px 16px 4px; font-size: 14.5px; }
+    .berita-article-foot { padding: 14px 16px 20px; }
+    .berita-article-info { gap: 10px; font-size: 12px; }
+    .berita-article-share .share-label { font-size: 11px; }
+
+    /* Sidebar lebih ringkas */
+    .berita-side-card { padding: 18px 18px 20px; }
+    .berita-side-cta-box { padding: 20px 18px 22px; }
+    .berita-side-cta-box h4 { font-size: 15.5px; }
+    .berita-side-cta-box p { font-size: 12.5px; }
+
+    /* Search input padding disesuaikan */
+    .berita-search input { padding: 10px 14px 10px 38px; font-size: 13.5px; }
+    .berita-search-icon { left: 14px; width: 16px; height: 16px; }
 }
