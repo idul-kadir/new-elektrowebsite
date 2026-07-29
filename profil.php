@@ -12,7 +12,7 @@ include 'template/header.php';
         <div>
             <div class="breadcrumb"><a href="beranda">Beranda</a> &nbsp;&rsaquo;&nbsp; Profil</div>
             <h1>Profil Jurusan Teknik Elektro & Komputer</h1>
-            <p class="lede">Mengenal lebih dekat sejarah, visi-misi, dan struktur organisasi Jurusan Teknik Elektro dan Komputer, Fakultas Teknik UNG.</p>
+            <p class="lede">Dari diploma tiga di tahun 2001 &mdash; ketika Gorontalo masih bernama STKIP &mdash; menjadi rumah bagi <strong>tiga program studi sarjana</strong> di tahun 2026. Sebuah perjalanan 25 tahun yang tidak pernah berhenti bertumbuh, demi satu misi: <em>menjadikan kawasan Indonesia Timur setara dengan kawasan mana pun di Indonesia.</em></p>
         </div>
         <div class="page-banner-meta">
             <strong>2000</strong>
@@ -34,10 +34,17 @@ include 'template/header.php';
         </div>
         <div class="sejarah-grid">
             <div class="sejarah-prose">
-                <p>Jurusan Teknik Elektro pertama kali didirikan pada tahun <strong>2000</strong> dan mulai menerima mahasiswa baru pada semester ganjil 2001/2002, dengan hanya mengelola Program Studi Diploma Tiga (D3) berdasarkan Surat Keputusan Direktur Jenderal Pendidikan Tinggi Nomor 279/DIKTI/Kep/2000, saat itu masih bernaung pada STKIP Gorontalo.</p>
-                <p>Pada tahun 2008, Jurusan mendapat izin penyelenggaraan program studi sarjana (S1) berdasarkan SK Nomor 2363/D/T/2008, dan mulai menerima mahasiswa baru S1 pada semester ganjil 2009/2010. Program Studi S1 Teknik Elektro memiliki 3 konsentrasi: Sistem Tenaga Listrik, Sistem Elektronika dan Telekomunikasi, serta Sistem Komputer dan Informatika.</p>
-                <p>Mulai tahun 2023, Jurusan mendapat izin pembukaan Program Studi Teknik Komputer berdasarkan SK 1526/E1/HK.03.00/2023, dan mulai menerima mahasiswa baru pada semester ganjil 2023/2024. Saat ini Jurusan dipercaya mengelola 2 program studi sarjana: <strong>S1 Teknik Elektro</strong> dan <strong>S1 Teknik Komputer</strong>.</p>
-                <p>Sejak 2024, Jurusan menjalankan kurikulum berbasis <strong>OBE (Outcome-Based Education)</strong>. Saat ini Jurusan dipimpin oleh <strong>Yasin Mohamad, ST., MT.</strong> (2019&ndash;sekarang), generasi kedelapan dalam kepemimpinan Jurusan sejak berdiri.</p>
+                <p>Sejarah Jurusan Teknik Elektro bermula pada tahun 2000, ketika benih pertama ditanamkan di bawah naungan STKIP Gorontalo. Melalui <strong>Surat Keputusan Direktur Jenderal Pendidikan Tinggi Nomor 279/DIKTI/Kep/2000</strong>, Jurusan resmi mengelola <strong>Program Studi Diploma Tiga (D3)</strong> dan mulai menyambut mahasiswa baru pada semester ganjil 2001/2002. Di titik inilah fondasi pertama diletakkan &mdash; sebuah babak awal di mana tenaga teknik menengah ditempa untuk menjawab kebutuhan kawasan Indonesia Timur.</p>
+
+                <p>Tujuh tahun berselang, sejarah mencatat sebuah lompatan yang menentukan arah masa depan. Pada tahun 2008, melalui <strong>SK Nomor 2363/D/T/2008</strong>, Jurusan memperoleh izin penyelenggaraan program sarjana (S1), dan pada semester ganjil 2009/2010 mahasiswa S1 angkatan pertama pun diterima. Lahirlah <strong>Program Studi S1 Teknik Elektro</strong>, mengusung tiga konsentrasi keilmuan: Sistem Tenaga Listrik, Sistem Elektronika dan Telekomunikasi, serta Sistem Komputer dan Informatika. Selama hampir lima belas tahun, prodi inilah yang menjadi tulang punggung tunggal Jurusan &mdash; akar dari mana nama besar Teknik Elektro tumbuh dan dikenal.</p>
+
+                <p>Namun sejarah tak pernah berhenti bergerak. Setelah lebih dari satu dekade bertumpu pada satu prodi sarjana, Jurusan menyadari bahwa kawasan Indonesia Timur membutuhkan lebih dari satu wajah keilmuan elektro. Maka pada tahun 2023, melalui <strong>SK Nomor 1526/E1/HK.03.00/2023</strong>, dibukalah <strong>Program Studi S1 Teknik Komputer</strong>, dengan penerimaan mahasiswa pertama pada semester ganjil 2023/2024. Bidang komputasi, yang semula hanya hadir sebagai konsentrasi, kini berdiri tegak sebagai sebuah program studi yang berdaulat.</p>
+
+                <p>Dan pada tahun 2026, Jurusan menorehkan tonggak sejarah yang tak kalah bermakna. Melalui <strong>Surat Keputusan Menteri Pendidikan Tinggi, Sains, dan Teknologi Republik Indonesia Nomor I195/B/O/2025</strong>, dibukalah <strong>Program Studi S1 Pendidikan Vokasional Rekayasa Elektro</strong>. Ini bukan sekadar penambahan prodi &mdash; untuk pertama kalinya, Jurusan tidak hanya melahirkan insinyur elektro, tetapi juga pendidik vokasional yang kompeten, siap mengabdikan diri mengajar di sekolah-sekolah kejuruan di seantero Indonesia Timur. Sebuah langkah yang membawa dampak jauh melampaui angka statistik program studi.</p>
+
+                <p>Hingga hari ini, Jurusan Teknik Elektro berdiri kokoh dengan tiga program studi sarjana yang saling melengkapi bagai tiga sayap: <strong>S1 Teknik Elektro</strong> (2009) sebagai pondasi yang menopang sejarah panjang, <strong>S1 Teknik Komputer</strong> (2023) sebagai sayap baru yang menjawab tuntutan zaman, dan <strong>S1 Pendidikan Vokasional Rekayasa Elektro</strong> (2026) sebagai perluasan misi ke ruang-ruang kelas kejuruan.</p>
+
+                <p>Sejak tahun 2024, Jurusan telah mengadopsi kurikulum berbasis <strong>Outcome-Based Education (OBE)</strong> &mdash; standar mutu yang sejajar dengan kampus-kampus teknik terkemuka di Indonesia. Kini, kepemimpinan Jurusan berada di tangan <strong>Yasin Mohamad, S.T., M.T.</strong> (2019&ndash;sekarang), generasi kedelapan yang meneruskan estafet kepemimpinan sejak Jurusan ini pertama kali berdiri.</p>
             </div>
             <div class="ketua-list">
                 <h4>Daftar Ketua Jurusan</h4>

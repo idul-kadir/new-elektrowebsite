@@ -17,13 +17,8 @@ $pageTitle = 'Detail Berita — Jurusan Teknik Elektro dan Komputer';
 $slug = isset($_GET['slug']) ? trim((string)$_GET['slug']) : '';
 $slug = preg_replace('/[^a-z0-9-]/', '', strtolower($slug));
 
-// Tahan output header.php dulu, render ulang nanti setelah $pageTitle final.
-// Buffer A: header.php, lalu flush ke output di akhir.
-// Buffer B: mulai di sini, tangkap output header.php, drop dulu.
-ob_start();
-include 'template/header.php';
-// Buang semua output header — akan dipancarkan ulang nanti setelah pageTitle final.
-ob_end_clean();
+// Data berita harus selesai dimuat sebelum header dirender agar crawler media sosial
+// langsung menemukan metadata artikel yang benar di dalam <head>.
 
 $berita = null;
 $fetchError = false;
@@ -145,7 +140,65 @@ function estimateReadingTime($text) {
     return $minutes;
 }
 
-// ---- Siapkan variabel ----
+function socialExcerpt($text, $limit = 180) {
+    $plain = strip_tags(str_replace('||', ' ', (string)$text));
+    $plain = preg_replace('/\s+/u', ' ', $plain);
+    $plain = trim($plain);
+    if ($plain === '') return '';
+
+    if (function_exists('mb_strlen') && function_exists('mb_substr')) {
+        if (mb_strlen($plain, 'UTF-8') <= $limit) return $plain;
+        $excerpt = mb_substr($plain, 0, $limit - 1, 'UTF-8');
+        $lastSpace = mb_strrpos($excerpt, ' ', 0, 'UTF-8');
+        if ($lastSpace !== false) $excerpt = mb_substr($excerpt, 0, $lastSpace, 'UTF-8');
+    } else {
+        if (strlen($plain) <= $limit) return $plain;
+        $excerpt = substr($plain, 0, $limit - 1);
+        $lastSpace = strrpos($excerpt, " ");
+        if ($lastSpace !== false) $excerpt = substr($excerpt, 0, $lastSpace);
+    }
+
+    return rtrim($excerpt, " .,;:-") . '…';
+}
+
+function requestOrigin() {
+    $forwardedProto = strtolower(trim(explode(',', $_SERVER['HTTP_X_FORWARDED_PROTO'] ?? '')[0]));
+    $isHttps = (!empty($_SERVER['HTTPS']) && strtolower((string)$_SERVER['HTTPS']) !== 'off')
+        || $forwardedProto === 'https';
+    $scheme = $isHttps ? 'https' : 'http';
+    $host = $_SERVER['HTTP_HOST'] ?? ($_SERVER['SERVER_NAME'] ?? 'localhost');
+    $host = preg_replace('/[^A-Za-z0-9.\-:\[\]]/', '', (string)$host);
+    if ($host === '') $host = 'localhost';
+
+    return $scheme . '://' . $host;
+}
+
+function absoluteAssetUrl($path, $origin) {
+    if (preg_match('#^https?://#i', (string)$path)) return $path;
+    $scriptDir = str_replace('\\', '/', dirname($_SERVER['SCRIPT_NAME'] ?? '/'));
+    $scriptDir = $scriptDir === '/' ? '' : rtrim($scriptDir, '/');
+
+    return $origin . $scriptDir . '/' . ltrim((string)$path, '/');
+}
+
+// ---- Siapkan metadata halaman ----
+$origin = requestOrigin();
+$requestPath = parse_url($_SERVER['REQUEST_URI'] ?? '/detail-berita', PHP_URL_PATH);
+if (!is_string($requestPath) || $requestPath === '') $requestPath = '/detail-berita';
+if ($requestPath[0] !== '/') $requestPath = '/' . $requestPath;
+
+$canonicalUrl = $origin . $requestPath;
+if ($slug !== '') $canonicalUrl .= '?slug=' . rawurlencode($slug);
+$pageDescription = 'Berita, pengumuman, dan aktivitas terbaru Jurusan Teknik Elektro dan Komputer Universitas Negeri Gorontalo.';
+$socialTitle = $pageTitle;
+$socialDescription = $pageDescription;
+$socialUrl = $canonicalUrl;
+$socialImage = absoluteAssetUrl('assets/logo.jpg', $origin);
+$socialType = 'website';
+$socialPublishedTime = '';
+$twitterCard = 'summary_large_image';
+
+// ---- Siapkan variabel artikel ----
 if ($berita) {
     $judul  = $berita['judul'] ?? '(Tanpa judul)';
     $tglRaw = $berita['tanggal'] ?? '';
@@ -156,7 +209,21 @@ if ($berita) {
     $hariIndo = hariIndo($tglRaw);
     $readMin  = estimateReadingTime($isiRaw);
 
-    $pageTitle = htmlspecialchars($judul) . ' — Jurusan Teknik Elektro dan Komputer';
+    $pageTitle = $judul . ' — Jurusan Teknik Elektro dan Komputer';
+    $pageDescription = socialExcerpt($isiRaw);
+    if ($pageDescription === '') {
+        $pageDescription = 'Baca berita ' . $judul . ' dari Jurusan Teknik Elektro dan Komputer Universitas Negeri Gorontalo.';
+    }
+    $socialTitle = $judul;
+    $socialDescription = $pageDescription;
+    $socialImage = $gambar !== '' ? absoluteAssetUrl($gambar, $origin) : $socialImage;
+    $socialType = 'article';
+    try {
+        $publishedDate = $tglRaw !== '' ? new DateTimeImmutable($tglRaw, new DateTimeZone('Asia/Makassar')) : null;
+        $socialPublishedTime = $publishedDate ? $publishedDate->format(DateTimeInterface::ATOM) : '';
+    } catch (Exception $e) {
+        $socialPublishedTime = '';
+    }
 
     // 5 berita terbaru untuk sidebar (berdasarkan tanggal desc)
     $recentItems = $listClean;
@@ -170,16 +237,8 @@ if ($berita) {
     ));
     $recentItems = array_slice($recentItems, 0, 5);
 }
-?>
 
-<?php
-// Header.php sudah di-include di awal (output ditahan).
-// Sekarang render ulang isi header dengan pageTitle final yang sudah benar.
-// Trik: gunakan include ulang yang sudah di-cache oleh opcache,
-// tapi untuk amannya kita pakai output buffer lagi.
-ob_start();
 include 'template/header.php';
-ob_end_flush();
 ?>
 
 <!-- Reading progress bar (atas, fixed) -->
@@ -286,9 +345,10 @@ ob_end_flush();
 
                     <div class="berita-article-share" aria-label="Bagikan berita">
                         <span class="share-label">Bagikan:</span>
-                        <a class="share-btn share-wa" href="https://wa.me/?text=<?php echo urlencode($judul . ' — ' . (isset($_SERVER['HTTP_HOST']) ? ('http://' . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI']) : '')); ?>" target="_blank" rel="noopener" title="Bagikan ke WhatsApp">WA</a>
-                        <a class="share-btn share-fb" href="https://www.facebook.com/sharer/sharer.php?u=<?php echo urlencode(isset($_SERVER['HTTP_HOST']) ? ('http://' . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI']) : ''); ?>" target="_blank" rel="noopener" title="Bagikan ke Facebook">f</a>
-                        <button class="share-btn share-copy" type="button" id="shareCopy" title="Salin tautan">⎘</button>
+                        <a class="share-btn share-wa" href="https://wa.me/?text=<?php echo rawurlencode($judul . ' — ' . $socialUrl); ?>" target="_blank" rel="noopener noreferrer" title="Bagikan ke WhatsApp" aria-label="Bagikan ke WhatsApp">WA</a>
+                        <a class="share-btn share-fb" href="https://www.facebook.com/sharer/sharer.php?u=<?php echo rawurlencode($socialUrl); ?>" target="_blank" rel="noopener noreferrer" title="Bagikan ke Facebook" aria-label="Bagikan ke Facebook">f</a>
+                        <a class="share-btn share-x" href="https://twitter.com/intent/tweet?url=<?php echo rawurlencode($socialUrl); ?>&amp;text=<?php echo rawurlencode($judul); ?>" target="_blank" rel="noopener noreferrer" title="Bagikan ke X / Twitter" aria-label="Bagikan ke X atau Twitter">X</a>
+                        <button class="share-btn share-copy" type="button" id="shareCopy" data-share-url="<?php echo htmlspecialchars($socialUrl, ENT_QUOTES, 'UTF-8'); ?>" title="Salin tautan" aria-label="Salin tautan berita">⎘</button>
                     </div>
                 </header>
 
@@ -433,7 +493,7 @@ ob_end_flush();
     if (!btn) return;
     btn.addEventListener('click', async function () {
         try {
-            await navigator.clipboard.writeText(window.location.href);
+            await navigator.clipboard.writeText(btn.dataset.shareUrl || window.location.href);
             const orig = btn.textContent;
             btn.textContent = '✓';
             btn.classList.add('is-done');

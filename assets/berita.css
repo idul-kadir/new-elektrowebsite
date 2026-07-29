@@ -444,6 +444,7 @@
 }
 .share-wa { background: #25D366; }
 .share-fb { background: #1877F2; font-family: 'Source Serif 4', serif; font-size: 18px; }
+.share-x { background: #111; font-size: 14px; }
 .share-copy { background: var(--navy); font-size: 16px; }
 .share-copy.is-done { background: #16a34a; }
 
@@ -926,8 +927,17 @@
     border: 1px solid var(--border);
     border-top: 4px solid var(--accent);
     border-radius: 14px;
-    padding: 36px 40px 40px;
+    padding: 0;
     box-shadow: 0 2px 10px rgba(15, 30, 71, .04);
+}
+.berita-article-head {
+    padding: 32px 40px 24px;
+}
+.berita-article-body {
+    padding: 24px 40px 8px;
+}
+.berita-article-foot {
+    padding: 16px 40px 40px;
 }
 .berita-article-meta {
     display: flex;
@@ -1255,9 +1265,9 @@
     .berita-side-cta-box {
         flex: 1 1 280px;
     }
-    .berita-article-head { padding: 24px 0 20px; }
-    .berita-article-body { padding: 20px 0 6px; font-size: 15.5px; line-height: 1.75; }
-    .berita-article-foot { padding: 16px 0 0; }
+    .berita-article-head { padding: 24px 32px 20px; }
+    .berita-article-body { padding: 20px 32px 6px; font-size: 15.5px; line-height: 1.75; }
+    .berita-article-foot { padding: 16px 32px 32px; }
     .berita-article-title { font-size: 26px; }
     .berita-article-hero img { max-height: 380px; }
 }
@@ -1268,9 +1278,9 @@
 }
 @media (max-width: 640px) {
     .berita-grid { grid-template-columns: 1fr; }
-    .berita-article-head { padding: 20px 0 16px; }
-    .berita-article-body { padding: 18px 0 4px; font-size: 15px; }
-    .berita-article-foot { padding: 16px 0 0; flex-direction: column; align-items: flex-start; }
+    .berita-article-head { padding: 20px 20px 16px; }
+    .berita-article-body { padding: 18px 20px 4px; font-size: 15px; }
+    .berita-article-foot { padding: 16px 20px 24px; flex-direction: column; align-items: flex-start; }
     .berita-article-title { font-size: 22px; }
     .berita-article-body p:first-child::first-letter { font-size: 3em; margin: 4px 8px 0 0; }
     .berita-toolbar { flex-direction: column; align-items: stretch; }

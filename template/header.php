@@ -16,6 +16,15 @@ if ($page === 'index' || $reqUri === '/beranda' || $reqUri === '/beranda/') {
 
 $currentPage = isset($currentPage) ? $currentPage : $page;
 $pageTitle = isset($pageTitle) ? $pageTitle : 'Jurusan Teknik Elektro dan Komputer - Universitas Negeri Gorontalo';
+$pageDescription = isset($pageDescription) ? $pageDescription : '';
+$canonicalUrl = isset($canonicalUrl) ? $canonicalUrl : '';
+$socialTitle = isset($socialTitle) ? $socialTitle : $pageTitle;
+$socialDescription = isset($socialDescription) ? $socialDescription : $pageDescription;
+$socialUrl = isset($socialUrl) ? $socialUrl : $canonicalUrl;
+$socialImage = isset($socialImage) ? $socialImage : '';
+$socialType = isset($socialType) ? $socialType : 'website';
+$socialPublishedTime = isset($socialPublishedTime) ? $socialPublishedTime : '';
+$twitterCard = isset($twitterCard) ? $twitterCard : ($socialImage !== '' ? 'summary_large_image' : 'summary');
 
 // Helper kecil untuk menandai <li> aktif pada menu
 if (!function_exists('isActive')) {
@@ -33,7 +42,41 @@ if (!function_exists('isActive')) {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title><?php echo $pageTitle; ?></title>
+    <title><?php echo htmlspecialchars($pageTitle, ENT_QUOTES, 'UTF-8'); ?></title>
+    <?php if ($pageDescription !== ''): ?>
+    <meta name="description" content="<?php echo htmlspecialchars($pageDescription, ENT_QUOTES, 'UTF-8'); ?>">
+    <?php endif; ?>
+    <?php if ($canonicalUrl !== ''): ?>
+    <link rel="canonical" href="<?php echo htmlspecialchars($canonicalUrl, ENT_QUOTES, 'UTF-8'); ?>">
+    <?php endif; ?>
+
+    <meta property="og:locale" content="id_ID">
+    <meta property="og:site_name" content="Jurusan Teknik Elektro dan Komputer UNG">
+    <meta property="og:type" content="<?php echo htmlspecialchars($socialType, ENT_QUOTES, 'UTF-8'); ?>">
+    <meta property="og:title" content="<?php echo htmlspecialchars($socialTitle, ENT_QUOTES, 'UTF-8'); ?>">
+    <?php if ($socialDescription !== ''): ?>
+    <meta property="og:description" content="<?php echo htmlspecialchars($socialDescription, ENT_QUOTES, 'UTF-8'); ?>">
+    <?php endif; ?>
+    <?php if ($socialUrl !== ''): ?>
+    <meta property="og:url" content="<?php echo htmlspecialchars($socialUrl, ENT_QUOTES, 'UTF-8'); ?>">
+    <?php endif; ?>
+    <?php if ($socialImage !== ''): ?>
+    <meta property="og:image" content="<?php echo htmlspecialchars($socialImage, ENT_QUOTES, 'UTF-8'); ?>">
+    <meta property="og:image:alt" content="<?php echo htmlspecialchars($socialTitle, ENT_QUOTES, 'UTF-8'); ?>">
+    <?php endif; ?>
+    <?php if ($socialType === 'article' && $socialPublishedTime !== ''): ?>
+    <meta property="article:published_time" content="<?php echo htmlspecialchars($socialPublishedTime, ENT_QUOTES, 'UTF-8'); ?>">
+    <?php endif; ?>
+
+    <meta name="twitter:card" content="<?php echo htmlspecialchars($twitterCard, ENT_QUOTES, 'UTF-8'); ?>">
+    <meta name="twitter:title" content="<?php echo htmlspecialchars($socialTitle, ENT_QUOTES, 'UTF-8'); ?>">
+    <?php if ($socialDescription !== ''): ?>
+    <meta name="twitter:description" content="<?php echo htmlspecialchars($socialDescription, ENT_QUOTES, 'UTF-8'); ?>">
+    <?php endif; ?>
+    <?php if ($socialImage !== ''): ?>
+    <meta name="twitter:image" content="<?php echo htmlspecialchars($socialImage, ENT_QUOTES, 'UTF-8'); ?>">
+    <meta name="twitter:image:alt" content="<?php echo htmlspecialchars($socialTitle, ENT_QUOTES, 'UTF-8'); ?>">
+    <?php endif; ?>
     <link rel="icon" href="assets/logo.jpg" type="image/jpeg">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -400,7 +443,7 @@ if (!function_exists('isActive')) {
                         <a href="laporan-kinerja">Laporan Kinerja</a>
                     </div>
                 </li>
-                <li><a href="#">Mahasiswa</a></li>
+                <li<?php echo isActive('mahasiswa'); ?>><a href="mahasiswa">Mahasiswa</a></li>
                 <li<?php echo isActive('publikasi'); ?>><a href="publikasi">Publikasi</a></li>
                 <li<?php echo isActive('fasilitas'); ?>><a href="fasilitas">Fasilitas</a></li>
                 <li<?php echo isActive('alumni'); ?>><a href="alumni">Alumni</a></li>

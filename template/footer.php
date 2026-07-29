@@ -162,10 +162,20 @@ const API = 'https://temp.ikad-developer.my.id/elektro';
                 const item = data[0];
                 const d = new Date(item.tanggal);
                 const dateStr = d.toLocaleDateString('id-ID', { day: 'numeric', month: 'long', year: 'numeric' });
+                const slug = (item.keterangan || '').trim();
+                const href = slug ? 'detail-berita?slug=' + encodeURIComponent(slug) : '#';
                 document.getElementById('beritaMainImg').src = item.gambar;
                 document.getElementById('beritaMainImg').alt = item.judul;
                 main.querySelector('.berita-meta').textContent = dateStr + ' • Berita Utama';
                 main.querySelector('h2').textContent = item.judul;
+                const link = main.querySelector('a.berita-main-link');
+                if (link) link.setAttribute('href', href);
+                // Buat seluruh kartu utama bisa diklik
+                const mainImg = main.querySelector('.berita-main-img');
+                if (mainImg && slug) {
+                    mainImg.style.cursor = 'pointer';
+                    mainImg.onclick = () => { window.location.href = href; };
+                }
             });
     })();
 
@@ -182,8 +192,10 @@ const API = 'https://temp.ikad-developer.my.id/elektro';
                 side.innerHTML = items.map(it => {
                     const d = new Date(it.tanggal);
                     const ds = d.toLocaleDateString('id-ID', { day: 'numeric', month: 'short', year: 'numeric' });
+                    const slug = (it.keterangan || '').trim();
+                    const href = slug ? 'detail-berita?slug=' + encodeURIComponent(slug) : '#';
                     return `
-                        <a href="#" class="berita-side-item">
+                        <a href="${href}" class="berita-side-item">
                             <div class="berita-side-img"><img src="${it.gambar}" alt=""></div>
                             <div>
                                 <div class="date">${ds}</div>
