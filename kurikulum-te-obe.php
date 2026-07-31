@@ -1,6 +1,6 @@
 <?php
-// kurikulum.php — Halaman Kurikulum OBE S1 Teknik Elektro (#te-2025)
-$pageTitle = 'Kurikulum OBE 2025 — Jurusan Teknik Elektro dan Komputer';
+// kurikulum.php — Halaman Kurikulum OBE S1 Teknik Elektro (#te-2026)
+$pageTitle = 'Kurikulum OBE 2026 — Jurusan Teknik Elektro dan Komputer';
 $currentPage = 'kurikulum';
 $pageCss = ['assets/kurikulum.css'];
 include 'template/header.php';
@@ -11,7 +11,7 @@ $kaprodi = getKaprodi('s1 teknik elektro');
 
 // ---- FETCH MATA KULIAH DARI API ----
 // Endpoint: https://temp.ikad-developer.my.id/elektro/kurikulum
-// Response: array of paket kurikulum. Filter: S1 Teknik Elektro OBE 2025.
+// Response: array of paket kurikulum. Filter: S1 Teknik Elektro OBE 2026.
 $mkData = [];
 $mkLoaded = false;
 try {
@@ -32,7 +32,7 @@ try {
                 $nama = strtolower($paket['nama'] ?? '');
                 $tahun = (string)($paket['tahun'] ?? '');
                 if ($kodeProdi === 's1teknikelektro'
-                    && $tahun === '2025'
+                    && $tahun === '2026'
                     && str_contains($nama, 'obe')) {
                     $mkData = $paket['matakuliah'] ?? [];
                     $mkLoaded = !empty($mkData);
@@ -81,30 +81,30 @@ $konsentrasiLabels = [
 <section class="page-banner">
     <div class="container">
         <div>
-            <div class="breadcrumb"><a href="beranda">Beranda</a> &nbsp;&rsaquo;&nbsp; Kurikulum &nbsp;&rsaquo;&nbsp; Kurikulum 2025</div>
-            <h1>Kurikulum 2025 &mdash; S1 Teknik Elektro</h1>
-            <p class="lede">Kurikulum 2025 Sarjana Teknik Elektro berfokus pada Energi Baru Terbarukan dengan menyederhanakan 39 CPL (SN DIKTI) menjadi 11 CPL sesuai rekomendasi Fortei agar capaian lulusan terukur secara terstruktur.</p>
+            <div class="breadcrumb"><a href="beranda">Beranda</a> &nbsp;&rsaquo;&nbsp; Kurikulum &nbsp;&rsaquo;&nbsp; Kurikulum OBE 2026</div>
+            <h1>Kurikulum OBE 2026 &mdash; S1 Teknik Elektro</h1>
+            <p class="lede">Kurikulum Outcome-Based Education Program Studi Sarjana Teknik Elektro, berbasis capaian pembelajaran lulusan dan berorientasi pada energi baru terbarukan.</p>
         </div>
         <div class="page-banner-meta">
-            <strong>2025</strong>
+            <strong>2026</strong>
             Tahun Kurikulum
         </div>
     </div>
 </section>
 
 <!-- SECTION KURIKULUM OBE TE -->
-<section id="te-2025" class="prodi-section">
+<section id="te-2026" class="prodi-section">
     <div class="container">
         <div class="section-head section-head-split">
             <div class="section-head-left">
-                <div class="section-eyebrow">Kurikulum 2025</div>
+                <div class="section-eyebrow">Kurikulum OBE 2026</div>
             </div>
             <div class="section-head-right">
                 <h2 class="section-title">S1 Teknik Elektro</h2>
             </div>
         </div>
         <p class="section-desc" style="margin-top:-32px;margin-bottom:48px;max-width:720px;">
-           Program Studi Sarjana Teknik Elektro menerapkan Kurikulum 2025 yang berbasis Capaian Pembelajaran Lulusan (CPL) dan berorientasi pada pengembangan Energi Baru Terbarukan (EBT). Sejalan dengan rekomendasi Forum Pendidikan Tinggi Teknik Elektro Indonesia (Fortei), struktur kurikulum ini dirampingkan dari 39 CPL (SN DIKTI) menjadi 11 CPL utama. Penyederhanaan ini memastikan setiap kompetensi dapat diukur secara terstruktur, terarah, dan relevan dengan kebutuhan industri energi masa depan.
+            Kurikulum 2026 disusun berdasarkan <em>Outcome-Based Education</em> dengan menyederhanakan CPL dari 39 (SN DIKTI) menjadi 11 CPL sesuai rekomendasi Forum Pendidikan Tinggi Teknik Elektro Indonesia (Fortei), sehingga setiap CPL dapat diukur secara terstruktur.
         </p>
 
         <!-- VISI + PENGELOLA GRID 7/5 -->

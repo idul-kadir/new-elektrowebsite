@@ -423,8 +423,9 @@ if (!function_exists('isActive')) {
                         <div class="dd-sep"></div>
                         <div class="dd-group">
                             <div class="dd-header">S1 Teknik Elektro</div>
-                            <a href="kurikulum-obe-teknik-elektro">Kurikulum OBE 2025</a>
-                            <a href="kurikulum-kkni">Kurikulum KKNI 2017</a>
+                            <a href="kurikulum-obe-te">Kurikulum OBE 2026</a>
+                            <a href="kurikulum-te-2025">Kurikulum 2025</a>
+                            <a href="kurikulum-kkni">Kurikulum KKNI / MBKM 2017</a>
                         </div>
                         <div class="dd-sep"></div>
                         <div class="dd-group">

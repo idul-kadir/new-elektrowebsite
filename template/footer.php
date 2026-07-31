@@ -25,6 +25,8 @@
                 <p><a href="https://www.ung.ac.id/" target="_blank">UNG</a></p>
                 <p><a href="https://ft.ung.ac.id/" target="_blank">Fakultas Teknik</a></p>
                 <p><a href="https://siat.ung.ac.id/" target="_blank">SIAT</a></p>
+                <p><a href="https://ejurnal.ung.ac.id/index.php/jjeee" target="_blank">JJEEE</a></p>
+                <p><a href="https://ejurnal.ung.ac.id/index.php/IJEmCE/index" target="_blank">IJEmCE</a></p>
             </div>
         </div>
         <div class="footer-bot">

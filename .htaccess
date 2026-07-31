@@ -14,7 +14,8 @@ RewriteRule ^beranda/?$ index.php [L]
 RewriteRule ^kurikulum-obe-teknik-komputer/?$ kurikulum-obe-tk.php [L]
 
 # /kur-obe-te -> /kur-obe-te.php (alias URL untuk halaman Kurikulum OBE TE)
-RewriteRule ^kurikulum-obe-teknik-elektro/?$ kurikulum-te.php [L]
+RewriteRule ^kurikulum-te-2025/?$ kurikulum-te.php [L]
+RewriteRule ^kurikulum-obe-te/?$ kurikulum-te-obe.php [L]
 
 # /kur-obe-pv -> /kur-obe-pv.php (alias URL untuk halaman Kurikulum OBE PV)
 RewriteRule ^kur-obe-pvre/?$ kurikulum-obe-pv.php [L]
